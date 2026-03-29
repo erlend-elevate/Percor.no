@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-frakt-og-levering",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

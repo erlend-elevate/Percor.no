@@ -1,0 +1,75 @@
+<section class="highlight-banner" aria-label="{{ section.settings.heading }}">
+  <div class="highlight-banner__bg">
+    {%- if section.settings.image != blank -%}
+      <img
+        src="{{ section.settings.image | image_url: width: 1920 }}"
+        alt="{{ section.settings.heading }}"
+        width="1920"
+        height="600"
+        loading="lazy"
+      >
+    {%- endif -%}
+  </div>
+
+  <div class="container">
+    <div class="highlight-banner__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="highlight-banner__title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <p class="highlight-banner__text">{{ section.settings.text }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.button_text != blank -%}
+        <a href="{{ section.settings.button_link }}" class="btn btn--primary">
+          {{ section.settings.button_text }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Highlight-banner",
+  "tag": "section",
+  "class": "highlight-banner-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Bakgrunnsbilde"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Overskrift",
+      "default": "Payper — eksklusivt hos Percor i Norge"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Brødtekst",
+      "default": "Payper er en av Europas største produsenter av arbeidstøy og profilklær, med en daglig produksjon på over 30 000 plagg fra sin fabrikk utenfor Milano. Som eneste norske forhandler gir vi deg direkte tilgang til hele sortimentet — fra robuste arbeidsbukser til stilrene profiljakker."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Knapptekst",
+      "default": "Utforsk Payper-kolleksjonen"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Knapplenke",
+      "default": "/collections/merkevare-payper"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Highlight-banner"
+    }
+  ]
+}
+{% endschema %}

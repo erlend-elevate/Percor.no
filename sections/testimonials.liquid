@@ -1,0 +1,68 @@
+<section class="section" aria-label="Kundevurderinger">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ section.settings.heading | default: 'Det sier kundene våre' }}</h2>
+    </div>
+
+    {%- for block in section.blocks -%}
+      <div class="testimonial" {{ block.shopify_attributes }}>
+        <p class="testimonial__quote">{{ block.settings.quote }}</p>
+        <p class="testimonial__author">{{ block.settings.author }}</p>
+        {%- if block.settings.company != blank -%}
+          <p class="testimonial__company">{{ block.settings.company }}</p>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kundevurderinger",
+  "tag": "section",
+  "class": "testimonials-section",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Overskrift",
+      "default": "Det sier kundene våre"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Vurdering",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Sitat",
+          "default": "Percor leverte 200 profilerte arbeidsjakker til oss på under to uker. Alt fra design til ferdig produkt — knirkefritt."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Navn",
+          "default": "Kundenavn"
+        },
+        {
+          "type": "text",
+          "id": "company",
+          "label": "Bedrift",
+          "default": "Bedriftsnavn"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kundevurderinger",
+      "blocks": [
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-om-oss",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

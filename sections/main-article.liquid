@@ -1,0 +1,51 @@
+{% render 'breadcrumbs' %}
+
+<article class="container" style="padding-bottom: var(--spacing-3xl);">
+  <div class="page-header">
+    <h1>{{ article.title }}</h1>
+    <p class="text-light" style="margin-top: var(--spacing-sm);">
+      <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%d. %B %Y' }}</time>
+      {%- if article.author -%}
+        &middot; {{ article.author }}
+      {%- endif -%}
+    </p>
+  </div>
+
+  {%- if article.image -%}
+    <div style="margin-bottom: var(--spacing-xl); border-radius: var(--radius-md); overflow: hidden;">
+      <img
+        src="{{ article.image | image_url: width: 1200 }}"
+        alt="{{ article.image.alt | default: article.title }}"
+        width="1200"
+        height="600"
+        loading="eager"
+        style="width: 100%; height: auto;"
+      >
+    </div>
+  {%- endif -%}
+
+  <div class="page-content">
+    {{ article.content }}
+  </div>
+
+  {%- if article.tags.size > 0 -%}
+    <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
+      <span class="text-light" style="font-size: 0.875rem;">Emner: </span>
+      {%- for tag in article.tags -%}
+        <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" style="font-size: 0.875rem;">{{ tag }}{% unless forloop.last %}, {% endunless %}</a>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
+    <a href="{{ blog.url }}" class="btn btn--secondary">&larr; Tilbake til {{ blog.title }}</a>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Artikkel",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

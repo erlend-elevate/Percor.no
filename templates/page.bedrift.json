@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-bedrift",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

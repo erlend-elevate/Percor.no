@@ -1,0 +1,112 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Gå til hovedinnhold",
+      "close": "Lukk",
+      "open": "Åpne"
+    },
+    "meta": {
+      "tags": "Tagget \"{{ tags }}\"",
+      "page": "Side {{ page }}"
+    },
+    "breadcrumbs": {
+      "home": "Hjem"
+    },
+    "search": {
+      "placeholder": "Søk etter produkter...",
+      "submit": "Søk",
+      "results_count": "{{ count }} resultater for \"{{ terms }}\"",
+      "no_results": "Ingen resultater for \"{{ terms }}\""
+    },
+    "newsletter": {
+      "email_placeholder": "Din e-postadresse",
+      "submit": "Meld meg på",
+      "success": "Takk for påmeldingen!",
+      "disclaimer": "Vi sender maks 2 nyhetsbrev per måned. Du kan melde deg av når som helst."
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Legg i handlekurv",
+      "sold_out": "Utsolgt",
+      "from_price": "Fra {{ price }}",
+      "quantity": "Antall",
+      "size_guide": "Størrelsesguide",
+      "request_quote": "Be om tilbud med trykk",
+      "in_stock": "På lager",
+      "free_shipping": "Fri frakt over 999 kr",
+      "pickup_available": "Henting i butikk — Åsveien 5, Sætre"
+    },
+    "tabs": {
+      "description": "Beskrivelse",
+      "specifications": "Spesifikasjoner",
+      "shipping": "Levering & retur",
+      "printing": "Trykk & profilering"
+    }
+  },
+  "collections": {
+    "general": {
+      "no_products": "Ingen produkter funnet i denne kategorien.",
+      "view_all": "Se alle produkter",
+      "filter_by": "Filtrer etter",
+      "sort_by": "Sorter etter"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Handlekurv",
+      "empty": "Handlekurven din er tom.",
+      "update": "Oppdater handlekurv",
+      "checkout": "Gå til kassen",
+      "total": "Totalt",
+      "shipping_note": "Frakt beregnes i kassen",
+      "continue_shopping": "Fortsett å handle"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Min konto",
+      "orders": "Bestillingshistorikk",
+      "addresses": "Adresser",
+      "logout": "Logg ut"
+    },
+    "login": {
+      "title": "Logg inn",
+      "email": "E-post",
+      "password": "Passord",
+      "submit": "Logg inn",
+      "forgot_password": "Glemt passord?",
+      "create_account": "Opprett konto"
+    },
+    "register": {
+      "title": "Opprett konto",
+      "first_name": "Fornavn",
+      "last_name": "Etternavn",
+      "email": "E-post",
+      "password": "Passord",
+      "submit": "Opprett konto"
+    }
+  },
+  "contact": {
+    "form": {
+      "title": "Send oss en henvendelse",
+      "name": "Navn",
+      "email": "E-post",
+      "phone": "Telefon",
+      "company": "Bedrift",
+      "subject": "Emne",
+      "message": "Melding",
+      "submit": "Send henvendelse",
+      "success": "Takk for din henvendelse! Vi svarer normalt innen én virkedag.",
+      "response_note": "Vi svarer normalt innen én virkedag."
+    }
+  },
+  "pagination": {
+    "previous": "Forrige",
+    "next": "Neste"
+  },
+  "date_formats": {
+    "short": "%d.%m.%Y",
+    "long": "%d. %B %Y"
+  }
+}

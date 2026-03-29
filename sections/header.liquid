@@ -1,0 +1,121 @@
+<header class="site-header" role="banner">
+  <div class="site-header__inner">
+    {%- comment -%} Logo {%- endcomment -%}
+    <a href="/" class="site-header__logo" aria-label="{{ shop.name }}">
+      {%- if section.settings.logo != blank -%}
+        <img
+          src="{{ section.settings.logo | image_url: width: 200 }}"
+          alt="{{ shop.name }}"
+          width="200"
+          height="{{ 200 | divided_by: section.settings.logo.aspect_ratio | round }}"
+          loading="eager"
+        >
+      {%- else -%}
+        <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary); letter-spacing: 1px;">PERCOR</span>
+      {%- endif -%}
+    </a>
+
+    {%- comment -%} Main Navigation {%- endcomment -%}
+    <nav class="site-header__nav" role="navigation" aria-label="Hovedmeny">
+      {%- for link in linklists[section.settings.menu].links -%}
+        <div class="site-header__nav-item" {% if link.links.size > 0 %}data-has-megamenu{% endif %}>
+          <a
+            href="{{ link.url }}"
+            class="site-header__nav-link{% if link.active %} site-header__nav-link--active{% endif %}"
+            {% if link.links.size > 0 %}
+              aria-expanded="false"
+              aria-haspopup="true"
+            {% endif %}
+          >
+            {{ link.title }}
+            {%- if link.links.size > 0 -%}
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" style="margin-left: 4px;">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            {%- endif -%}
+          </a>
+
+          {%- if link.links.size > 0 -%}
+            <div class="mega-menu" aria-hidden="true">
+              <div class="mega-menu__inner container--wide">
+                {%- for child_link in link.links -%}
+                  <div class="mega-menu__column">
+                    <h3>{{ child_link.title }}</h3>
+                    {%- if child_link.links.size > 0 -%}
+                      <ul class="mega-menu__list">
+                        {%- for grandchild_link in child_link.links -%}
+                          <li><a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                  </div>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </nav>
+
+    {%- comment -%} Header Actions {%- endcomment -%}
+    <div class="site-header__actions">
+      {%- comment -%} Search {%- endcomment -%}
+      <a href="/search" class="site-header__action-btn" aria-label="Søk">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </a>
+
+      {%- comment -%} Account {%- endcomment -%}
+      <a href="/account" class="site-header__action-btn" aria-label="Min konto">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </a>
+
+      {%- comment -%} Cart {%- endcomment -%}
+      <a href="/cart" class="site-header__action-btn" aria-label="Handlekurv" style="position: relative;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        {%- if cart.item_count > 0 -%}
+          <span class="site-header__cart-count">{{ cart.item_count }}</span>
+        {%- endif -%}
+      </a>
+
+      {%- comment -%} Mobile menu toggle {%- endcomment -%}
+      <button class="mobile-menu-toggle" aria-label="Åpne meny" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "section",
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Hovedmeny",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

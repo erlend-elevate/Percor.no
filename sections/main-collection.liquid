@@ -1,0 +1,105 @@
+{% render 'breadcrumbs' %}
+{% render 'structured-data' %}
+
+<div class="container">
+  <div class="collection-header">
+    <h1>{{ collection.title }}</h1>
+    {%- if collection.description != blank -%}
+      <div class="collection-header__desc mt-md">
+        {{ collection.description }}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} Filters & Sort {%- endcomment -%}
+  <div class="collection-filters">
+    {%- for filter in collection.filters -%}
+      <details class="filter-group" style="position: relative;">
+        <summary style="cursor: pointer; padding: var(--spacing-sm) var(--spacing-md); border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.875rem; list-style: none; display: flex; align-items: center; gap: var(--spacing-sm);">
+          {{ filter.label }}
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1 1 5 5 9 1"/></svg>
+        </summary>
+        <div style="position: absolute; top: 100%; left: 0; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: var(--spacing-md); min-width: 200px; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          {%- for value in filter.values -%}
+            <label style="display: flex; align-items: center; gap: var(--spacing-sm); padding: 4px 0; font-size: 0.875rem; cursor: pointer;">
+              <input
+                type="checkbox"
+                name="{{ value.param_name }}"
+                value="{{ value.value }}"
+                {% if value.active %}checked{% endif %}
+                onchange="this.closest('form') ? this.closest('form').submit() : (window.location.href = '{{ value.url }}')"
+              >
+              {{ value.label }} ({{ value.count }})
+            </label>
+          {%- endfor -%}
+        </div>
+      </details>
+    {%- endfor -%}
+
+    <div style="margin-left: auto;">
+      <label for="sort-by" class="visually-hidden">Sorter etter</label>
+      <select id="sort-by" class="form-select" style="padding: var(--spacing-sm) var(--spacing-md); font-size: 0.875rem;" onchange="window.location.href = this.value;">
+        {%- for option in collection.sort_options -%}
+          <option value="{{ option.url }}" {% if option.value == collection.sort_by %}selected{% endif %}>
+            {{ option.name }}
+          </option>
+        {%- endfor -%}
+      </select>
+    </div>
+  </div>
+
+  {%- comment -%} Product Grid {%- endcomment -%}
+  {%- if collection.products.size > 0 -%}
+    <div class="product-grid" style="padding: var(--spacing-xl) 0 var(--spacing-3xl);">
+      {%- for product in collection.products -%}
+        {% render 'product-card', product: product %}
+      {%- endfor -%}
+    </div>
+
+    {%- comment -%} Pagination {%- endcomment -%}
+    {%- if paginate.pages > 1 -%}
+      {% paginate collection.products by 24 %}
+        <nav class="text-center mb-2xl" aria-label="Sidenavigasjon">
+          {%- if paginate.previous -%}
+            <a href="{{ paginate.previous.url }}" class="btn btn--sm btn--secondary">&laquo; Forrige</a>
+          {%- endif -%}
+
+          {%- for part in paginate.parts -%}
+            {%- if part.is_link -%}
+              <a href="{{ part.url }}" style="padding: var(--spacing-sm); font-weight: 500;">{{ part.title }}</a>
+            {%- else -%}
+              <span style="padding: var(--spacing-sm); font-weight: 700; color: var(--color-primary);">{{ part.title }}</span>
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if paginate.next -%}
+            <a href="{{ paginate.next.url }}" class="btn btn--sm btn--secondary">Neste &raquo;</a>
+          {%- endif -%}
+        </nav>
+      {% endpaginate %}
+    {%- endif -%}
+  {%- else -%}
+    <div class="text-center" style="padding: var(--spacing-3xl) 0;">
+      <p>Ingen produkter funnet i denne kategorien.</p>
+      <a href="/collections/all" class="btn btn--primary mt-lg">Se alle produkter</a>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Hovedkolleksjon",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "Produkter per side",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "default": 24
+    }
+  ]
+}
+{% endschema %}

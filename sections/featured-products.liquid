@@ -1,0 +1,84 @@
+<section class="section" aria-label="Populære produkter">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ section.settings.heading | default: 'Populære produkter' }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="section-header__subtitle">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.collection != blank -%}
+      {%- assign collection = collections[section.settings.collection] -%}
+      <div class="product-grid">
+        {%- for product in collection.products limit: section.settings.products_to_show -%}
+          {% render 'product-card', product: product %}
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.show_view_all -%}
+        <div class="text-center mt-xl">
+          <a href="{{ collection.url }}" class="btn btn--secondary">Se alle produkter</a>
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      <div class="product-grid">
+        {%- for i in (1..4) -%}
+          <div class="product-card">
+            <div class="product-card__image">
+              {{ 'product-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+            <p class="product-card__vendor">Merkevare</p>
+            <h3 class="product-card__title">Eksempelprodukt {{ i }}</h3>
+            <p class="product-card__price">Fra 299 kr</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fremhevede produkter",
+  "tag": "section",
+  "class": "featured-products-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Overskrift",
+      "default": "Populære produkter"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Undertekst"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Velg collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Antall produkter",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Vis 'Se alle'-knapp",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fremhevede produkter"
+    }
+  ]
+}
+{% endschema %}

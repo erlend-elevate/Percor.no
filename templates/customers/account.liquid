@@ -1,0 +1,49 @@
+<div class="container" style="padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-3xl);">
+  <h1>Min konto</h1>
+  <p>Velkommen, {{ customer.first_name }}!</p>
+
+  <div style="margin-top: var(--spacing-lg);">
+    <a href="/account/logout" class="btn btn--secondary btn--sm">Logg ut</a>
+  </div>
+
+  <h2 class="mt-2xl">Bestillingshistorikk</h2>
+
+  {%- if customer.orders.size > 0 -%}
+    <table style="width: 100%; border-collapse: collapse; margin-top: var(--spacing-md);">
+      <thead>
+        <tr style="border-bottom: 2px solid var(--color-border); text-align: left;">
+          <th style="padding: var(--spacing-sm) 0;">Ordre</th>
+          <th style="padding: var(--spacing-sm) 0;">Dato</th>
+          <th style="padding: var(--spacing-sm) 0;">Status</th>
+          <th style="padding: var(--spacing-sm) 0; text-align: right;">Totalt</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for order in customer.orders -%}
+          <tr style="border-bottom: 1px solid var(--color-border);">
+            <td style="padding: var(--spacing-sm) 0;"><a href="{{ order.customer_url }}">{{ order.name }}</a></td>
+            <td style="padding: var(--spacing-sm) 0;">{{ order.created_at | date: '%d.%m.%Y' }}</td>
+            <td style="padding: var(--spacing-sm) 0;">{{ order.fulfillment_status_label }}</td>
+            <td style="padding: var(--spacing-sm) 0; text-align: right;">{{ order.total_price | money }}</td>
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+  {%- else -%}
+    <p class="text-light mt-md">Du har ingen bestillinger ennå.</p>
+  {%- endif -%}
+
+  <h2 class="mt-2xl">Adresser</h2>
+  {%- if customer.addresses.size > 0 -%}
+    {%- for address in customer.addresses -%}
+      <div style="border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: var(--spacing-md); margin-top: var(--spacing-md);">
+        {{ address | format_address }}
+        {%- if address == customer.default_address -%}
+          <span class="badge badge--stock mt-sm">Standard</span>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  {%- else -%}
+    <p class="text-light mt-md">Ingen adresser registrert.</p>
+  {%- endif -%}
+</div>

@@ -1,0 +1,29 @@
+<div class="container" style="max-width: 480px; padding: var(--spacing-3xl) var(--spacing-md);">
+  <h1 class="text-center">Logg inn</h1>
+
+  {%- form 'customer_login' -%}
+    {%- if form.errors -%}
+      <div class="mb-lg" style="background: #FFEBEE; padding: var(--spacing-md); border-radius: var(--radius-sm); color: var(--color-error);">
+        {{ form.errors | default_errors }}
+      </div>
+    {%- endif -%}
+
+    <div class="form-group">
+      <label class="form-label" for="customer-email">E-post</label>
+      <input class="form-input" type="email" id="customer-email" name="customer[email]" required autocomplete="email">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="customer-password">Passord</label>
+      <input class="form-input" type="password" id="customer-password" name="customer[password]" required autocomplete="current-password">
+    </div>
+
+    <button type="submit" class="btn btn--primary btn--full">Logg inn</button>
+
+    <div class="text-center mt-lg">
+      <a href="/account/register">Opprett konto</a>
+      <span style="margin: 0 var(--spacing-sm); color: var(--color-text-light);">|</span>
+      <a href="#recover">Glemt passord?</a>
+    </div>
+  {%- endform -%}
+</div>

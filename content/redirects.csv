@@ -1,0 +1,12 @@
+Redirect from,Redirect to
+/shop/,/collections/all
+/payperwear/,/pages/payper
+/om-oss/,/pages/om-oss
+/aktuelt/,/blogs/aktuelt
+/foresporsel/,/pages/kontakt
+/kataloger/,/pages/kontakt
+/product-category/arbeidstoy/,/collections/arbeidstoy
+/product-category/profilklaer/,/collections/profilklaer
+/product-category/verneutstyr/,/collections/verneutstyr
+/product-category/sport-fritid/,/collections/sport-fritid
+/product-category/gaveartikler/,/collections/gaveartikler

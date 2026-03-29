@@ -1,0 +1,67 @@
+{
+  "current": {
+    "color_primary": "#1B3A5C",
+    "color_primary_dark": "#0F2640",
+    "color_primary_light": "#2B5A8C",
+    "color_accent": "#E8A838",
+    "color_accent_dark": "#C88A20",
+    "color_accent_light": "#F5C45A",
+    "color_bg": "#FFFFFF",
+    "color_bg_light": "#F5F5F0",
+    "color_bg_dark": "#1B3A5C",
+    "color_text": "#1A1A1A",
+    "color_text_light": "#666666",
+    "color_text_on_dark": "#FFFFFF",
+    "color_border": "#E0E0E0",
+    "social_facebook_link": "https://www.facebook.com/percor",
+    "social_instagram_link": "https://www.instagram.com/percor",
+    "sections": {
+      "header-group": {
+        "type": "header-group",
+        "name": "Header-gruppe",
+        "sections": {
+          "announcement-bar": {
+            "type": "announcement-bar",
+            "settings": {
+              "show_announcement": true
+            },
+            "blocks": {
+              "msg1": { "type": "message", "settings": { "text": "📦 Gratis frakt over 999 kr" } },
+              "msg2": { "type": "message", "settings": { "text": "📍 Besøk vår butikk på Sætre" } },
+              "msg3": { "type": "message", "settings": { "text": "📞 Ring 907 72 409" } }
+            },
+            "block_order": ["msg1", "msg2", "msg3"]
+          },
+          "header": {
+            "type": "header",
+            "settings": {
+              "menu": "main-menu"
+            }
+          }
+        },
+        "order": ["announcement-bar", "header"]
+      },
+      "footer-group": {
+        "type": "footer-group",
+        "name": "Footer-gruppe",
+        "sections": {
+          "footer": {
+            "type": "footer",
+            "settings": {
+              "description": "Din totalleverandør av arbeidstøy, profilklær og trykk.",
+              "show_payment_icons": true
+            },
+            "blocks": {
+              "col1": { "type": "link_list", "settings": { "heading": "Om Percor", "menu": "footer-om-percor" } },
+              "col2": { "type": "link_list", "settings": { "heading": "Kundeservice", "menu": "footer-kundeservice" } },
+              "col3": { "type": "link_list", "settings": { "heading": "Kategorier", "menu": "footer-kategorier" } },
+              "col4": { "type": "contact", "settings": { "heading": "Kontakt", "content": "<p>Percor AS<br>Åsveien 5, 3475 Sætre<br><a href='mailto:stein@percor.no'>stein@percor.no</a><br><a href='tel:+4790772409'>907 72 409</a></p>" } }
+            },
+            "block_order": ["col1", "col2", "col3", "col4"]
+          }
+        },
+        "order": ["footer"]
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-kjopsvilkar",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

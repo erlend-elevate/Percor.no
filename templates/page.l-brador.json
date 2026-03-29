@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-l-brador",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

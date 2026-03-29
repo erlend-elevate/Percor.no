@@ -1,0 +1,238 @@
+{
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "show_announcement": true
+      },
+      "blocks": {
+        "msg1": {
+          "type": "message",
+          "settings": {
+            "text": "📦 Gratis frakt over 999 kr"
+          }
+        },
+        "msg2": {
+          "type": "message",
+          "settings": {
+            "text": "📍 Besøk vår butikk på Sætre"
+          }
+        },
+        "msg3": {
+          "type": "message",
+          "settings": {
+            "text": "📞 Ring 907 72 409"
+          }
+        }
+      },
+      "block_order": ["msg1", "msg2", "msg3"]
+    },
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "Alt du trenger av arbeidstøy og profilering — fra én leverandør",
+        "subheading": "Percor leverer arbeidstøy, profilklær, verneutstyr og trykk direkte fra europeiske kvalitetsprodusenter. Du får alt under ett tak.",
+        "button_text_1": "Se våre produkter",
+        "button_link_1": "/collections/all",
+        "button_text_2": "Be om tilbud",
+        "button_link_2": "/pages/kontakt"
+      }
+    },
+    "usp": {
+      "type": "usp-bar",
+      "blocks": {
+        "usp1": {
+          "type": "usp",
+          "settings": {
+            "icon": "factory",
+            "title": "Direkte import",
+            "text": "Gode priser"
+          }
+        },
+        "usp2": {
+          "type": "usp",
+          "settings": {
+            "icon": "flag",
+            "title": "Eksklusiv Payper",
+            "text": "Kun hos Percor"
+          }
+        },
+        "usp3": {
+          "type": "usp",
+          "settings": {
+            "icon": "layers",
+            "title": "Alt under ett tak",
+            "text": "Varer + trykk + design"
+          }
+        },
+        "usp4": {
+          "type": "usp",
+          "settings": {
+            "icon": "truck",
+            "title": "Rask levering",
+            "text": "Fra europeiske lagre"
+          }
+        }
+      },
+      "block_order": ["usp1", "usp2", "usp3", "usp4"]
+    },
+    "categories": {
+      "type": "category-grid",
+      "blocks": {
+        "cat1": {
+          "type": "category",
+          "settings": {
+            "title": "Arbeidstøy",
+            "description": "Fra Payper, L.Brador og flere",
+            "link": "/collections/arbeidstoy",
+            "link_text": "Se utvalget"
+          }
+        },
+        "cat2": {
+          "type": "category",
+          "settings": {
+            "title": "Profilklær",
+            "description": "Klær med din logo fra 50 stk",
+            "link": "/collections/profilklaer",
+            "link_text": "Se utvalget"
+          }
+        },
+        "cat3": {
+          "type": "category",
+          "settings": {
+            "title": "Verneutstyr",
+            "description": "HMS og sikkerhet fra Skydda",
+            "link": "/collections/verneutstyr",
+            "link_text": "Se utvalget"
+          }
+        },
+        "cat4": {
+          "type": "category",
+          "settings": {
+            "title": "Sport & Fritid",
+            "description": "Zeus Sport Italia — drakter og utstyr",
+            "link": "/collections/sport-fritid",
+            "link_text": "Se utvalget"
+          }
+        },
+        "cat5": {
+          "type": "category",
+          "settings": {
+            "title": "Gaveartikler",
+            "description": "Flasker, vesker, penner og mer",
+            "link": "/collections/gaveartikler",
+            "link_text": "Se utvalget"
+          }
+        },
+        "cat6": {
+          "type": "category",
+          "settings": {
+            "title": "Trykk & Design",
+            "description": "Broderi, foliering, bannere og mer",
+            "link": "/pages/trykk-og-design",
+            "link_text": "Se tjenester"
+          }
+        }
+      },
+      "block_order": ["cat1", "cat2", "cat3", "cat4", "cat5", "cat6"]
+    },
+    "brands": {
+      "type": "brand-showcase",
+      "settings": {
+        "heading": "Merkevarer vi er stolte av",
+        "subtext": "Percor er eksklusiv norsk forhandler av Payper — Italias ledende produsent av arbeidstøy med over 50 000 m² fabrikkareal.",
+        "subtext_link": "/pages/payper",
+        "subtext_link_text": "Les mer om Payper →"
+      },
+      "blocks": {
+        "b1": { "type": "brand", "settings": { "name": "Payper", "link": "/collections/merkevare-payper" } },
+        "b2": { "type": "brand", "settings": { "name": "L.Brador", "link": "/collections/merkevare-lbrador" } },
+        "b3": { "type": "brand", "settings": { "name": "Roly", "link": "/collections/merkevare-roly" } },
+        "b4": { "type": "brand", "settings": { "name": "Zeus Sport", "link": "/collections/merkevare-zeus" } },
+        "b5": { "type": "brand", "settings": { "name": "Skydda", "link": "/collections/merkevare-skydda" } },
+        "b6": { "type": "brand", "settings": { "name": "Stamina", "link": "/collections/merkevare-stamina" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"]
+    },
+    "featured-products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Populære produkter",
+        "products_to_show": 8,
+        "show_view_all": true
+      }
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "settings": {
+        "heading": "Fra produkt til ferdig profilering — slik fungerer det",
+        "cta_text": "Be om tilbud for bedriften din",
+        "cta_link": "/pages/kontakt"
+      },
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Velg produkter", "text": "Finn det du trenger i nettbutikken" } },
+        "s2": { "type": "step", "settings": { "title": "Send oss logo", "text": "Vi tar oss av design og oppsett" } },
+        "s3": { "type": "step", "settings": { "title": "Vi sender korrektur", "text": "Du godkjenner før produksjon" } },
+        "s4": { "type": "step", "settings": { "title": "Levering", "text": "Rett til døren eller hent i butikk" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "payper-highlight": {
+      "type": "highlight-banner",
+      "settings": {
+        "heading": "Payper — eksklusivt hos Percor i Norge",
+        "text": "Payper er en av Europas største produsenter av arbeidstøy og profilklær, med en daglig produksjon på over 30 000 plagg fra sin fabrikk utenfor Milano. Som eneste norske forhandler gir vi deg direkte tilgang til hele sortimentet — fra robuste arbeidsbukser til stilrene profiljakker.",
+        "button_text": "Utforsk Payper-kolleksjonen",
+        "button_link": "/collections/merkevare-payper"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "heading": "Det sier kundene våre"
+      },
+      "blocks": {
+        "t1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Percor leverte 200 profilerte arbeidsjakker til oss på under to uker. Alt fra design til ferdig produkt — knirkefritt.",
+            "author": "Kundenavn",
+            "company": "Bedrift"
+          }
+        }
+      },
+      "block_order": ["t1"]
+    },
+    "blog": {
+      "type": "blog-posts",
+      "settings": {
+        "heading": "Aktuelt fra Percor",
+        "blog": "aktuelt",
+        "posts_to_show": 3,
+        "show_view_all": true
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Få tilbud og nyheter rett i innboksen",
+        "subheading": "Meld deg på vårt nyhetsbrev og vær først ute med nye kolleksjoner, kampanjer og tips om arbeidstøy og profilering.",
+        "button_text": "Meld meg på",
+        "disclaimer": "Vi sender maks 2 nyhetsbrev per måned. Du kan melde deg av når som helst."
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "hero",
+    "usp",
+    "categories",
+    "brands",
+    "featured-products",
+    "how-it-works",
+    "payper-highlight",
+    "testimonials",
+    "blog",
+    "newsletter"
+  ]
+}
