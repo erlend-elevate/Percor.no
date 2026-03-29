@@ -3,31 +3,35 @@
 const services = [
   {
     title: 'Tekstiltrykk',
-    desc: 'Broderi, screentrykk, DTF, transfer og sublimering. Din logo — på hva som helst.',
+    desc: 'Fem teknikker, én leverandør. Fra broderi på jakkebrystet til DTF-trykk over hele ryggen — vi finner metoden som passer stoffet, budsjettet og ambisjonen.',
     href: '/tjenester/tekstiltrykk',
     icon: '<path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"/>',
     accent: 'from-blue-500/10 to-primary/5',
+    badge: 'Broderi, screen, DTF, transfer, sublimering',
   },
   {
     title: 'Foliering',
-    desc: 'Biler, lastebiler, butikkvinduer, kontorer. Profilen din — overalt.',
+    desc: 'Varebilen din kjører hundrevis av kilometer i uken. Vinduene dine vender mot fortauet. Med foliering jobber hver overflate for merkevaren din — 24/7, uten løpende kostnader.',
     href: '/tjenester/foliering',
     icon: '<rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h2a2 2 0 012 2v6a2 2 0 01-2 2H6"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
     accent: 'from-emerald-500/10 to-primary/5',
+    badge: 'Bil, vindu, fasade, kontor',
   },
   {
     title: 'Storformat',
-    desc: 'Bannere, rollups, plakater, fasadeskilt. Stort nok til å bli lagt merke til.',
+    desc: 'Du har tre sekunder. Så lenge bruker et menneske på å bestemme om budskapet ditt er verdt oppmerksomheten. Bannere, rollups og fasadeskilt som vinner de sekundene.',
     href: '/tjenester/storformat',
     icon: '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>',
     accent: 'from-violet-500/10 to-primary/5',
+    badge: 'Bannere, rollups, skilt, plakater',
   },
   {
     title: 'Grafisk design',
-    desc: 'Logo, profilhåndbok, trykkfiler. Vi designer det — dere eier det.',
+    desc: 'De fleste bedrifter har en logo. Få har en identitet. Vi bygger visuell profil fra grunnen — logo, fargesystem, profilhåndbok og trykkfiler du eier selv.',
     href: '/tjenester/grafisk-design',
     icon: '<path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>',
     accent: 'from-rose-500/10 to-primary/5',
+    badge: 'Logo, profil, trykkfiler',
   },
 ];
 ---
@@ -55,7 +59,8 @@ const services = [
               </svg>
             </div>
             <h3 class="text-xl font-bold text-text mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
-            <p class="text-text-secondary leading-relaxed mb-6">{service.desc}</p>
+            <p class="text-text-secondary leading-relaxed mb-4">{service.desc}</p>
+            <p class="text-xs text-text-light mb-6">{service.badge}</p>
             <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary">
               Utforsk
               <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
