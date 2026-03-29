@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+
+const shopUrl = 'https://butikk.percor.no';
+
+const categories = [
+  { name: 'Profilklær', desc: 'Moderne profilklær med fokus på stil og kvalitet — perfekt for bedriftsprofilering.' },
+  { name: 'Tilbehør', desc: 'Praktisk tilbehør som vesker, capser og andre profilartikler med mulighet for trykk og broderi.' },
+];
+---
+
+<BaseLayout
+  title="Stamina"
+  description="Stamina tilbyr moderne profilklær og tilbehør med fokus på stil og kvalitet. Tilgjengelig hos Percor med trykk og profilering."
+>
+  <section class="bg-primary py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <Breadcrumbs items={[{ label: 'Merkevarer', href: '/merkevarer' }, { label: 'Stamina' }]} />
+      <div class="max-w-3xl">
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">
+          Stamina <span class="text-4xl md:text-5xl">🇪🇸</span>
+        </h1>
+        <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Spansk profilklær og tilbehør</p>
+        <p class="text-lg text-dark-text-secondary leading-relaxed mb-8">
+          Stamina er et spansk merke som tilbyr moderne profilklær og tilbehør med fokus på stil og kvalitet. Med et gjennomtenkt sortiment er Stamina et godt valg for bedrifter som ønsker å profilere seg med klær som både ser bra ut og holder over tid.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-light transition-colors">
+            Handle Stamina i nettbutikken
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <a href="/kontakt" class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm">
+            Be om tilbud
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-text mb-4">Produktkategorier</h2>
+        <p class="text-text-secondary leading-relaxed">
+          Stamina tilbyr profilklær og tilbehør som kombinerer moderne design med god kvalitet.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {categories.map(cat => (
+          <div class="bg-white rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-bold text-text mb-2">{cat.name}</h3>
+            <p class="text-sm text-text-secondary leading-relaxed">{cat.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-bg-alt">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-text mb-6">Hvorfor Stamina hos Percor?</h2>
+        <div class="prose prose-lg text-text-secondary">
+          <p>
+            Stamina skiller seg ut med moderne design og et sortiment som passer godt for bedrifter som vil ha profilklær med litt ekstra stil. De spanske røttene gir et friskt og moderne uttrykk som skiller seg fra de tradisjonelle alternativene.
+          </p>
+          <p>
+            Hos Percor kan alle Stamina-produkter tilpasses med trykk og broderi. Vi hjelper deg med å sette sammen en profileringsløsning som passer din bedrifts identitet og budsjett.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-accent">
+    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Interessert i Stamina?
+      </h2>
+      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+        Besøk nettbutikken eller kontakt oss for et tilbud på profilklær og tilbehør.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+          Kontakt oss
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/20 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/30 transition-colors backdrop-blur-sm">
+          Besøk nettbutikken
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

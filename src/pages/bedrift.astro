@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/layout/Breadcrumbs.astro';
+import ContactForm from '../components/ui/ContactForm.astro';
+
+const shopUrl = 'https://butikk.percor.no';
+---
+
+<BaseLayout
+  title="For bedrifter"
+  description="Percor leverer arbeidstøy, profilklær, trykk og design til bedrifter. Volumpriser, dedikert kontaktperson, rask levering og skreddersydd profilering."
+>
+  <Breadcrumbs items={[{ label: 'For bedrifter' }]} />
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-lighter/20 to-transparent"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-16 md:py-24 text-center">
+      <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">For bedrifter</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Din partner for arbeidstøy og profilering</h1>
+      <p class="mt-4 text-lg md:text-xl text-dark-text-secondary max-w-2xl mx-auto">
+        Vi hjelper bedrifter med alt fra arbeidsklær og profilklær til trykk, foliering og design — med dedikert oppfølging og konkurransedyktige priser.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#kontakt-bedrift" class="inline-flex items-center gap-2 bg-accent text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
+          Be om tilbud
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/20 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/30 transition-colors backdrop-blur-sm">
+          Se nettbutikken
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fordeler -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Fordeler</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-text">Hvorfor velge Percor?</h2>
+        <p class="mt-3 text-text-secondary">Vi gjør det enkelt for bedrifter å kle opp teamet og profilere seg profesjonelt.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl border border-border p-6 text-center">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-text mb-2">Volumpriser</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Gunstige priser ved større bestillinger. Jo mer du bestiller, desto bedre pris per enhet.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-6 text-center">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-text mb-2">Dedikert kontaktperson</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">En fast kontaktperson som kjenner din bedrift og dine behov, og sikrer smidig oppfølging.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-6 text-center">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-text mb-2">Skreddersydd profilering</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Trykk, broderi, foliering og design tilpasset din merkevare og profil.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-6 text-center">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-text mb-2">Rask levering</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Effektiv logistikk med eget lager. Standard levering 2–3 uker, hasteordre etter avtale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prosess -->
+  <section class="py-16 md:py-24 bg-bg-alt">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Slik jobber vi</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-text">Fra henvendelse til ferdig leveranse</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="relative text-center">
+          <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+          <h3 class="text-lg font-bold text-text mb-2">Kontakt oss</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Send oss en henvendelse med dine behov. Vi svarer raskt med en uforpliktende vurdering.</p>
+        </div>
+        <div class="relative text-center">
+          <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+          <h3 class="text-lg font-bold text-text mb-2">Tilbud og rådgivning</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Vi setter sammen et skreddersydd tilbud med produkter, trykk og design tilpasset ditt budsjett.</p>
+        </div>
+        <div class="relative text-center">
+          <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+          <h3 class="text-lg font-bold text-text mb-2">Produksjon</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Vi produserer trykk, broderi eller foliering på vårt eget verksted i Sætre.</p>
+        </div>
+        <div class="relative text-center">
+          <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
+          <h3 class="text-lg font-bold text-text mb-2">Levering</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Ferdig produkt leveres til avtalt tid — enten tilsendt eller hentet på vårt lager.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hva vi tilbyr -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Tjenester for bedrift</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-text">Alt under ett tak</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="/produkter" class="group bg-white rounded-xl border border-border p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+          <h3 class="text-lg font-bold text-text group-hover:text-primary transition-colors mb-2">Arbeidstøy og profilklær</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Bredt utvalg av kvalitetsmerker som Payper, L.Brador, Roly og flere. Tilpasset din bransje.</p>
+        </a>
+        <a href="/tjenester/tekstiltrykk" class="group bg-white rounded-xl border border-border p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+          <h3 class="text-lg font-bold text-text group-hover:text-primary transition-colors mb-2">Tekstiltrykk og broderi</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Screentrykk, DTF, transfer, sublimering og broderi. Vi finner riktig teknikk for deg.</p>
+        </a>
+        <a href="/tjenester/foliering" class="group bg-white rounded-xl border border-border p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+          <h3 class="text-lg font-bold text-text group-hover:text-primary transition-colors mb-2">Bilfoliering og skilting</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Profesjonell foliering av kjøretøy, vinduer og skilt. Synliggjør bedriften din overalt.</p>
+        </a>
+        <a href="/tjenester/storformat" class="group bg-white rounded-xl border border-border p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+          <h3 class="text-lg font-bold text-text group-hover:text-primary transition-colors mb-2">Storformatprint</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Bannere, rollups, fasadeskilt og messevegg. Alt i høy kvalitet og store formater.</p>
+        </a>
+        <a href="/tjenester/grafisk-design" class="group bg-white rounded-xl border border-border p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+          <h3 class="text-lg font-bold text-text group-hover:text-primary transition-colors mb-2">Grafisk design</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Logodesign, profilhåndbøker og trykkklare filer. Vi hjelper deg fra idé til ferdig design.</p>
+        </a>
+        <a href="/merkevarer" class="group bg-white rounded-xl border border-border p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+          <h3 class="text-lg font-bold text-text group-hover:text-primary transition-colors mb-2">Merkevarer</h3>
+          <p class="text-sm text-text-secondary leading-relaxed">Payper, L.Brador, Roly, Skydda, Zeus Sport og Stamina. Kvalitetsmerker til bedriftspriser.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontaktskjema -->
+  <section id="kontakt-bedrift" class="py-16 md:py-24 bg-bg-alt">
+    <div class="mx-auto max-w-3xl px-4 lg:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Ta kontakt</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-text">Få et uforpliktende tilbud</h2>
+        <p class="mt-3 text-text-secondary">
+          Fortell oss om dine behov, så lager vi et skreddersydd tilbud. Vi svarer normalt innen én virkedag.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-8">
+        <ContactForm formName="bedrift" showCompany={true} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

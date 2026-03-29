@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "payper",
+    "name": "Payper",
+    "country": "Italia",
+    "flag": "🇮🇹",
+    "tagline": "Eksklusiv norsk forhandler",
+    "description": "Payper er en italiensk produsent av høykvalitets arbeidstøy og profilklær. Percor er stolt eksklusiv importør og distributør i Norge.",
+    "categories": ["Arbeidstøy", "Profilklær", "T-skjorter", "Jakker", "Bukser"],
+    "featured": true
+  },
+  {
+    "slug": "l-brador",
+    "name": "L.Brador",
+    "country": "Sverige",
+    "flag": "🇸🇪",
+    "tagline": "Svensk arbeidstøy via Skydda",
+    "description": "L.Brador leverer solid skandinavisk arbeidstøy med fokus på funksjonalitet og holdbarhet, distribuert gjennom Skydda.",
+    "categories": ["Arbeidstøy", "Arbeidsjakker", "Arbeidsbukser"],
+    "featured": true
+  },
+  {
+    "slug": "roly",
+    "name": "Roly",
+    "country": "Spania",
+    "flag": "🇪🇸",
+    "tagline": "Profilklær og gaveartikler",
+    "description": "Roly tilbyr et bredt utvalg av profilklær til konkurransedyktige priser — ideelt for bedrifter som ønsker å profilere seg.",
+    "categories": ["Profilklær", "T-skjorter", "Capser", "Vesker"],
+    "featured": true
+  },
+  {
+    "slug": "zeus-sport",
+    "name": "Zeus Sport",
+    "country": "Italia",
+    "flag": "🇮🇹",
+    "tagline": "Drakter og sportsutstyr",
+    "description": "Zeus Sport er en ledende italiensk produsent av sportsklær, drakter og utstyr for lag og foreninger.",
+    "categories": ["Drakter", "Treningsklær", "Sportsutstyr"],
+    "featured": false
+  },
+  {
+    "slug": "skydda",
+    "name": "Skydda",
+    "country": "Sverige",
+    "flag": "🇸🇪",
+    "tagline": "Verneutstyr og HMS",
+    "description": "Skydda er Nordens ledende leverandør av verneutstyr og HMS-produkter for alle bransjer.",
+    "categories": ["Verneutstyr", "HMS", "Vernesko", "Hjelmer"],
+    "featured": false
+  },
+  {
+    "slug": "stamina",
+    "name": "Stamina",
+    "country": "Spania",
+    "flag": "🇪🇸",
+    "tagline": "Profilklær og tilbehør",
+    "description": "Stamina tilbyr moderne profilklær og tilbehør med fokus på stil og kvalitet.",
+    "categories": ["Profilklær", "Tilbehør"],
+    "featured": false
+  }
+]

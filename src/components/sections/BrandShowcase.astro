@@ -1,0 +1,40 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const brands = [
+  { name: 'Payper', flag: '🇮🇹', desc: 'Eksklusiv norsk forhandler — arbeidstøy & profilklær', href: '/merkevarer/payper', featured: true },
+  { name: 'L.Brador', flag: '🇸🇪', desc: 'Svensk arbeidstøy via Skydda', href: '/merkevarer/l-brador' },
+  { name: 'Roly', flag: '🇪🇸', desc: 'Profilklær og gaveartikler', href: '/merkevarer/roly' },
+  { name: 'Zeus Sport', flag: '🇮🇹', desc: 'Drakter og sportsutstyr', href: '/merkevarer/zeus-sport' },
+  { name: 'Skydda', flag: '🇸🇪', desc: 'Verneutstyr og HMS', href: '/merkevarer/skydda' },
+  { name: 'Stamina', flag: '🇪🇸', desc: 'Profilklær og tilbehør', href: '/merkevarer/stamina' },
+];
+---
+
+<section class="py-16 md:py-24 bg-bg-alt">
+  <div class="mx-auto max-w-7xl px-4 lg:px-6">
+    <SectionHeading subtitle="Merkevarer">
+      Kvalitetsprodukter fra ledende merker
+    </SectionHeading>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      {brands.map(brand => (
+        <a href={brand.href} class={`group relative bg-white rounded-xl border p-5 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 ${brand.featured ? 'border-accent ring-1 ring-accent/20' : 'border-border'}`}>
+          {brand.featured && (
+            <span class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Eksklusiv</span>
+          )}
+          <span class="text-3xl block mb-2">{brand.flag}</span>
+          <h3 class="font-bold text-text group-hover:text-primary transition-colors text-sm">{brand.name}</h3>
+          <p class="text-xs text-text-secondary mt-1 leading-snug">{brand.desc}</p>
+        </a>
+      ))}
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="/merkevarer" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-light transition-colors">
+        Se alle merkevarer
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

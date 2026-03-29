@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+
+const techniques = [
+  {
+    title: 'Broderi',
+    desc: 'Klassisk og holdbart. Broderi gir et eksklusivt uttrykk og tåler utallige vask. Perfekt for logoer på poloer, caps og arbeidstøy.',
+  },
+  {
+    title: 'Screentrykk',
+    desc: 'Ideelt for store opplag. Screentrykk gir sterke, levende farger og er den mest kostnadseffektive metoden ved høye volum.',
+  },
+  {
+    title: 'DTF-trykk',
+    desc: 'Direct-to-Film gir fotorealistiske trykk i full farge på nesten alle tekstiler — uten minstekrav til antall.',
+  },
+  {
+    title: 'Transfer',
+    desc: 'Varmeoverføring som egner seg godt til små og mellomstore opplag. Fleksibelt og raskt med god holdbarhet.',
+  },
+  {
+    title: 'Sublimering',
+    desc: 'Fargene blir en del av stoffet. Sublimering gir uovertrufne heldekkende trykk på polyester og lyse tekstiler.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Hvilken teknikk er best for små opplag?',
+    a: 'DTF-trykk og transfer er ideelle for små opplag, da de ikke krever oppsettskostnader som screentrykk.',
+  },
+  {
+    q: 'Kan dere trykke på arbeidstøy vi allerede har?',
+    a: 'Ja, vi kan trykke på tekstiler du allerede har. Send oss gjerne en forespørsel med detaljer, så gir vi deg et tilbud.',
+  },
+  {
+    q: 'Hva er leveringstiden?',
+    a: 'Normal leveringstid er 5–10 virkedager, avhengig av teknikk og opplag. Ved hasteordre kan vi ofte levere raskere.',
+  },
+  {
+    q: 'Lager dere prøvetrykk?',
+    a: 'Ja, vi lager alltid prøvetrykk ved større bestillinger slik at du kan godkjenne resultatet før produksjon.',
+  },
+];
+---
+
+<BaseLayout
+  title="Tekstiltrykk"
+  description="Tekstiltrykk fra Percor — broderi, screentrykk, DTF-trykk, transfer og sublimering. Vi finner den beste teknikken for ditt prosjekt."
+  schemaType="faqPage"
+>
+  <Breadcrumbs items={[{ label: 'Tjenester', href: '/tjenester' }, { label: 'Tekstiltrykk' }]} />
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-lighter/20 to-transparent"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-16 md:py-24">
+      <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Tjenester</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Tekstiltrykk</h1>
+      <p class="mt-4 text-lg md:text-xl text-dark-text-secondary max-w-2xl">
+        Vi tilbyr et bredt spekter av tekstiltrykk-teknikker for alle behov — fra enkle logotrykk til avansert fullfargetrykk på alle typer tekstiler.
+      </p>
+    </div>
+  </section>
+
+  <!-- Techniques -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-text mb-10">Våre teknikker</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {techniques.map((t) => (
+          <div class="bg-white rounded-xl border border-border p-6">
+            <h3 class="text-lg font-bold text-text mb-2">{t.title}</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ accordion -->
+  <section class="py-16 md:py-24 bg-bg-alt">
+    <div class="mx-auto max-w-3xl px-4 lg:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-text mb-10 text-center">Ofte stilte spørsmål</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-white rounded-xl border border-border">
+            <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-text">
+              {faq.q}
+              <svg class="w-5 h-5 text-text-light shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-6 text-text-secondary leading-relaxed">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-accent">
+    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Klar for å komme i gang?</h2>
+      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+        Send oss en forespørsel, så hjelper vi deg med å velge riktig teknikk og lager et tilbud tilpasset ditt prosjekt.
+      </p>
+      <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+        Be om tilbud
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

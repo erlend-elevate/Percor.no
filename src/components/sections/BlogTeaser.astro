@@ -1,0 +1,58 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const posts = [
+  {
+    title: 'Hvordan velge riktig arbeidstøy for din bransje',
+    excerpt: 'En guide til å velge arbeidstøy som kombinerer sikkerhet, komfort og holdbarhet.',
+    date: '2026-03-15',
+    href: '/blogg/velge-riktig-arbeidstoey',
+  },
+  {
+    title: 'DTF-trykk: Den nye standarden for tekstiltrykk',
+    excerpt: 'Lær om DTF-trykk og hvorfor det revolusjonerer bransjen.',
+    date: '2026-03-01',
+    href: '/blogg/dtf-trykk-ny-standard',
+  },
+  {
+    title: 'Bilfoliering — alt du trenger å vite',
+    excerpt: 'Fra kostnader til holdbarhet, her er alt du trenger å vite om bilfoliering.',
+    date: '2026-02-15',
+    href: '/blogg/bilfoliering-guide',
+  },
+];
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('nb-NO', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+---
+
+<section class="py-16 md:py-24">
+  <div class="mx-auto max-w-7xl px-4 lg:px-6">
+    <SectionHeading subtitle="Blogg">
+      Siste fra bloggen
+    </SectionHeading>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {posts.map(post => (
+        <a href={post.href} class="group bg-white rounded-xl border border-border overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+          <div class="h-48 bg-bg-alt flex items-center justify-center">
+            <span class="text-4xl opacity-30">📝</span>
+          </div>
+          <div class="p-5">
+            <time class="text-xs text-text-light">{formatDate(post.date)}</time>
+            <h3 class="font-bold text-text mt-2 group-hover:text-primary transition-colors leading-snug">{post.title}</h3>
+            <p class="text-sm text-text-secondary mt-2 leading-relaxed">{post.excerpt}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="/blogg" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-light transition-colors">
+        Se alle innlegg
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,9 +1,0 @@
-{
-  "sections": {
-    "main": {
-      "type": "page-payper",
-      "settings": {}
-    }
-  },
-  "order": ["main"]
-}

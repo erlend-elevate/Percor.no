@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+
+const services = [
+  {
+    title: 'Logodesign',
+    desc: 'Vi designer unike logoer som kommuniserer merkevaren din tydelig. Du får logo i alle nødvendige filformater for trykk og digital bruk.',
+  },
+  {
+    title: 'Profilhåndbok',
+    desc: 'En komplett guide til din visuelle identitet — med retningslinjer for logo, farger, typografi og bruk på ulike flater.',
+  },
+  {
+    title: 'Trykkfiler',
+    desc: 'Vi klargjør trykkferdige filer for alle typer produksjon — fra tekstiltrykk og storformat til emballasje og visittkort.',
+  },
+  {
+    title: 'Visittkort',
+    desc: 'Profesjonelle visittkort som gjør inntrykk. Vi designer og leverer i ulike papirkvaliteter og finisher.',
+  },
+];
+
+const process = [
+  { title: 'Briefing', desc: 'Vi starter med å forstå din bedrift, målgruppe og ønsker. Jo bedre vi kjenner deg, jo bedre blir resultatet.' },
+  { title: 'Konseptutvikling', desc: 'Vi utarbeider flere konseptforslag basert på briefingen og presenterer disse for deg.' },
+  { title: 'Tilbakemelding', desc: 'Du gir tilbakemelding, og vi justerer designet til du er fornøyd med resultatet.' },
+  { title: 'Levering', desc: 'Du mottar ferdige filer i alle relevante formater — klare til bruk på trykk og digitale flater.' },
+];
+---
+
+<BaseLayout
+  title="Grafisk design"
+  description="Grafisk design fra Percor — logodesign, profilhåndbok, trykkfiler og visittkort. Vi hjelper deg med å bygge en sterk visuell identitet."
+>
+  <Breadcrumbs items={[{ label: 'Tjenester', href: '/tjenester' }, { label: 'Grafisk design' }]} />
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-lighter/20 to-transparent"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-16 md:py-24">
+      <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Tjenester</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Grafisk design</h1>
+      <p class="mt-4 text-lg md:text-xl text-dark-text-secondary max-w-2xl">
+        Våre designere hjelper deg med alt fra logodesign og visuell identitet til trykkklare filer og profilhåndbøker.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-text mb-10">Hva vi tilbyr</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {services.map((s) => (
+          <div class="bg-white rounded-xl border border-border p-6">
+            <h3 class="text-lg font-bold text-text mb-2">{s.title}</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="py-16 md:py-24 bg-bg-alt">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-text mb-10 text-center">Slik jobber vi</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {process.map((step, i) => (
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white text-lg font-bold mb-4">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <h3 class="font-bold text-text text-lg">{step.title}</h3>
+            <p class="text-sm text-text-secondary mt-2 leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-accent">
+    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Trenger du hjelp med design?</h2>
+      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+        Fortell oss om prosjektet ditt, så hjelper vi deg med å skape en visuell identitet som skiller seg ut.
+      </p>
+      <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+        Be om tilbud
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

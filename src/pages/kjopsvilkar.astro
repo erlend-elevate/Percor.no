@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/layout/Breadcrumbs.astro';
+---
+
+<BaseLayout
+  title="Vilkår"
+  description="Kjøpsvilkår for Percor AS. Les våre salgs- og leveringsvilkår for arbeidstøy, profilklær, trykk og designtjenester."
+>
+  <Breadcrumbs items={[{ label: 'Vilkår' }]} />
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-lighter/20 to-transparent"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-16 md:py-24 text-center">
+      <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Juridisk</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Kjøpsvilkår</h1>
+      <p class="mt-4 text-lg md:text-xl text-dark-text-secondary max-w-2xl mx-auto">
+        Salgs- og leveringsvilkår for Percor AS.
+      </p>
+    </div>
+  </section>
+
+  <!-- Innhold -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-3xl px-4 lg:px-6">
+      <div class="prose prose-lg max-w-none text-text-secondary leading-relaxed space-y-10">
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">1. Generelt</h2>
+          <p>
+            Disse vilkårene gjelder for alle kjøp og bestillinger hos Percor AS, med forretningsadresse Åsveien 5, 3475 Sætre. Vilkårene omfatter salg av arbeidstøy, profilklær, verneutstyr, samt tjenester som tekstiltrykk, foliering, storformatprint og grafisk design.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">2. Bestilling og avtaleinngåelse</h2>
+          <p>
+            En bindende avtale anses inngått når Percor AS har bekreftet bestillingen skriftlig (e-post eller ordrebekreftelse). For bestillinger med trykk, broderi eller design, er avtalen bindende etter at kunden har godkjent prøvetrykk eller designforslag.
+          </p>
+          <p class="mt-3">
+            Kunden er ansvarlig for at oppgitt informasjon, som antall, størrelse, farge og trykkfiler, er korrekt. Endringer etter godkjent prøvetrykk kan medføre tilleggskostnader.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">3. Priser</h2>
+          <p>
+            Alle priser oppgis i norske kroner (NOK) eksklusiv merverdiavgift (MVA), med mindre annet er spesifisert. Prisene er gyldige i tilbudsperioden angitt i tilbudet. Percor AS forbeholder seg retten til å justere priser ved vesentlige endringer i valutakurser, råvarepriser eller leverandørpriser.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">4. Betaling</h2>
+          <p>
+            Standard betalingsbetingelser er netto 14 dager fra fakturadato, med mindre annet er avtalt. Ved forsinket betaling påløper forsinkelsesrente i henhold til forsinkelsesrenteloven. Percor AS kan kreve inkassokostnader ved manglende betaling.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">5. Levering</h2>
+          <p>
+            Standard leveringstid er 2–3 uker fra godkjent bestilling eller godkjent prøvetrykk. Leveringstiden er veiledende og kan variere avhengig av produkt, trykkteknikk og ordrestørrelse. Percor AS informerer kunden dersom det oppstår forsinkelser.
+          </p>
+          <p class="mt-3">
+            Levering skjer med avtalt fraktmetode. Fraktkostnader tilkommer med mindre annet er avtalt. Henting på vårt lager i Sætre er gratis.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">6. Reklamasjon og retur</h2>
+          <p>
+            Kunden plikter å kontrollere varen ved mottak. Eventuelle feil eller mangler må reklameres skriftlig innen 7 dager etter mottak. Reklamasjon sendes til <a href="mailto:stein@percor.no" class="text-primary hover:underline">stein@percor.no</a>.
+          </p>
+          <p class="mt-3">
+            Varer med trykk, broderi eller annen tilpasning kan ikke returneres med mindre det foreligger produksjonsfeil fra Percor AS sin side. Ved godkjent reklamasjon tilbyr vi omlevering eller kreditering etter avtale.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">7. Avbestilling</h2>
+          <p>
+            Avbestilling må skje skriftlig. For standardvarer uten trykk aksepteres avbestilling inntil varen er sendt. For varer med trykk, broderi eller annen tilpasning kan bestillingen ikke avbestilles etter at produksjon er igangsatt eller prøvetrykk er godkjent.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">8. Immaterielle rettigheter</h2>
+          <p>
+            Kunden er ansvarlig for at levert trykkmateriale (logoer, bilder, design) ikke krenker tredjeparters rettigheter. Percor AS påtar seg intet ansvar for eventuelle rettighetskrenkelser. Designarbeid utført av Percor AS forblir Percor AS sin eiendom inntil full betaling er mottatt.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">9. Ansvarsbegrensning</h2>
+          <p>
+            Percor AS er ikke ansvarlig for indirekte tap, følgetap eller tap av fortjeneste. Vårt samlede erstatningsansvar er begrenset til verdien av den aktuelle bestillingen. Percor AS er ikke ansvarlig for forsinkelser eller mangler som skyldes forhold utenfor vår kontroll (force majeure).
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">10. Personvern</h2>
+          <p>
+            Percor AS behandler personopplysninger i henhold til gjeldende personvernlovgivning. Se vår <a href="/personvern" class="text-primary hover:underline">personvernerklæring</a> for mer informasjon.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">11. Tvister</h2>
+          <p>
+            Eventuelle tvister som oppstår i forbindelse med disse vilkårene skal forsøkes løst i minnelighet. Dersom partene ikke oppnår enighet, skal tvisten avgjøres ved de ordinære domstolene med Drammen tingrett som verneting.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">12. Endringer</h2>
+          <p>
+            Percor AS forbeholder seg retten til å endre disse vilkårene. Gjeldende vilkår ved bestillingstidspunktet legges til grunn for den enkelte ordre.
+          </p>
+          <p class="mt-3 text-sm text-text-light">
+            Sist oppdatert: Mars 2026
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

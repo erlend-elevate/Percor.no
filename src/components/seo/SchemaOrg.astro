@@ -1,0 +1,73 @@
+---
+interface Props {
+  type: 'organization' | 'localBusiness' | 'faqPage' | 'breadcrumb';
+  data?: any;
+}
+
+const { type, data } = Astro.props;
+
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Percor AS",
+  "url": "https://percor.no",
+  "logo": "https://percor.no/images/percor-logo.svg",
+  "description": "Norsk importør og leverandør av arbeidstøy, profilklær, verneutstyr, tekstiltrykk og foliering",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+47-907-72-409",
+    "email": "stein@percor.no",
+    "contactType": "customer service",
+    "availableLanguage": "Norwegian"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Åsveien 5",
+    "addressLocality": "Sætre",
+    "postalCode": "3475",
+    "addressCountry": "NO"
+  },
+  "sameAs": [
+    "https://www.facebook.com/percor",
+    "https://www.instagram.com/percor"
+  ]
+};
+
+const localBusiness = {
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Percor AS",
+  "url": "https://percor.no",
+  "telephone": "+47-907-72-409",
+  "email": "stein@percor.no",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Åsveien 5",
+    "addressLocality": "Sætre",
+    "postalCode": "3475",
+    "addressCountry": "NO"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "16:00"
+  }
+};
+
+function getSchema() {
+  switch (type) {
+    case 'organization': return organization;
+    case 'localBusiness': return localBusiness;
+    case 'faqPage': return data;
+    case 'breadcrumb': return data;
+    default: return null;
+  }
+}
+
+const schema = getSchema();
+---
+
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

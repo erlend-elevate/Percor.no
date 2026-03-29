@@ -1,0 +1,47 @@
+---
+import MetaTags from '../components/seo/MetaTags.astro';
+import SchemaOrg from '../components/seo/SchemaOrg.astro';
+import AnnouncementBar from '../components/layout/AnnouncementBar.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import CookieConsent from '../components/layout/CookieConsent.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+  schemaType?: 'organization' | 'localBusiness' | 'faqPage' | 'breadcrumb';
+  schemaData?: any;
+}
+
+const { title, description, ogImage, canonicalUrl, schemaType = 'organization', schemaData } = Astro.props;
+const fullTitle = title === 'Hjem' ? 'Percor — Arbeidstøy, profilklær, trykk og design' : `${title} | Percor`;
+---
+
+<!doctype html>
+<html lang="nb">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
+    <MetaTags title={fullTitle} description={description} ogImage={ogImage} canonicalUrl={canonicalUrl} />
+    <SchemaOrg type={schemaType} data={schemaData} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <a href="#main-content" class="skip-to-content">Hopp til hovedinnhold</a>
+    <AnnouncementBar />
+    <Header />
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <CookieConsent />
+    <slot name="after-footer" />
+  </body>
+</html>

@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import UspBar from '../components/sections/UspBar.astro';
+import CategoryGrid from '../components/sections/CategoryGrid.astro';
+import BrandShowcase from '../components/sections/BrandShowcase.astro';
+import ProcessSteps from '../components/sections/ProcessSteps.astro';
+import PayperHighlight from '../components/sections/PayperHighlight.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import BlogTeaser from '../components/sections/BlogTeaser.astro';
+import NewsletterSignup from '../components/sections/NewsletterSignup.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+---
+
+<BaseLayout
+  title="Hjem"
+  description="Percor er din totalleverandør av arbeidstøy, profilklær, tekstiltrykk, foliering og grafisk design. Eksklusiv norsk importør av Payper."
+  schemaType="localBusiness"
+>
+  <Hero />
+  <UspBar />
+  <CategoryGrid />
+  <PayperHighlight />
+  <BrandShowcase />
+  <ProcessSteps />
+  <Testimonials />
+  <BlogTeaser />
+  <NewsletterSignup />
+  <CtaBanner />
+</BaseLayout>

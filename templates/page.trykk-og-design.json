@@ -1,9 +1,0 @@
-{
-  "sections": {
-    "main": {
-      "type": "page-trykk-og-design",
-      "settings": {}
-    }
-  },
-  "order": ["main"]
-}
