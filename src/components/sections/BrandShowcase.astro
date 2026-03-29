@@ -1,11 +1,11 @@
 ---
 const brands = [
-  { name: 'Payper', flag: '🇮🇹', role: 'Arbeidstøy & profilklær', href: '/merkevarer/payper', exclusive: true },
-  { name: 'L.Brador', flag: '🇸🇪', role: 'Arbeidstøy', href: '/merkevarer/l-brador' },
-  { name: 'Roly', flag: '🇪🇸', role: 'Profilklær', href: '/merkevarer/roly' },
-  { name: 'Zeus Sport', flag: '🇮🇹', role: 'Sportsutstyr', href: '/merkevarer/zeus-sport' },
-  { name: 'Skydda', flag: '🇸🇪', role: 'Verneutstyr', href: '/merkevarer/skydda' },
-  { name: 'Stamina', flag: '🇪🇸', role: 'Profilklær', href: '/merkevarer/stamina' },
+  { name: 'Payper', country: 'Italia', role: 'Arbeidstøy & profilklær', href: '/merkevarer/payper', exclusive: true, initial: 'P' },
+  { name: 'L.Brador', country: 'Sverige', role: 'Arbeidstøy', href: '/merkevarer/l-brador', initial: 'L' },
+  { name: 'Roly', country: 'Spania', role: 'Profilklær', href: '/merkevarer/roly', initial: 'R' },
+  { name: 'Zeus Sport', country: 'Italia', role: 'Sportsutstyr', href: '/merkevarer/zeus-sport', initial: 'Z' },
+  { name: 'Skydda', country: 'Sverige', role: 'Verneutstyr', href: '/merkevarer/skydda', initial: 'S' },
+  { name: 'Stamina', country: 'Spania', role: 'Profilklær', href: '/merkevarer/stamina', initial: 'S' },
 ];
 ---
 
@@ -17,7 +17,7 @@ const brands = [
         Nøye utvalgt. Grundig testet.
       </h2>
       <p data-reveal class="mt-4 text-text-secondary max-w-xl mx-auto">
-        Vi fører bare merkevarer vi selv står inne for. Hver eneste leverandør er valgt fordi de leverer kvalitet — gang etter gang.
+        Vi fører bare merkevarer vi selv står inne for. Hver leverandør er valgt fordi de leverer kvalitet — gang etter gang.
       </p>
     </div>
 
@@ -27,17 +27,19 @@ const brands = [
           {brand.exclusive && (
             <span class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-accent text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap">Eksklusiv</span>
           )}
-          <span class="text-3xl block mb-3">{brand.flag}</span>
+          <div class={`w-12 h-12 mx-auto rounded-xl flex items-center justify-center mb-3 ${brand.exclusive ? 'bg-accent/10' : 'bg-primary/5'}`}>
+            <span class={`text-xl font-extrabold ${brand.exclusive ? 'text-accent' : 'text-primary'}`}>{brand.initial}</span>
+          </div>
           <h3 class="font-bold text-text group-hover:text-primary transition-colors text-sm">{brand.name}</h3>
-          <p class="text-[11px] text-text-light mt-1">{brand.role}</p>
+          <p class="text-[11px] text-text-light mt-1">{brand.country} · {brand.role}</p>
         </a>
       ))}
     </div>
 
     <div data-reveal class="text-center mt-10">
-      <a href="/merkevarer" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-light transition-colors">
+      <a href="/merkevarer" class="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-light transition-colors">
         Se alle merkevarer
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
   </div>

@@ -1,0 +1,89 @@
+---
+// Horizontal scrolling showcase of all techniques Percor masters
+const techniques = [
+  {
+    name: 'Broderi',
+    desc: 'Holdbart og elegant. Perfekt for logoer på jakker, skjorter og capser.',
+    detail: 'Opp til 15 farger per design',
+    icon: '<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>',
+    color: 'from-blue-500/20 to-blue-600/5',
+  },
+  {
+    name: 'Screentrykk',
+    desc: 'Skarpe farger på store opplag. Klassisk teknikk, bevist kvalitet.',
+    detail: 'Best for 25+ enheter',
+    icon: '<path d="M6 20h12M6 4h12M4 8h16v8H4z"/><path d="M9 12h6"/>',
+    color: 'from-emerald-500/20 to-emerald-600/5',
+  },
+  {
+    name: 'DTF-trykk',
+    desc: 'Nyeste teknologi. Full fargefrihet på alle tekstiler — uten minimumsantall.',
+    detail: 'Fra 1 stk',
+    icon: '<path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.764m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/>',
+    color: 'from-violet-500/20 to-violet-600/5',
+  },
+  {
+    name: 'Transfer',
+    desc: 'Foto og komplekse grafiske motiver. Perfekt for fullfarge-design.',
+    detail: 'Fotorealistisk kvalitet',
+    icon: '<path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21zm16.5-13.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>',
+    color: 'from-rose-500/20 to-rose-600/5',
+  },
+  {
+    name: 'Sublimering',
+    desc: 'All-over print på polyester. Fargen blir en del av stoffet.',
+    detail: 'Ubegrenset farger',
+    icon: '<path d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>',
+    color: 'from-amber-500/20 to-amber-600/5',
+  },
+  {
+    name: 'Bilfoliering',
+    desc: 'Full eller delvis wrapping. Kvalitetsfolie med 5+ års holdbarhet.',
+    detail: 'Fjernes uten skade',
+    icon: '<rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h2a2 2 0 012 2v6a2 2 0 01-2 2H6"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
+    color: 'from-cyan-500/20 to-cyan-600/5',
+  },
+  {
+    name: 'Storformat',
+    desc: 'Bannere, rollups og fasadeskilt. UV-bestandig trykk for utendørs bruk.',
+    detail: 'Opptil 5m bredde',
+    icon: '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>',
+    color: 'from-indigo-500/20 to-indigo-600/5',
+  },
+];
+---
+
+<section class="py-20 md:py-28 overflow-hidden">
+  <div class="mx-auto max-w-7xl px-4 lg:px-6 mb-10">
+    <p data-reveal class="text-accent font-semibold text-sm uppercase tracking-widest mb-4">Teknikker vi behersker</p>
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <h2 data-reveal class="text-3xl md:text-4xl font-extrabold text-text leading-tight">
+        7 teknikker.<br />
+        <span class="text-text-light">Én leverandør.</span>
+      </h2>
+      <p data-reveal class="text-sm text-text-light md:text-right">
+        Scroll sideveis for å utforske →
+      </p>
+    </div>
+  </div>
+
+  <div class="horizontal-scroll pl-4 lg:pl-[max(1rem,calc((100vw-80rem)/2+1rem))]" data-reveal="fade">
+    {techniques.map((tech) => (
+      <div class="w-[300px] md:w-[340px] bg-white rounded-3xl border border-border p-7 hover:shadow-xl transition-all duration-300 group">
+        <div class={`w-14 h-14 rounded-2xl bg-gradient-to-br ${tech.color} flex items-center justify-center mb-5`}>
+          <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <Fragment set:html={tech.icon} />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-text group-hover:text-primary transition-colors">{tech.name}</h3>
+        <p class="text-text-secondary text-sm leading-relaxed mt-2 mb-4">{tech.desc}</p>
+        <div class="inline-flex items-center gap-1.5 bg-accent-subtle text-accent px-3 py-1 rounded-full text-xs font-semibold">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>
+          {tech.detail}
+        </div>
+      </div>
+    ))}
+    <!-- Spacer for scroll padding -->
+    <div class="w-4 flex-shrink-0"></div>
+  </div>
+</section>
