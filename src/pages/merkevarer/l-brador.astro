@@ -5,91 +5,194 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
 const shopUrl = 'https://butikk.percor.no';
 
 const categories = [
-  { name: 'Arbeidsjakker', desc: 'Robuste jakker designet for skandinaviske forhold — varme, vindtette og slitesterke.' },
-  { name: 'Arbeidsbukser', desc: 'Funksjonelle bukser med smarte lommer og forsterket slitestyrke.' },
-  { name: 'Arbeidstøy', desc: 'Komplett sortiment av arbeidsklær for håndverkere og industri.' },
+  {
+    name: 'Arbeidsjakker',
+    desc: 'Robuste jakker konstruert for skandinaviske vintre -- vindtette, vannavstotende og med isolasjon som holder varmen selv pa de kaldeste dagene pa anlegget.',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>`,
+  },
+  {
+    name: 'Arbeidsbukser',
+    desc: 'Funksjonelle bukser med forsterkede knelommer, strategisk plasserte verktoyslommer og slitesterk konstruksjon som varer sesong etter sesong.',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>`,
+  },
+  {
+    name: 'Komplett arbeidstoy',
+    desc: 'Hele sortimentet av arbeidsplagg -- fra undertoy og mellomlag til ytterjakker. Alt du trenger for en komplett arbeidshverdag i ett system.',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>`,
+  },
+];
+
+const strengths = [
+  { title: 'Bygget for Norden', text: 'Hvert plagg er designet med skandinavisk klima i tankene -- fra bitende kulde til hostens regn.' },
+  { title: 'Distribuert via Skydda', text: 'Percor har tilgang til hele L.Brador-sortimentet gjennom Skydda, Nordens ledende HMS-leverandor.' },
+  { title: 'Trykk og profilering', text: 'Alle L.Brador-plagg kan tilpasses med din bedrifts logo gjennom Percors profileringstjenester.' },
+  { title: 'Skandinavisk kvalitet', text: 'Svensk tradisjon for kvalitet og funksjonalitet i hvert som og hver detalj.' },
 ];
 ---
 
 <BaseLayout
-  title="L.Brador"
-  description="L.Brador leverer solid svensk arbeidstøy med fokus på funksjonalitet og holdbarhet. Tilgjengelig hos Percor via Skydda."
+  title="L.Brador -- Svensk arbeidstoy | Percor"
+  description="L.Brador leverer solid svensk arbeidstoy designet for nordiske vintre. Arbeidsjakker, arbeidsbukser og komplett arbeidstoy tilgjengelig hos Percor via Skydda."
 >
-  <section class="bg-primary py-16 md:py-24">
-    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-[#0f1d2e] via-primary to-primary-light/40 py-20 md:py-32">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-72 h-72 bg-blue-600 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6">
       <Breadcrumbs items={[{ label: 'Merkevarer', href: '/merkevarer' }, { label: 'L.Brador' }]} />
-      <div class="max-w-3xl">
-        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">
-          L.Brador <span class="text-4xl md:text-5xl">🇸🇪</span>
-        </h1>
-        <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Svensk arbeidstøy via Skydda</p>
-        <p class="text-lg text-dark-text-secondary leading-relaxed mb-8">
-          L.Brador er et svensk merke som leverer solid arbeidstøy med fokus på funksjonalitet og holdbarhet. Distribuert gjennom Skydda, er L.Brador et naturlig valg for skandinaviske arbeidsforhold.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-light transition-colors">
-            Handle L.Brador i nettbutikken
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-          <a href="/kontakt" class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm">
-            Be om tilbud
-          </a>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-12 items-center">
+        <div data-reveal>
+          <div class="inline-flex items-center gap-2 mb-6">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white text-xs font-bold">SE</span>
+            <span class="text-blue-300 font-semibold text-sm uppercase tracking-wider">Svensk arbeidstoy via Skydda</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Bygget for de som <span class="text-blue-400">aldri stopper</span>
+          </h1>
+          <p class="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-xl">
+            Nar temperaturen synker og vinden pisker over byggeplassen, er det L.Brador som holder deg varm. Svensk arbeidstoy skapt for nordiske forhold -- ingenting mindre.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-blue-600 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-blue-500 transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-blue-600/25">
+              Handle L.Brador
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+            <a href="/kontakt" class="inline-flex items-center gap-2 bg-white/10 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/10">
+              Be om tilbud
+            </a>
+          </div>
+        </div>
+
+        <div data-reveal="right" class="hidden md:flex justify-center">
+          <div class="relative">
+            <div class="w-72 h-72 rounded-full bg-gradient-to-br from-blue-600/30 to-blue-400/10 flex items-center justify-center border border-blue-500/20">
+              <div class="w-48 h-48 rounded-full bg-gradient-to-br from-blue-600/40 to-transparent flex items-center justify-center">
+                <span class="text-6xl font-black text-white/90">L.B</span>
+              </div>
+            </div>
+            <div class="absolute -top-4 -right-4 bg-blue-600/20 backdrop-blur-sm border border-blue-500/30 rounded-2xl px-4 py-2">
+              <span class="text-blue-300 text-sm font-semibold">Siden 1979</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24">
+  <!-- Brand Story -->
+  <section class="py-20 md:py-28">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
-      <div class="max-w-3xl mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold text-text mb-4">Produktkategorier</h2>
-        <p class="text-text-secondary leading-relaxed">
-          L.Brador tilbyr arbeidstøy utviklet for nordiske forhold — designet for komfort, funksjonalitet og lang levetid.
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div data-reveal="left">
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-3xl p-10 border border-blue-200/50">
+            <div class="grid grid-cols-2 gap-6 text-center">
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <div class="text-3xl font-black text-blue-600">40+</div>
+                <div class="text-sm text-text-secondary mt-1">Ars erfaring</div>
+              </div>
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <div class="text-3xl font-black text-blue-600">-30&#176;C</div>
+                <div class="text-sm text-text-secondary mt-1">Testet til</div>
+              </div>
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <div class="text-3xl font-black text-blue-600">100%</div>
+                <div class="text-sm text-text-secondary mt-1">Skandinavisk</div>
+              </div>
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <div class="text-3xl font-black text-blue-600">CE</div>
+                <div class="text-sm text-text-secondary mt-1">Sertifisert</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal="right">
+          <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Historien bak merket</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-text mt-3 mb-6">Skandinavisk hardforhet i hver som</h2>
+          <div class="space-y-4 text-text-secondary leading-relaxed text-lg">
+            <p>
+              L.Brador startet med en enkel overbevisning: de som jobber i Nordens toffeste forhold, fortjener klaer som jobber like hardt som dem selv. Fra svenske verksteder har merket utviklet arbeidstoy som taler is, regn og hardt fysisk arbeid.
+            </p>
+            <p>
+              I dag er L.Brador forstevalget for handverkere, industriarbeidere og anleggsfolk i hele Skandinavia. Hvert plagg er resultatet av dialog med de som faktisk bruker dem -- designet i felten, ikke bare pa tegnebrettet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Categories -->
+  <section class="py-20 md:py-28 bg-bg-alt">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16" data-reveal>
+        <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Sortiment</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-text mt-3 mb-4">Arbeidstoy for alle forhold</h2>
+        <p class="text-text-secondary text-lg leading-relaxed">
+          L.Brador dekker hele arbeidsdagen -- fra innerst til ytterst, fra verksted til byggeplass.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-reveal-stagger>
         {categories.map(cat => (
-          <div class="bg-white rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
-            <h3 class="text-lg font-bold text-text mb-2">{cat.name}</h3>
-            <p class="text-sm text-text-secondary leading-relaxed">{cat.desc}</p>
+          <div class="group bg-white rounded-3xl border border-border p-8 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300" set:html={cat.icon}></div>
+            <h3 class="text-xl font-bold text-text mb-3">{cat.name}</h3>
+            <p class="text-text-secondary leading-relaxed">{cat.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-bg-alt">
+  <!-- Why L.Brador through Percor -->
+  <section class="py-20 md:py-28">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-text mb-6">Hvorfor L.Brador hos Percor?</h2>
-        <div class="prose prose-lg text-text-secondary">
-          <p>
-            L.Brador har bygget et sterkt rykte i Skandinavia takket være arbeidstøy som tåler de tøffeste forholdene. Med svensk kvalitetstradisjon i bunn leveres klær som kombinerer holdbarhet med komfort gjennom hele arbeidsdagen.
-          </p>
-          <p>
-            Gjennom Skydda har Percor tilgang til hele L.Brador-sortimentet. Vi hjelper deg med å finne riktig arbeidstøy for din bransje, og kan tilby trykk og profilering på alle plagg.
-          </p>
-        </div>
+      <div class="text-center max-w-2xl mx-auto mb-16" data-reveal>
+        <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Fordeler</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-text mt-3 mb-4">Hvorfor L.Brador gjennom Percor?</h2>
+        <p class="text-text-secondary text-lg leading-relaxed">
+          Nar du velger L.Brador gjennom Percor, far du mer enn bare arbeidstoy. Du far en partner som sikrer riktig produkt, profilering og levering.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-reveal-stagger>
+        {strengths.map((item, i) => (
+          <div class="group flex gap-5 bg-white rounded-3xl border border-border p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-text mb-2">{item.title}</h3>
+              <p class="text-text-secondary leading-relaxed">{item.text}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-20 bg-accent">
-    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-        Interessert i L.Brador?
+  <!-- CTA -->
+  <section class="relative overflow-hidden py-20 md:py-28 bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-4xl px-4 lg:px-6 text-center" data-reveal>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+        Klar for arbeidstoy som taler nordiske vintre?
       </h2>
-      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-        Besøk nettbutikken eller kontakt oss for råd og tilbud tilpasset dine behov.
+      <p class="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Besok nettbutikken for a se sortimentet, eller ta kontakt for radgivning og skreddersydde tilbud til din bedrift.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-all duration-300 hover:-translate-y-0.5 shadow-lg">
           Kontakt oss
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/20 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/30 transition-colors backdrop-blur-sm">
-          Besøk nettbutikken
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/15 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/25 transition-all duration-300 backdrop-blur-sm border border-white/20">
+          Besok nettbutikken
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
       </div>
     </div>

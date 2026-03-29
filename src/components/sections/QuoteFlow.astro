@@ -1,0 +1,192 @@
+---
+// Interactive multi-step "start your project" flow
+---
+
+<section class="py-20 md:py-32 bg-bg-alt" id="tilbud">
+  <div class="mx-auto max-w-4xl px-4 lg:px-6">
+    <div class="text-center mb-12">
+      <p data-reveal class="text-accent font-semibold text-sm uppercase tracking-widest mb-4">Kom i gang</p>
+      <h2 data-reveal class="text-3xl md:text-4xl font-extrabold text-text leading-tight">
+        Hva kan vi hjelpe deg med?
+      </h2>
+      <p data-reveal class="mt-4 text-text-secondary max-w-lg mx-auto">
+        Velg det som passer, så tar vi kontakt med et tilpasset forslag.
+      </p>
+    </div>
+
+    <form name="tilbud" method="POST" data-netlify="true" data-reveal id="quote-form">
+      <input type="hidden" name="form-name" value="tilbud" />
+
+      <!-- Step 1: What do you need? -->
+      <div id="step-1" class="quote-step">
+        <p class="text-sm font-semibold text-text-light uppercase tracking-wider mb-5">Steg 1 av 3 — Velg tjeneste</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="service-options">
+          <label class="quote-option">
+            <input type="checkbox" name="tjeneste" value="tekstiltrykk" class="sr-only peer" />
+            <div class="flex items-center gap-4 p-5 rounded-2xl border-2 border-border bg-white cursor-pointer transition-all peer-checked:border-accent peer-checked:bg-accent-subtle hover:border-primary/30">
+              <div class="w-12 h-12 rounded-xl bg-primary/5 peer-checked:bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-text">Tekstiltrykk</p>
+                <p class="text-xs text-text-light">Broderi, DTF, screen, transfer</p>
+              </div>
+              <svg class="w-5 h-5 text-accent ml-auto opacity-0 peer-checked:opacity-100 transition-opacity flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
+            </div>
+          </label>
+
+          <label class="quote-option">
+            <input type="checkbox" name="tjeneste" value="foliering" class="sr-only peer" />
+            <div class="flex items-center gap-4 p-5 rounded-2xl border-2 border-border bg-white cursor-pointer transition-all peer-checked:border-accent peer-checked:bg-accent-subtle hover:border-primary/30">
+              <div class="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h2a2 2 0 012 2v6a2 2 0 01-2 2H6"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-text">Foliering</p>
+                <p class="text-xs text-text-light">Bil, lastebil, vindu, kontor</p>
+              </div>
+              <svg class="w-5 h-5 text-accent ml-auto opacity-0 peer-checked:opacity-100 transition-opacity flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
+            </div>
+          </label>
+
+          <label class="quote-option">
+            <input type="checkbox" name="tjeneste" value="storformat" class="sr-only peer" />
+            <div class="flex items-center gap-4 p-5 rounded-2xl border-2 border-border bg-white cursor-pointer transition-all peer-checked:border-accent peer-checked:bg-accent-subtle hover:border-primary/30">
+              <div class="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-text">Storformat</p>
+                <p class="text-xs text-text-light">Banner, rollup, skilt, plakat</p>
+              </div>
+              <svg class="w-5 h-5 text-accent ml-auto opacity-0 peer-checked:opacity-100 transition-opacity flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
+            </div>
+          </label>
+
+          <label class="quote-option">
+            <input type="checkbox" name="tjeneste" value="design" class="sr-only peer" />
+            <div class="flex items-center gap-4 p-5 rounded-2xl border-2 border-border bg-white cursor-pointer transition-all peer-checked:border-accent peer-checked:bg-accent-subtle hover:border-primary/30">
+              <div class="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-text">Grafisk design</p>
+                <p class="text-xs text-text-light">Logo, profil, trykkfiler</p>
+              </div>
+              <svg class="w-5 h-5 text-accent ml-auto opacity-0 peer-checked:opacity-100 transition-opacity flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
+            </div>
+          </label>
+        </div>
+        <button type="button" class="quote-next mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-primary-light transition-colors disabled:opacity-40 disabled:cursor-not-allowed" data-next="2" disabled>
+          Neste steg
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- Step 2: Tell us more -->
+      <div id="step-2" class="quote-step hidden">
+        <button type="button" class="quote-back text-sm text-text-light hover:text-text flex items-center gap-1.5 mb-5 transition-colors" data-back="1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Tilbake
+        </button>
+        <p class="text-sm font-semibold text-text-light uppercase tracking-wider mb-5">Steg 2 av 3 — Fortell oss mer</p>
+        <div class="space-y-4">
+          <div>
+            <label for="q-antall" class="block text-sm font-medium text-text mb-1.5">Omtrentlig antall</label>
+            <select id="q-antall" name="antall" class="w-full px-4 py-3.5 border-2 border-border rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white">
+              <option value="">Velg</option>
+              <option value="1-10">1–10 stk</option>
+              <option value="10-50">10–50 stk</option>
+              <option value="50-200">50–200 stk</option>
+              <option value="200+">200+ stk</option>
+              <option value="usikker">Usikker</option>
+            </select>
+          </div>
+          <div>
+            <label for="q-frist" class="block text-sm font-medium text-text mb-1.5">Når trenger du det?</label>
+            <select id="q-frist" name="frist" class="w-full px-4 py-3.5 border-2 border-border rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white">
+              <option value="">Velg</option>
+              <option value="haster">Så fort som mulig</option>
+              <option value="2-uker">Innen 2 uker</option>
+              <option value="1-maned">Innen en måned</option>
+              <option value="planlegger">Bare planlegger</option>
+            </select>
+          </div>
+          <div>
+            <label for="q-beskrivelse" class="block text-sm font-medium text-text mb-1.5">Kort beskrivelse (valgfritt)</label>
+            <textarea id="q-beskrivelse" name="beskrivelse" rows="3" placeholder="F.eks: Vi trenger 50 broderte jakker med firmalogo til et arrangement i mai..." class="w-full px-4 py-3.5 border-2 border-border rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white resize-y"></textarea>
+          </div>
+        </div>
+        <button type="button" class="quote-next mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-primary-light transition-colors" data-next="3">
+          Siste steg
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- Step 3: Contact info -->
+      <div id="step-3" class="quote-step hidden">
+        <button type="button" class="quote-back text-sm text-text-light hover:text-text flex items-center gap-1.5 mb-5 transition-colors" data-back="2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Tilbake
+        </button>
+        <p class="text-sm font-semibold text-text-light uppercase tracking-wider mb-5">Steg 3 av 3 — Dine kontaktopplysninger</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="q-navn" class="block text-sm font-medium text-text mb-1.5">Navn *</label>
+            <input type="text" id="q-navn" name="navn" required class="w-full px-4 py-3.5 border-2 border-border rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white" />
+          </div>
+          <div>
+            <label for="q-bedrift" class="block text-sm font-medium text-text mb-1.5">Bedrift</label>
+            <input type="text" id="q-bedrift" name="bedrift" class="w-full px-4 py-3.5 border-2 border-border rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white" />
+          </div>
+          <div>
+            <label for="q-epost" class="block text-sm font-medium text-text mb-1.5">E-post *</label>
+            <input type="email" id="q-epost" name="epost" required class="w-full px-4 py-3.5 border-2 border-border rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white" />
+          </div>
+          <div>
+            <label for="q-telefon" class="block text-sm font-medium text-text mb-1.5">Telefon</label>
+            <input type="tel" id="q-telefon" name="telefon" class="w-full px-4 py-3.5 border-2 border-border rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white" />
+          </div>
+        </div>
+        <button type="submit" class="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-semibold hover:bg-accent-light transition-colors shadow-lg shadow-accent/20">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+          Send forespørsel
+        </button>
+        <p class="text-xs text-text-light mt-3">Vi svarer innen én arbeidsdag. Ingen forpliktelser.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('quote-form');
+  if (form) {
+    // Step navigation
+    form.querySelectorAll('.quote-next').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const next = (btn as HTMLElement).dataset.next;
+        form.querySelectorAll('.quote-step').forEach(s => s.classList.add('hidden'));
+        document.getElementById(`step-${next}`)?.classList.remove('hidden');
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    form.querySelectorAll('.quote-back').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const back = (btn as HTMLElement).dataset.back;
+        form.querySelectorAll('.quote-step').forEach(s => s.classList.add('hidden'));
+        document.getElementById(`step-${back}`)?.classList.remove('hidden');
+      });
+    });
+
+    // Enable next button when at least one service is selected
+    const checkboxes = form.querySelectorAll('input[name="tjeneste"]');
+    const nextBtn = form.querySelector('.quote-next[data-next="2"]') as HTMLButtonElement;
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const anyChecked = Array.from(checkboxes).some((c: any) => c.checked);
+        if (nextBtn) nextBtn.disabled = !anyChecked;
+      });
+    });
+  }
+</script>

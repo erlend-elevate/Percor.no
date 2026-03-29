@@ -4,79 +4,176 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
 import merkevarer from '../../data/merkevarer.json';
 
 const shopUrl = 'https://butikk.percor.no';
+
+const brandColors: Record<string, { bg: string; border: string; text: string; initial: string }> = {
+  payper: { bg: 'bg-accent/5', border: 'border-accent/30', text: 'text-accent', initial: 'bg-accent text-white' },
+  'l-brador': { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-700', initial: 'bg-blue-600 text-white' },
+  roly: { bg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-700', initial: 'bg-emerald-600 text-white' },
+  'zeus-sport': { bg: 'bg-violet-50', border: 'border-violet-200', text: 'text-violet-700', initial: 'bg-violet-600 text-white' },
+  skydda: { bg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-700', initial: 'bg-amber-600 text-white' },
+  stamina: { bg: 'bg-rose-50', border: 'border-rose-200', text: 'text-rose-700', initial: 'bg-rose-600 text-white' },
+};
 ---
 
 <BaseLayout
   title="Merkevarer"
-  description="Utforsk merkevarene vi forer — Payper, L.Brador, Roly, Zeus Sport, Skydda og Stamina. Kvalitetsprodukter fra ledende europeiske produsenter."
+  description="Utforsk merkevarene Percor fører — Payper, L.Brador, Roly, Zeus Sport, Skydda og Stamina. Europeisk kvalitet, norsk service."
 >
-  <section class="bg-primary py-16 md:py-24">
-    <div class="mx-auto max-w-7xl px-4 lg:px-6">
-      <Breadcrumbs items={[{ label: 'Merkevarer' }]} />
+  <div class="mx-auto max-w-7xl px-4 lg:px-6">
+    <Breadcrumbs items={[{ label: 'Merkevarer' }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#0f1d2e] via-primary to-primary-light/40"></div>
+      <div class="absolute bottom-0 right-1/3 w-[400px] h-[400px] bg-accent/8 rounded-full blur-[120px]"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-24 md:py-36">
       <div class="max-w-3xl">
-        <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-3">Våre partnere</p>
-        <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">Merkevarer vi stoler på</h1>
-        <p class="text-lg text-dark-text-secondary leading-relaxed">
-          Vi samarbeider med ledende europeiske produsenter for å levere arbeidstøy, profilklær, verneutstyr og sportsutstyr av høyeste kvalitet. Percor er eksklusiv norsk forhandler av Payper.
+        <p data-reveal class="text-accent-light font-semibold text-sm uppercase tracking-widest mb-6">Våre merkevarer</p>
+        <h1 data-reveal class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.08]">
+          Vi velger partnere<br/>
+          <span class="text-white/50">like nøye som du gjør.</span>
+        </h1>
+        <p data-reveal class="mt-6 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed">
+          Seks merkevarer fra fire land. Hver valgt fordi de leverer det samme som oss: kvalitet uten kompromiss. Percor er eksklusiv norsk importør av Payper.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24">
-    <div class="mx-auto max-w-7xl px-4 lg:px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {merkevarer.map(brand => (
-          <a
-            href={`/merkevarer/${brand.slug}`}
-            class={`group relative bg-white rounded-xl border p-8 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 ${brand.slug === 'payper' ? 'border-accent ring-2 ring-accent/20 lg:col-span-1 md:col-span-2' : 'border-border'}`}
-          >
-            {brand.slug === 'payper' && (
-              <span class="absolute -top-3 left-6 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                Eksklusiv norsk forhandler
-              </span>
-            )}
-            <div class="flex items-start gap-4">
-              <span class="text-4xl">{brand.flag}</span>
-              <div class="flex-1">
-                <h2 class="text-xl font-bold text-text group-hover:text-primary transition-colors mb-1">{brand.name}</h2>
-                <p class="text-sm text-text-light mb-3">{brand.country} {brand.tagline && `— ${brand.tagline}`}</p>
-                <p class="text-text-secondary text-sm leading-relaxed mb-4">{brand.description}</p>
-                <div class="flex flex-wrap gap-2">
-                  {brand.categories.map(cat => (
-                    <span class="text-xs bg-bg-alt text-text-secondary px-2.5 py-1 rounded-full">{cat}</span>
-                  ))}
+  <!-- The Philosophy -->
+  <section class="py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle at 1px 1px, var(--color-text) 1px, transparent 0); background-size: 24px 24px;"></div>
+    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center" data-reveal>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-text leading-tight mb-6">
+        Hvorfor bare seks merker?
+      </h2>
+      <p class="text-xl text-text-secondary leading-relaxed max-w-2xl mx-auto font-light">
+        Fordi vi kan produktene til hver eneste en. Vi vet hvilken jakke som tåler anleggsarbeid, hvilken t-skjorte som holder formen etter 50 vasker, og hvilken drakt som sitter best på banen. <strong class="text-text font-semibold">Få merker, dyp kunnskap.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured: Payper -->
+  {merkevarer.filter(b => b.slug === 'payper').map(brand => (
+    <section class="py-20 md:py-28 bg-bg-alt">
+      <div class="mx-auto max-w-7xl px-4 lg:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div data-reveal="left">
+            <div class="inline-flex items-center gap-2 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
+              Eksklusiv norsk importør
+            </div>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-text leading-tight mb-4">
+              Payper
+            </h2>
+            <p class="text-lg text-text-secondary leading-relaxed mb-4">
+              Italiensk håndverk møter nordisk arbeidshverdag. Payper lager arbeidstøy og profilklær som ser like bra ut fredag ettermiddag som mandag morgen.
+            </p>
+            <p class="text-text-secondary leading-relaxed mb-6">
+              Med over 500 produkter i sortimentet — fra tekniske arbeidsjakker til elegante poloskjorter — er Payper den mest komplette enkeltmerkevaren vi fører. Og som eksklusiv norsk importør får du prisene direkte, uten mellomledd.
+            </p>
+            <a href="/merkevarer/payper" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-xl font-semibold hover:bg-accent/90 transition-colors">
+              Utforsk Payper
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div data-reveal="right">
+            <div class="bg-white rounded-3xl border border-accent/20 p-10 shadow-xl">
+              <div class="w-20 h-20 rounded-2xl bg-accent text-white flex items-center justify-center text-3xl font-extrabold mb-6 mx-auto">P</div>
+              <div class="grid grid-cols-2 gap-4 text-center">
+                <div class="bg-accent/5 rounded-xl p-4">
+                  <p class="text-2xl font-extrabold text-text">500+</p>
+                  <p class="text-xs text-text-secondary mt-1">Produkter</p>
+                </div>
+                <div class="bg-accent/5 rounded-xl p-4">
+                  <p class="text-2xl font-extrabold text-text">40+</p>
+                  <p class="text-xs text-text-secondary mt-1">Års erfaring</p>
+                </div>
+                <div class="bg-accent/5 rounded-xl p-4">
+                  <p class="text-2xl font-extrabold text-text">Italia</p>
+                  <p class="text-xs text-text-secondary mt-1">Produksjon</p>
+                </div>
+                <div class="bg-accent/5 rounded-xl p-4">
+                  <p class="text-2xl font-extrabold text-text">1</p>
+                  <p class="text-xs text-text-secondary mt-1">Norsk importør</p>
                 </div>
               </div>
             </div>
-            <div class="mt-4 pt-4 border-t border-border">
-              <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-primary-light transition-colors">
-                Utforsk {brand.name}
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </a>
-        ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Other brands grid -->
+  <section class="py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="max-w-2xl mb-16" data-reveal>
+        <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-4">Komplett sortiment</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-text">Resten av laget.</h2>
+        <p class="mt-4 text-lg text-text-secondary leading-relaxed">
+          Sammen med Payper utgjør disse merkevarene et komplett økosystem — fra arbeidsklær og verneutstyr til profilklær og sportsutstyr.
+        </p>
+      </div>
+
+      <div data-reveal-stagger class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {merkevarer.filter(b => b.slug !== 'payper').map(brand => {
+          const colors = brandColors[brand.slug] || brandColors.roly;
+          return (
+            <a href={`/merkevarer/${brand.slug}`} class={`group rounded-3xl border p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${colors.bg} ${colors.border}`}>
+              <div class="flex items-start gap-5">
+                <div class={`w-14 h-14 rounded-2xl flex items-center justify-center text-xl font-extrabold flex-shrink-0 ${colors.initial}`}>
+                  {brand.name.charAt(0)}
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <h3 class="text-xl font-bold text-text group-hover:text-primary transition-colors">{brand.name}</h3>
+                  </div>
+                  <p class="text-xs text-text-light mb-3">{brand.country} — {brand.tagline}</p>
+                  <p class="text-sm text-text-secondary leading-relaxed mb-4">{brand.description}</p>
+                  <div class="flex flex-wrap gap-1.5">
+                    {brand.categories.slice(0, 3).map(cat => (
+                      <span class="text-xs bg-white/80 text-text-secondary px-2.5 py-1 rounded-full">{cat}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5 pt-4 border-t border-border/50">
+                <span class={`inline-flex items-center gap-2 text-sm font-semibold ${colors.text} group-hover:gap-3 transition-all`}>
+                  Utforsk {brand.name}
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          );
+        })}
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-20 bg-accent">
-    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+  <!-- CTA -->
+  <section class="relative py-24 md:py-32 bg-primary overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px]"></div>
+    </div>
+    <div class="relative mx-auto max-w-4xl px-4 lg:px-6 text-center" data-reveal>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
         Finner du ikke det du leter etter?
       </h2>
-      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-        Vi har tilgang til hele sortimentet fra alle våre merkevarer. Ta kontakt for en uforpliktende prat.
+      <p class="text-lg text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Vi har tilgang til hele sortimentet fra alle våre merkevarer. Ta kontakt for en uforpliktende prat — vi finner riktig produkt for deg.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+        <a href="/kontakt" class="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-accent/90 transition-colors shadow-lg shadow-accent/25">
           Kontakt oss
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/20 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/30 transition-colors backdrop-blur-sm">
+        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/20 transition-colors">
           Besøk nettbutikken
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          <svg class="w-3.5 h-3.5 opacity-70" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
       </div>
     </div>

@@ -1,87 +1,123 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import AnimatedCounter from '../../components/AnimatedCounter.astro';
 
 const shopUrl = 'https://butikk.percor.no';
 
 const categories = [
-  { name: 'Arbeidstøy', desc: 'Slitesterkt arbeidstøy for alle bransjer og arbeidsforhold.' },
-  { name: 'Profilklær', desc: 'Profilering med stil — poloskjorter, gensere og mer.' },
-  { name: 'T-skjorter', desc: 'Stort utvalg t-skjorter i alle farger og størrelser.' },
-  { name: 'Jakker', desc: 'Fra softshell til vinterjakker — for alle sesonger.' },
-  { name: 'Bukser', desc: 'Arbeidsbukser, shorts og fritidsbukser.' },
-  { name: 'High-Vis', desc: 'Synlighetsklær som oppfyller norske HMS-krav.' },
+  {
+    name: 'Arbeidstøy',
+    desc: 'Jakker, bukser og kjeledresser som tåler hverdagen på anlegg, verksted og lager. Forsterket der det trengs, komfortabelt resten av dagen.',
+    color: 'blue',
+  },
+  {
+    name: 'Profilklær',
+    desc: 'Poloskjorter, gensere og softshell som kler opp teamet ditt. Elegant nok for kontoret, robust nok for felten.',
+    color: 'emerald',
+  },
+  {
+    name: 'T-skjorter',
+    desc: 'Hundrevis av farger, alle størrelser. Fra klassiske unisex-modeller til feminine snitt. Det perfekte lerretet for trykk.',
+    color: 'violet',
+  },
+  {
+    name: 'Jakker',
+    desc: 'Fra lette softshell til varme vinterjakker. Hver sesong dekket, hvert vær taklet — med stil.',
+    color: 'amber',
+  },
+  {
+    name: 'High-Vis',
+    desc: 'Synlighetsklær som oppfyller norske HMS-krav. Fordi sikkerhet og stil ikke trenger å være motsetninger.',
+    color: 'rose',
+  },
+  {
+    name: 'Bukser',
+    desc: 'Arbeidsbukser med smarte lommer, forsterket kne og stretch der det trengs. Shorts for sommeren.',
+    color: 'cyan',
+  },
 ];
+
+const colorMap: Record<string, string> = {
+  blue: 'bg-blue-50 text-blue-600',
+  emerald: 'bg-emerald-50 text-emerald-600',
+  violet: 'bg-violet-50 text-violet-600',
+  amber: 'bg-amber-50 text-amber-600',
+  rose: 'bg-rose-50 text-rose-600',
+  cyan: 'bg-cyan-50 text-cyan-600',
+};
 ---
 
 <BaseLayout
-  title="Payper"
-  description="Percor er eksklusiv norsk importør og distributør av Payper — italiensk arbeidstøy og profilklær av høyeste kvalitet siden 1977."
+  title="Payper — Eksklusiv norsk importør | Percor"
+  description="Percor er eksklusiv norsk importør av Payper. Italiensk arbeidstøy og profilklær med over 500 produkter. Kvalitet siden 1977."
 >
-  <section class="bg-primary py-16 md:py-24">
-    <div class="mx-auto max-w-7xl px-4 lg:px-6">
-      <Breadcrumbs items={[{ label: 'Merkevarer', href: '/merkevarer' }, { label: 'Payper' }]} />
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="inline-flex items-center gap-2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
-            Eksklusiv norsk forhandler
-          </span>
-          <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">
-            Payper <span class="text-4xl md:text-5xl">🇮🇹</span>
+  <div class="mx-auto max-w-7xl px-4 lg:px-6">
+    <Breadcrumbs items={[{ label: 'Merkevarer', href: '/merkevarer' }, { label: 'Payper' }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#0f1d2e] via-primary to-primary-light/40"></div>
+      <div class="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 left-1/6 w-[300px] h-[300px] bg-primary-lighter/15 rounded-full blur-[100px]"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-24 md:py-36">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <div data-reveal class="inline-flex items-center gap-2.5 bg-accent/20 backdrop-blur-md rounded-full px-5 py-2 mb-8 border border-accent/30">
+            <svg class="w-4 h-4 text-accent-light" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <span class="text-accent-light text-sm font-semibold">Eksklusiv norsk importør</span>
+          </div>
+
+          <h1 data-reveal class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.08]">
+            Payper.
           </h1>
-          <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Italiensk kvalitet siden 1977</p>
-          <p class="text-lg text-dark-text-secondary leading-relaxed mb-6">
-            Percor er stolt eksklusiv importør og distributør av Payper i Norge. Med over 500 produkter i sortimentet leverer Payper arbeidstøy og profilklær som kombinerer italiensk design med funksjonalitet og holdbarhet.
+          <p data-reveal class="text-2xl md:text-3xl font-extrabold text-white/40 mt-2">
+            Italiensk håndverk, norsk lager.
           </p>
-          <ul class="space-y-2 text-dark-text-secondary mb-8">
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-accent-light flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-              Eksklusiv importør i Norge — direkte fra produsent
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-accent-light flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-              Italiensk kvalitet og design siden 1977
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-accent-light flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-              Over 500 produkter — fra t-skjorter til high-vis
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-accent-light flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-              Raske leveranser fra norsk lager
-            </li>
-          </ul>
-          <div class="flex flex-wrap gap-4">
-            <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-light transition-colors">
-              Handle Payper i nettbutikken
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          <p data-reveal class="mt-8 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed">
+            Siden 1977 har Payper laget arbeidstøy og profilklær som ser like bra ut fredag ettermiddag som mandag morgen. Percor er deres eneste norske partner.
+          </p>
+
+          <div data-reveal class="mt-10 flex flex-wrap gap-4">
+            <a href={shopUrl} target="_blank" rel="noopener" class="group inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-semibold hover:bg-accent-light transition-all shadow-lg shadow-accent/25">
+              Handle Payper
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
             </a>
-            <a href="/kontakt" class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm">
+            <a href="/kontakt" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all border border-white/10">
               Be om tilbud
             </a>
           </div>
         </div>
-        <div class="bg-white/5 rounded-2xl p-8 lg:p-12 backdrop-blur-sm border border-white/10">
-          <div class="text-center">
-            <span class="text-6xl mb-4 block">🇮🇹</span>
-            <h2 class="text-2xl font-bold text-white mb-2">Payper</h2>
-            <p class="text-dark-text-secondary text-sm mb-6">Made in Italy — Since 1977</p>
-            <div class="grid grid-cols-2 gap-4 text-center">
-              <div class="bg-white/5 rounded-lg p-4">
-                <p class="text-2xl font-bold text-accent-light">500+</p>
-                <p class="text-xs text-dark-text-secondary mt-1">Produkter</p>
+
+        <!-- Stats panel -->
+        <div class="lg:col-span-5 hidden lg:block" data-reveal="right">
+          <div class="bg-white/[0.05] backdrop-blur-xl rounded-3xl border border-white/10 p-8 glow-accent">
+            <div class="flex items-center gap-3 mb-8">
+              <div class="w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center text-2xl font-extrabold">P</div>
+              <div>
+                <p class="text-white text-sm font-semibold">Payper i tall</p>
+                <p class="text-white/40 text-xs">Made in Italy — Since 1977</p>
               </div>
-              <div class="bg-white/5 rounded-lg p-4">
-                <p class="text-2xl font-bold text-accent-light">40+</p>
-                <p class="text-xs text-dark-text-secondary mt-1">År erfaring</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white/[0.04] rounded-2xl p-5 text-center border border-white/5">
+                <p class="text-3xl font-extrabold text-white"><AnimatedCounter value="500" suffix="+" /></p>
+                <p class="text-[11px] text-white/40 mt-2 uppercase tracking-wider">Produkter</p>
               </div>
-              <div class="bg-white/5 rounded-lg p-4">
-                <p class="text-2xl font-bold text-accent-light">1</p>
-                <p class="text-xs text-dark-text-secondary mt-1">Norsk distributør</p>
+              <div class="bg-white/[0.04] rounded-2xl p-5 text-center border border-white/5">
+                <p class="text-3xl font-extrabold text-accent-light"><AnimatedCounter value="47" /></p>
+                <p class="text-[11px] text-white/40 mt-2 uppercase tracking-wider">År erfaring</p>
               </div>
-              <div class="bg-white/5 rounded-lg p-4">
-                <p class="text-2xl font-bold text-accent-light">100%</p>
-                <p class="text-xs text-dark-text-secondary mt-1">Italiensk</p>
+              <div class="bg-white/[0.04] rounded-2xl p-5 text-center border border-white/5">
+                <p class="text-3xl font-extrabold text-white"><AnimatedCounter value="1" /></p>
+                <p class="text-[11px] text-white/40 mt-2 uppercase tracking-wider">Norsk importør</p>
+              </div>
+              <div class="bg-white/[0.04] rounded-2xl p-5 text-center border border-white/5">
+                <p class="text-3xl font-extrabold text-accent-light">100%</p>
+                <p class="text-[11px] text-white/40 mt-2 uppercase tracking-wider">Italiensk</p>
               </div>
             </div>
           </div>
@@ -90,17 +126,81 @@ const categories = [
     </div>
   </section>
 
-  <section class="py-16 md:py-24">
+  <!-- The Story -->
+  <section class="py-24 md:py-36 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle at 1px 1px, var(--color-text) 1px, transparent 0); background-size: 24px 24px;"></div>
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
-      <div class="max-w-3xl mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold text-text mb-4">Produktkategorier</h2>
-        <p class="text-text-secondary leading-relaxed">
-          Payper tilbyr et komplett sortiment for bedrifter som trenger arbeidstøy og profilklær av høy kvalitet. Alt kan tilpasses med trykk og broderi gjennom Percor.
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p data-reveal class="text-accent font-semibold text-sm uppercase tracking-widest mb-4">Historien</p>
+          <h2 data-reveal class="text-3xl md:text-4xl font-extrabold text-text leading-tight mb-6">
+            Hvorfor akkurat Payper?
+          </h2>
+          <div data-reveal class="space-y-4 text-text-secondary leading-relaxed">
+            <p>
+              De fleste arbeidstøy-leverandører selger det samme fra de samme katalogene. Hundrevis av merker, tusenvis av produkter — men lite som skiller seg ut.
+            </p>
+            <p>
+              Payper er unntaket. Med nesten 50 års erfaring fra Vicenza i Nord-Italia har de perfeksjonert kunsten å lage klær som <strong class="text-text">kombinerer design med funksjon</strong>. Hvert plagg er gjennomtenkt — fra sylinjen til stoffvalget.
+            </p>
+            <p>
+              Som <strong class="text-text">eneste norske importør</strong> har vi direkte kontakt med fabrikken. Det betyr bedre priser, raskere leveranser, og tilgang til produkter ingen andre i Norge kan tilby.
+            </p>
+          </div>
+        </div>
+        <div data-reveal="right">
+          <div class="space-y-4">
+            <div class="bg-accent/5 rounded-2xl border border-accent/20 p-6 flex items-start gap-4">
+              <svg class="w-6 h-6 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div>
+                <p class="font-bold text-text mb-1">Direkte fra produsent</p>
+                <p class="text-sm text-text-secondary">Ingen mellomledd. Prisene du får er direkte fra Italia.</p>
+              </div>
+            </div>
+            <div class="bg-primary/5 rounded-2xl border border-primary/10 p-6 flex items-start gap-4">
+              <svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div>
+                <p class="font-bold text-text mb-1">Norsk lager</p>
+                <p class="text-sm text-text-secondary">Store deler av sortimentet ligger klart på vårt lager i Sætre.</p>
+              </div>
+            </div>
+            <div class="bg-blue-50 rounded-2xl border border-blue-100 p-6 flex items-start gap-4">
+              <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div>
+                <p class="font-bold text-text mb-1">Fullstendig profilering</p>
+                <p class="text-sm text-text-secondary">Trykk, broderi og design — alt gjøres på samme sted.</p>
+              </div>
+            </div>
+            <div class="bg-emerald-50 rounded-2xl border border-emerald-100 p-6 flex items-start gap-4">
+              <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div>
+                <p class="font-bold text-text mb-1">Raske leveranser</p>
+                <p class="text-sm text-text-secondary">Standard 2–3 uker inkludert trykk. Hasteordre etter avtale.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Categories -->
+  <section class="py-24 md:py-32 bg-bg-alt">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="max-w-2xl mb-16" data-reveal>
+        <p class="text-accent font-semibold text-sm uppercase tracking-widest mb-4">Sortiment</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-text">Alt du trenger. Fra én merkevare.</h2>
+        <p class="mt-4 text-text-secondary leading-relaxed">
+          Med over 500 produkter i sortimentet kan Payper kle hele bedriften din — fra anleggsarbeideren til resepsjonisten. Alt kan tilpasses med trykk og broderi.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {categories.map(cat => (
-          <div class="bg-white rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+
+      <div data-reveal-stagger class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categories.map((cat) => (
+          <div class="bg-white rounded-3xl border border-border p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class={`w-12 h-12 rounded-2xl flex items-center justify-center mb-5 ${colorMap[cat.color].split(' ')[0]}`}>
+              <span class={`text-lg font-extrabold ${colorMap[cat.color].split(' ')[1]}`}>{cat.name.charAt(0)}</span>
+            </div>
             <h3 class="text-lg font-bold text-text mb-2">{cat.name}</h3>
             <p class="text-sm text-text-secondary leading-relaxed">{cat.desc}</p>
           </div>
@@ -109,41 +209,55 @@ const categories = [
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-bg-alt">
-    <div class="mx-auto max-w-7xl px-4 lg:px-6">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-text mb-6">Hvorfor velge Payper gjennom Percor?</h2>
-        <div class="prose prose-lg text-text-secondary">
-          <p>
-            Som eksklusiv norsk importør av Payper kan Percor tilby konkurransedyktige priser direkte fra den italienske produsenten. Vi holder et bredt utvalg på norsk lager, noe som sikrer raske leveranser til kunder over hele landet.
-          </p>
-          <p>
-            Payper har siden 1977 produsert arbeidstøy og profilklær med fokus på kvalitet, komfort og design. Den italienske produksjonen sikrer at hvert plagg holder en standard som tåler daglig bruk i krevende arbeidsmiljøer.
-          </p>
-          <p>
-            I tillegg til standardsortimentet tilbyr vi trykk, broderi og fullstendig profilering av alle Payper-produkter. Enten du trenger en liten ordre eller store volumer, hjelper vi deg hele veien.
-          </p>
+  <!-- The Quality Promise -->
+  <section class="relative py-24 md:py-32 bg-primary overflow-hidden section-slant-top section-slant-bottom">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 right-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[120px]"></div>
+    </div>
+    <div class="relative mx-auto max-w-4xl px-4 lg:px-6 text-center">
+      <h2 data-reveal class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-8">
+        Kvalitet du kan kjenne.
+      </h2>
+      <p data-reveal class="text-lg text-white/60 leading-relaxed max-w-2xl mx-auto mb-12">
+        Payper bruker ikke snarveier. Dobbelsydde sømmer der det trengs. Forvasket stoff som holder formen. Knapper og glidelåser fra YKK. Det er detaljer du kanskje ikke tenker over — men du merker det etter 50 vasker.
+      </p>
+      <div data-reveal-stagger class="grid grid-cols-3 gap-6 max-w-lg mx-auto">
+        <div class="text-center">
+          <p class="text-3xl font-extrabold text-accent-light">OEKO-TEX</p>
+          <p class="text-xs text-white/40 mt-1">Sertifisert</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-extrabold text-white">EN ISO</p>
+          <p class="text-xs text-white/40 mt-1">Godkjent</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-extrabold text-accent-light">YKK</p>
+          <p class="text-xs text-white/40 mt-1">Glidelåser</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-20 bg-accent">
-    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-        Klar for å bestille Payper?
+  <!-- CTA -->
+  <section class="relative py-24 md:py-32 bg-accent overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-[100px]"></div>
+    </div>
+    <div class="relative mx-auto max-w-4xl px-4 lg:px-6 text-center" data-reveal>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+        Klar for å prøve Payper?
       </h2>
-      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-        Besøk nettbutikken vår eller ta kontakt for et skreddersydd tilbud med trykk og profilering.
+      <p class="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Handle direkte i nettbutikken, eller ta kontakt for et skreddersydd bedriftstilbud med trykk og profilering.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
-          Be om tilbud
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white text-accent px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/90 transition-colors shadow-lg">
+          Handle i nettbutikken
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
-        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/20 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/30 transition-colors backdrop-blur-sm">
-          Besøk nettbutikken
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/30 transition-colors">
+          Be om bedriftstilbud
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>

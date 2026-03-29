@@ -5,92 +5,198 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
 const shopUrl = 'https://butikk.percor.no';
 
 const categories = [
-  { name: 'Profilklær', desc: 'Bredt utvalg av profilklær til bedrifter — poloskjorter, gensere og mer til konkurransedyktige priser.' },
-  { name: 'T-skjorter', desc: 'Stort utvalg t-skjorter i mange farger, passformer og materialer — perfekt for profilering.' },
-  { name: 'Capser', desc: 'Capser og hatter med mulighet for broderi og trykk av logo.' },
-  { name: 'Vesker', desc: 'Praktiske vesker og bager for jobb, fritid og arrangement.' },
+  {
+    name: 'Profilklaer',
+    desc: 'Poloskjorter, gensere, softshell og mer -- alt du trenger for a kle opp teamet ditt med bedriftens identitet, uten a sprenge budsjettet.',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>`,
+  },
+  {
+    name: 'T-skjorter',
+    desc: 'Hundrevis av fargevalg og passformer -- fra klassiske unisex-modeller til feminine snitt. Perfekt lerret for trykk og broderi.',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z"/></svg>`,
+  },
+  {
+    name: 'Capser',
+    desc: 'Capser, snapbacks og luer i utallige farger og modeller. Populaere for broderi av logo -- et av de mest synlige profileringsproduktene.',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>`,
+  },
+  {
+    name: 'Vesker og bager',
+    desc: 'Praktiske vesker, ryggsekker og bager for jobb, fritid og arrangement. Stort trykkflate gjor dem ideelle som giveaways.',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>`,
+  },
+];
+
+const strengths = [
+  { title: 'Konkurransedyktige priser', text: 'Roly er kjent for a levere god kvalitet til priser som gjor profilering tilgjengelig for alle bedrifter, uansett storrelse.' },
+  { title: 'Enormt fargeutvalg', text: 'Med opptil 30+ farger pa mange modeller finner du alltid en farge som matcher bedriftens profil.' },
+  { title: 'Rask levering', text: 'Store lagerbeholdninger gjor at de fleste produkter er tilgjengelige for rask levering nar du trenger dem.' },
+  { title: 'Fullstendig profilering', text: 'Percor tilbyr trykk, broderi og fullstendig tilpasning pa alle Roly-produkter for a skape din unike profil.' },
 ];
 ---
 
 <BaseLayout
-  title="Roly"
-  description="Roly tilbyr et bredt utvalg av profilklær til konkurransedyktige priser. Ideelt for bedrifter som ønsker å profilere seg. Tilgjengelig hos Percor."
+  title="Roly -- Profilklaer til konkurransedyktige priser | Percor"
+  description="Roly tilbyr et bredt utvalg profilklaer, t-skjorter, capser og vesker til konkurransedyktige priser. Ideelt for bedriftsprofilering. Tilgjengelig hos Percor."
 >
-  <section class="bg-primary py-16 md:py-24">
-    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-[#0f1d2e] via-primary to-primary-light/40 py-20 md:py-32">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-1/4 w-64 h-64 bg-emerald-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-80 h-80 bg-emerald-300 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6">
       <Breadcrumbs items={[{ label: 'Merkevarer', href: '/merkevarer' }, { label: 'Roly' }]} />
-      <div class="max-w-3xl">
-        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">
-          Roly <span class="text-4xl md:text-5xl">🇪🇸</span>
-        </h1>
-        <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Spansk profilklær og gaveartikler</p>
-        <p class="text-lg text-dark-text-secondary leading-relaxed mb-8">
-          Roly er en ledende spansk produsent av profilklær og tilbehør. Med et stort utvalg i mange farger og størrelser er Roly et populært valg for bedrifter, lag og arrangement som ønsker profilering til konkurransedyktige priser.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-light transition-colors">
-            Handle Roly i nettbutikken
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-          <a href="/kontakt" class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm">
-            Be om tilbud
-          </a>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-12 items-center">
+        <div data-reveal>
+          <div class="inline-flex items-center gap-2 mb-6">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-600 text-white text-xs font-bold">ES</span>
+            <span class="text-emerald-300 font-semibold text-sm uppercase tracking-wider">Spansk profilklaer og tilbehor</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Profilering som er <span class="text-emerald-400">tilgjengelig for alle</span>
+          </h1>
+          <p class="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-xl">
+            Roly beviser at god profilering ikke trenger a koste en formue. Europeisk kvalitet, hundrevis av farger og priser som gjor det enkelt a si ja -- uansett bedriftsstrrelse.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-emerald-500 transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-emerald-600/25">
+              Handle Roly
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+            <a href="/kontakt" class="inline-flex items-center gap-2 bg-white/10 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/10">
+              Be om tilbud
+            </a>
+          </div>
+        </div>
+
+        <div data-reveal="right" class="hidden md:flex justify-center">
+          <div class="relative">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-center">
+                <div class="text-3xl font-black text-emerald-400">500+</div>
+                <div class="text-white/60 text-sm mt-1">Produkter</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-center mt-8">
+                <div class="text-3xl font-black text-emerald-400">30+</div>
+                <div class="text-white/60 text-sm mt-1">Farger per modell</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-center">
+                <div class="text-3xl font-black text-emerald-400">XS-5XL</div>
+                <div class="text-white/60 text-sm mt-1">Storrelser</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-center mt-8">
+                <div class="text-3xl font-black text-emerald-400">24t</div>
+                <div class="text-white/60 text-sm mt-1">Rask levering</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24">
+  <!-- Brand Story -->
+  <section class="py-20 md:py-28">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
-      <div class="max-w-3xl mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold text-text mb-4">Produktkategorier</h2>
-        <p class="text-text-secondary leading-relaxed">
-          Roly har et komplett sortiment av profilklær og tilbehør som egner seg perfekt for bedriftsprofilering, arrangement og gaver.
+      <div class="max-w-3xl mx-auto text-center" data-reveal>
+        <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Historien bak merket</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-text mt-3 mb-6">Kvalitet trenger ikke vaere dyrt</h2>
+        <div class="space-y-4 text-text-secondary text-lg leading-relaxed text-left">
+          <p>
+            Fra Spania har Roly vokst til a bli et av Europas storste og mest populaere merker for profilklaer. Hemmeligheten? En overbevisning om at enhver bedrift -- fra den minste oppstartsbedriften til den storste konsernet -- fortjener profesjonell profilering uten a maatte ofre kvalitet eller budsjett.
+          </p>
+          <p>
+            Med et sortiment som spenner over hundrevis av produkter i utallige farger, har Roly gjort det enkelt for bedrifter over hele Europa a finne akkurat det de trenger. Enten det er 50 t-skjorter til et arrangement eller 500 profilplagg til en ny merkevarelanserig -- Roly leverer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Categories -->
+  <section class="py-20 md:py-28 bg-bg-alt">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16" data-reveal>
+        <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Sortiment</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-text mt-3 mb-4">Alt du trenger for profilering</h2>
+        <p class="text-text-secondary text-lg leading-relaxed">
+          Fra enkle t-skjorter til komplette profileringslosninger -- Roly har noe for enhver anledning.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-reveal-stagger>
         {categories.map(cat => (
-          <div class="bg-white rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
-            <h3 class="text-lg font-bold text-text mb-2">{cat.name}</h3>
-            <p class="text-sm text-text-secondary leading-relaxed">{cat.desc}</p>
+          <div class="group bg-white rounded-3xl border border-border p-8 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300" set:html={cat.icon}></div>
+            <h3 class="text-xl font-bold text-text mb-3">{cat.name}</h3>
+            <p class="text-text-secondary leading-relaxed">{cat.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-bg-alt">
+  <!-- Why Roly through Percor -->
+  <section class="py-20 md:py-28">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-text mb-6">Hvorfor Roly hos Percor?</h2>
-        <div class="prose prose-lg text-text-secondary">
-          <p>
-            Roly har etablert seg som et av Europas mest populære merker for profilklær takket være et enormt utvalg, gode priser og jevn kvalitet. Sortimentet dekker alt fra enkle t-skjorter til jakker, vesker og capser.
-          </p>
-          <p>
-            Hos Percor kan alle Roly-produkter tilpasses med trykk, broderi og fullstendig profilering. Vi hjelper deg med design og produksjon slik at din bedrift eller ditt arrangement skiller seg ut.
-          </p>
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div data-reveal="left">
+          <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Fordeler</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-text mt-3 mb-8">Hvorfor velge Roly gjennom Percor?</h2>
+          <div class="space-y-6">
+            {strengths.map((item, i) => (
+              <div class="flex gap-4 items-start">
+                <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+                <div>
+                  <h3 class="font-bold text-text mb-1">{item.title}</h3>
+                  <p class="text-text-secondary leading-relaxed text-sm">{item.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div data-reveal="right">
+          <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-3xl p-10 border border-emerald-200/50">
+            <blockquote class="text-lg text-text leading-relaxed italic">
+              "Med Roly kan vi tilby profilklaer til alle typer kunder -- fra de som bestiller 20 t-skjorter til sommerfesten, til de som trenger 2000 plagg til en landsdekkende kampanje."
+            </blockquote>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">P</div>
+              <div>
+                <div class="font-semibold text-text">Percor-teamet</div>
+                <div class="text-sm text-text-secondary">Din profileringspartner</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-20 bg-accent">
-    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-        Interessert i Roly?
+  <!-- CTA -->
+  <section class="relative overflow-hidden py-20 md:py-28 bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-500">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-4xl px-4 lg:px-6 text-center" data-reveal>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+        Klar for a profilere bedriften din?
       </h2>
-      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-        Besøk nettbutikken eller kontakt oss for et tilbud tilpasset dine behov.
+      <p class="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Utforsk Roly-sortimentet i nettbutikken, eller kontakt oss for et skreddersydd tilbud med trykk og broderi.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-emerald-700 px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-all duration-300 hover:-translate-y-0.5 shadow-lg">
           Kontakt oss
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/20 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/30 transition-colors backdrop-blur-sm">
-          Besøk nettbutikken
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/15 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/25 transition-all duration-300 backdrop-blur-sm border border-white/20">
+          Besok nettbutikken
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
       </div>
     </div>

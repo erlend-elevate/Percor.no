@@ -1,7 +1,10 @@
 ---
 ---
 
+<div class="scroll-progress" id="scroll-progress"></div>
+
 <script>
+  // Scroll reveal observer
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -10,10 +13,38 @@
         }
       });
     },
-    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
   );
 
-  document.querySelectorAll('[data-reveal], [data-reveal-stagger]').forEach((el) => {
+  document.querySelectorAll('[data-reveal], [data-reveal-stagger], .text-reveal-mask').forEach((el) => {
     observer.observe(el);
   });
+
+  // Scroll progress bar
+  const progressBar = document.getElementById('scroll-progress');
+  function updateProgress() {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    if (progressBar && total > 0) {
+      progressBar.style.transform = `scaleX(${scrolled / total})`;
+    }
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+
+  // Parallax depth elements
+  const depthElements = document.querySelectorAll('[data-depth]');
+  if (depthElements.length > 0) {
+    function updateDepth() {
+      const scrollY = window.scrollY;
+      depthElements.forEach((el) => {
+        const depth = parseFloat((el as HTMLElement).dataset.depth || '0.1');
+        const rect = el.getBoundingClientRect();
+        const centerY = rect.top + rect.height / 2;
+        const offset = (window.innerHeight / 2 - centerY) * depth;
+        (el as HTMLElement).style.transform = `translateY(${offset}px)`;
+      });
+      requestAnimationFrame(updateDepth);
+    }
+    requestAnimationFrame(updateDepth);
+  }
 </script>

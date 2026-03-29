@@ -1,82 +1,259 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
-import tjenester from '../../data/tjenester.json';
-
-const shopUrl = 'https://butikk.percor.no';
-
-const icons: Record<string, string> = {
-  tekstiltrykk: '👕',
-  foliering: '🚗',
-  storformat: '🖼️',
-  'grafisk-design': '🎨',
-};
+import AnimatedCounter from '../../components/AnimatedCounter.astro';
 ---
 
 <BaseLayout
   title="Tjenester"
   description="Percor tilbyr tekstiltrykk, foliering, storformatprint og grafisk design. Alt du trenger — under ett tak."
 >
-  <Breadcrumbs items={[{ label: 'Tjenester' }]} />
+  <div class="mx-auto max-w-7xl px-4 lg:px-6">
+    <Breadcrumbs items={[{ label: 'Tjenester' }]} />
+  </div>
 
-  <!-- Hero -->
-  <section class="relative bg-primary overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-lighter/20 to-transparent"></div>
+  <!-- Hero: The promise -->
+  <section class="relative bg-primary overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#0f1d2e] via-primary to-primary-light/60"></div>
+      <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-accent/8 rounded-full blur-[100px]"></div>
     </div>
-    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-16 md:py-24 text-center">
-      <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Vårt tilbud</p>
-      <h1 class="text-4xl md:text-5xl font-bold text-white">Våre tjenester</h1>
-      <p class="mt-4 text-lg md:text-xl text-dark-text-secondary max-w-2xl mx-auto">
-        Alt du trenger — under ett tak. Fra tekstiltrykk og foliering til storformatprint og grafisk design.
-      </p>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p data-reveal class="text-accent-light font-semibold text-sm uppercase tracking-widest mb-6">Alt under ett tak</p>
+        <h1 data-reveal class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1]">
+          Én leverandør.<br />
+          <span class="text-white/50">Fire fagområder.</span><br />
+          Null koordinering.
+        </h1>
+        <p data-reveal class="mt-8 text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl">
+          De fleste bedrifter bruker én leverandør for klær, en annen for trykk, en tredje for design. Vi gjør alt — og det henger sammen.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Service grid -->
-  <section class="py-16 md:py-24">
+  <!-- The Story: Your brand across everything -->
+  <section class="py-20 md:py-32">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-        {tjenester.map((t) => (
-          <a
-            href={`/tjenester/${t.slug}`}
-            class="group bg-white rounded-xl border border-border p-8 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
-          >
-            <span class="text-4xl block mb-4">{icons[t.slug]}</span>
-            <h2 class="text-2xl font-bold text-text group-hover:text-primary transition-colors">
-              {t.title}
-            </h2>
-            <p class="text-text-secondary mt-3 leading-relaxed">{t.description}</p>
-            <ul class="flex flex-wrap gap-2 mt-4">
-              {t.techniques.map((tech: string) => (
-                <li class="text-xs bg-bg-alt text-text-secondary px-3 py-1 rounded-full">{tech}</li>
-              ))}
-            </ul>
-            <span class="inline-flex items-center gap-1 mt-6 text-sm font-semibold text-primary">
-              Les mer
-              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-          </a>
-        ))}
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p data-reveal class="text-accent font-semibold text-sm uppercase tracking-widest mb-4">Tenk deg dette</p>
+        <h2 data-reveal class="text-3xl md:text-4xl font-extrabold text-text leading-tight">
+          Logoen din. På <em>alt</em>.
+        </h2>
+        <p data-reveal class="mt-6 text-lg text-text-secondary leading-relaxed">
+          Samme dag mottar teamet ditt broderte jakker, varebilene får ny folie, og messestandens rollups er klare.
+          Alt med samme fargeprofil, samme kvalitet, samme leverandør. Det er dette vi gjør.
+        </p>
+      </div>
+
+      <!-- Four services as a visual journey -->
+      <div class="space-y-6">
+        <!-- Tekstiltrykk -->
+        <a href="/tjenester/tekstiltrykk" class="group block" data-reveal>
+          <div class="relative bg-white rounded-3xl border border-border overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+              <div class="lg:col-span-4 bg-gradient-to-br from-blue-500/5 to-primary/10 p-8 lg:p-10 flex flex-col justify-center">
+                <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"/>
+                  </svg>
+                </div>
+                <span class="text-xs font-semibold text-primary/60 uppercase tracking-widest">01</span>
+                <h3 class="text-2xl lg:text-3xl font-extrabold text-text mt-2 group-hover:text-primary transition-colors">Tekstiltrykk</h3>
+              </div>
+              <div class="lg:col-span-8 p-8 lg:p-10 flex flex-col justify-center">
+                <p class="text-text-secondary leading-relaxed text-lg mb-6">
+                  Din logo på hva som helst — T-skjorter, jakker, capser, vesker. Vi behersker fem teknikker og velger den som gir best resultat for ditt prosjekt.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  {['Broderi', 'Screentrykk', 'DTF-trykk', 'Transfer', 'Sublimering'].map(t => (
+                    <span class="text-xs bg-bg-alt text-text-secondary px-3 py-1.5 rounded-full font-medium">{t}</span>
+                  ))}
+                </div>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
+                  Utforsk tekstiltrykk
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Foliering -->
+        <a href="/tjenester/foliering" class="group block" data-reveal>
+          <div class="relative bg-white rounded-3xl border border-border overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+              <div class="lg:col-span-4 bg-gradient-to-br from-emerald-500/5 to-primary/10 p-8 lg:p-10 flex flex-col justify-center">
+                <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <rect x="1" y="3" width="15" height="13" rx="2"/>
+                    <path d="M16 8h2a2 2 0 012 2v6a2 2 0 01-2 2H6"/>
+                    <circle cx="5.5" cy="18.5" r="2.5"/>
+                    <circle cx="18.5" cy="18.5" r="2.5"/>
+                  </svg>
+                </div>
+                <span class="text-xs font-semibold text-primary/60 uppercase tracking-widest">02</span>
+                <h3 class="text-2xl lg:text-3xl font-extrabold text-text mt-2 group-hover:text-primary transition-colors">Foliering</h3>
+              </div>
+              <div class="lg:col-span-8 p-8 lg:p-10 flex flex-col justify-center">
+                <p class="text-text-secondary leading-relaxed text-lg mb-6">
+                  Gjør hver kilometer til en reklame. Vi folierer biler, lastebiler, butikkvinduer og kontorer — profilen din, overalt.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  {['Bilfoliering', 'Lastebildekor', 'Vindusfolie', 'Kontorfolie', 'Wrapping'].map(t => (
+                    <span class="text-xs bg-bg-alt text-text-secondary px-3 py-1.5 rounded-full font-medium">{t}</span>
+                  ))}
+                </div>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
+                  Utforsk foliering
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Storformat -->
+        <a href="/tjenester/storformat" class="group block" data-reveal>
+          <div class="relative bg-white rounded-3xl border border-border overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+              <div class="lg:col-span-4 bg-gradient-to-br from-violet-500/5 to-primary/10 p-8 lg:p-10 flex flex-col justify-center">
+                <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                    <path d="M8 21h8M12 17v4"/>
+                  </svg>
+                </div>
+                <span class="text-xs font-semibold text-primary/60 uppercase tracking-widest">03</span>
+                <h3 class="text-2xl lg:text-3xl font-extrabold text-text mt-2 group-hover:text-primary transition-colors">Storformat</h3>
+              </div>
+              <div class="lg:col-span-8 p-8 lg:p-10 flex flex-col justify-center">
+                <p class="text-text-secondary leading-relaxed text-lg mb-6">
+                  Stort nok til å bli lagt merke til. Bannere, rollups, plakater og fasadeskilt — for messer, events og permanent skilting.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  {['Bannere', 'Rollups', 'Plakater', 'Klistremerker', 'Fasadeskilt'].map(t => (
+                    <span class="text-xs bg-bg-alt text-text-secondary px-3 py-1.5 rounded-full font-medium">{t}</span>
+                  ))}
+                </div>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
+                  Utforsk storformat
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Grafisk design -->
+        <a href="/tjenester/grafisk-design" class="group block" data-reveal>
+          <div class="relative bg-white rounded-3xl border border-border overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+              <div class="lg:col-span-4 bg-gradient-to-br from-rose-500/5 to-primary/10 p-8 lg:p-10 flex flex-col justify-center">
+                <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                    <path d="M2 2l7.586 7.586"/>
+                    <circle cx="11" cy="11" r="2"/>
+                  </svg>
+                </div>
+                <span class="text-xs font-semibold text-primary/60 uppercase tracking-widest">04</span>
+                <h3 class="text-2xl lg:text-3xl font-extrabold text-text mt-2 group-hover:text-primary transition-colors">Grafisk design</h3>
+              </div>
+              <div class="lg:col-span-8 p-8 lg:p-10 flex flex-col justify-center">
+                <p class="text-text-secondary leading-relaxed text-lg mb-6">
+                  Design som forteller hvem du er. Fra logodesign og profilhåndbok til trykkklare filer — vi skaper identiteten din.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  {['Logodesign', 'Profilhåndbok', 'Trykkfiler', 'Visittkort', 'Emballasje'].map(t => (
+                    <span class="text-xs bg-bg-alt text-text-secondary px-3 py-1.5 rounded-full font-medium">{t}</span>
+                  ))}
+                </div>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
+                  Utforsk grafisk design
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Advantage: Integration -->
+  <section class="py-20 md:py-32 bg-bg-alt">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p data-reveal class="text-accent font-semibold text-sm uppercase tracking-widest mb-4">Fordelen</p>
+          <h2 data-reveal class="text-3xl md:text-4xl font-extrabold text-text leading-tight">
+            Hvorfor alt fra<br />én leverandør?
+          </h2>
+          <div data-reveal class="mt-8 space-y-6 text-text-secondary leading-relaxed">
+            <p>
+              Når designeren som lager logoen din også vet hvilken trykkteknikk som brukes, blir resultatet bedre.
+              Når den som trykker klærne dine også folierer bilene, matcher fargene perfekt.
+            </p>
+            <p>
+              Det er ikke bare praktisk — det er <strong class="text-text">kvalitet som oppstår når alt henger sammen</strong>.
+            </p>
+          </div>
+        </div>
+        <div data-reveal="right">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-2xl border border-border p-6 text-center card-3d">
+              <div class="card-3d-inner">
+                <p class="text-4xl font-extrabold text-primary"><AnimatedCounter value="1" /></p>
+                <p class="text-sm text-text-secondary mt-2">Kontaktperson</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl border border-border p-6 text-center card-3d">
+              <div class="card-3d-inner">
+                <p class="text-4xl font-extrabold text-accent"><AnimatedCounter value="1" /></p>
+                <p class="text-sm text-text-secondary mt-2">Faktura</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl border border-border p-6 text-center card-3d">
+              <div class="card-3d-inner">
+                <p class="text-4xl font-extrabold text-primary"><AnimatedCounter value="1" /></p>
+                <p class="text-sm text-text-secondary mt-2">Fargeprofil</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl border border-border p-6 text-center card-3d">
+              <div class="card-3d-inner">
+                <p class="text-4xl font-extrabold text-accent"><AnimatedCounter value="1" /></p>
+                <p class="text-sm text-text-secondary mt-2">Leveranse</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 md:py-20 bg-accent">
-    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Usikker på hva du trenger?</h2>
-      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-        Ta kontakt, så hjelper vi deg med å finne den beste løsningen for din bedrift.
+  <section class="relative py-24 md:py-32 bg-primary overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-3xl px-4 lg:px-6 text-center">
+      <h2 data-reveal class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+        Usikker på hva du trenger?
+      </h2>
+      <p data-reveal class="mt-6 text-lg text-dark-text-secondary max-w-xl mx-auto">
+        Fortell oss om bedriften din. Vi foreslår løsningen — uten forpliktelser.
       </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
-          Kontakt oss
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <div data-reveal class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="/kontakt" class="group inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-semibold hover:bg-accent-light transition-all shadow-lg shadow-accent/30">
+          Start samtalen
+          <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/20 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/30 transition-colors backdrop-blur-sm">
-          Besøk nettbutikken
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        <a href="tel:+4790772409" class="inline-flex items-center gap-2 bg-white/10 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          907 72 409
         </a>
       </div>
     </div>
