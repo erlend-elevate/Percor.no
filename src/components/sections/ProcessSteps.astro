@@ -1,33 +1,65 @@
 ---
-import SectionHeading from '../ui/SectionHeading.astro';
-
+// Scene 3: Follow a project — from idea to delivery
 const steps = [
-  { num: '01', title: 'Kontakt oss', desc: 'Send oss en forespørsel med dine ønsker og behov.' },
-  { num: '02', title: 'Tilbud & design', desc: 'Vi lager et tilpasset tilbud og designforslag.' },
-  { num: '03', title: 'Godkjenning', desc: 'Du godkjenner prøvetrykk og endelig design.' },
-  { num: '04', title: 'Levering', desc: 'Vi produserer og leverer direkte til deg.' },
+  {
+    num: '01',
+    title: 'Du forteller oss hva du trenger',
+    desc: 'En rask prat — på telefon, e-post eller besøk hos oss på Sætre. Vi forstår bedriften din og hva som trengs.',
+    detail: 'Ingen forpliktelser. Bare en samtale.',
+  },
+  {
+    num: '02',
+    title: 'Vi lager et forslag',
+    desc: 'Produktvalg, designskisser, prøvetrykk. Du ser nøyaktig hva du får før du bestemmer deg.',
+    detail: 'Inkludert i alle oppdrag — ingen skjulte kostnader.',
+  },
+  {
+    num: '03',
+    title: 'Du godkjenner',
+    desc: 'Juster farger, plassering, størrelse. Vi endrer til du er 100 % fornøyd.',
+    detail: 'Prøvetrykk og digital forhåndsvisning.',
+  },
+  {
+    num: '04',
+    title: 'Vi leverer',
+    desc: 'Produksjon settes i gang. 2–3 uker senere har du ferdig merkevare i hendene.',
+    detail: 'Levert på døra eller hentet hos oss.',
+  },
 ];
 ---
 
-<section class="py-16 md:py-24">
+<section class="py-20 md:py-32 bg-primary section-slant-top section-slant-bottom relative">
   <div class="mx-auto max-w-7xl px-4 lg:px-6">
-    <SectionHeading subtitle="Slik jobber vi">
-      Fra ide til ferdig produkt
-    </SectionHeading>
+    <div class="text-center mb-16">
+      <p data-reveal class="text-accent-light font-semibold text-sm uppercase tracking-widest mb-4">Slik fungerer det</p>
+      <h2 data-reveal class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+        Fra idé til ferdig<br />på fire steg
+      </h2>
+    </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      {steps.map((step, i) => (
-        <div class="relative text-center">
-          {i < steps.length - 1 && (
-            <div class="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-px bg-border"></div>
-          )}
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white text-xl font-bold mb-4">
-            {step.num}
+    <div class="relative">
+      <!-- Connecting line -->
+      <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-white/10 -translate-y-1/2"></div>
+
+      <div data-reveal-stagger class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {steps.map((step) => (
+          <div class="relative bg-white/[0.06] backdrop-blur-sm rounded-2xl border border-white/10 p-6 lg:p-8 hover:bg-white/[0.1] transition-colors">
+            <div class="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center mb-5">
+              <span class="text-2xl font-extrabold text-accent-light">{step.num}</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3">{step.title}</h3>
+            <p class="text-dark-text-secondary text-sm leading-relaxed mb-4">{step.desc}</p>
+            <p class="text-xs text-white/40 italic">{step.detail}</p>
           </div>
-          <h3 class="font-bold text-text text-lg">{step.title}</h3>
-          <p class="text-sm text-text-secondary mt-2 leading-relaxed">{step.desc}</p>
-        </div>
-      ))}
+        ))}
+      </div>
+    </div>
+
+    <div data-reveal class="text-center mt-12">
+      <a href="/kontakt" class="group inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-semibold hover:bg-accent-light transition-all shadow-lg shadow-accent/20">
+        Start ditt prosjekt
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 </section>

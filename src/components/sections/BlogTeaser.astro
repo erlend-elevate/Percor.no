@@ -1,6 +1,4 @@
 ---
-import SectionHeading from '../ui/SectionHeading.astro';
-
 const posts = [
   {
     title: 'Hvordan velge riktig arbeidstøy for din bransje',
@@ -27,32 +25,32 @@ function formatDate(dateStr: string) {
 }
 ---
 
-<section class="py-16 md:py-24">
+<section class="py-20 md:py-28">
   <div class="mx-auto max-w-7xl px-4 lg:px-6">
-    <SectionHeading subtitle="Blogg">
-      Siste fra bloggen
-    </SectionHeading>
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+      <div>
+        <p data-reveal class="text-accent font-semibold text-sm uppercase tracking-widest mb-4">Blogg</p>
+        <h2 data-reveal class="text-3xl md:text-4xl font-extrabold text-text">Fra bloggen</h2>
+      </div>
+      <a data-reveal href="/blogg" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-light transition-colors">
+        Alle innlegg
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div data-reveal-stagger class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {posts.map(post => (
-        <a href={post.href} class="group bg-white rounded-xl border border-border overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
-          <div class="h-48 bg-bg-alt flex items-center justify-center">
-            <span class="text-4xl opacity-30">📝</span>
+        <a href={post.href} class="group bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+          <div class="h-44 bg-gradient-to-br from-primary/5 to-bg-alt flex items-center justify-center">
+            <svg class="w-10 h-10 text-primary/20" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
           </div>
-          <div class="p-5">
-            <time class="text-xs text-text-light">{formatDate(post.date)}</time>
+          <div class="p-6">
+            <time class="text-xs text-text-light font-medium">{formatDate(post.date)}</time>
             <h3 class="font-bold text-text mt-2 group-hover:text-primary transition-colors leading-snug">{post.title}</h3>
             <p class="text-sm text-text-secondary mt-2 leading-relaxed">{post.excerpt}</p>
           </div>
         </a>
       ))}
-    </div>
-
-    <div class="text-center mt-8">
-      <a href="/blogg" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-light transition-colors">
-        Se alle innlegg
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
     </div>
   </div>
 </section>
