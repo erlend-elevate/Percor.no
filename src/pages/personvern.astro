@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/layout/Breadcrumbs.astro';
+---
+
+<BaseLayout
+  title="Personvern"
+  description="Personvernerklæring for Percor AS. Les om hvordan vi samler inn, bruker og beskytter dine personopplysninger."
+>
+  <Breadcrumbs items={[{ label: 'Personvern' }]} />
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-lighter/20 to-transparent"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-16 md:py-24 text-center">
+      <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Juridisk</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Personvernerklæring</h1>
+      <p class="mt-4 text-lg md:text-xl text-dark-text-secondary max-w-2xl mx-auto">
+        Slik behandler Percor AS dine personopplysninger.
+      </p>
+    </div>
+  </section>
+
+  <!-- Innhold -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-3xl px-4 lg:px-6">
+      <div class="prose prose-lg max-w-none text-text-secondary leading-relaxed space-y-10">
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">1. Behandlingsansvarlig</h2>
+          <p>
+            Percor AS er behandlingsansvarlig for personopplysninger som samles inn via denne nettsiden.
+          </p>
+          <ul class="list-disc pl-6 space-y-1 mt-3">
+            <li>Percor AS</li>
+            <li>Åsveien 5, 3475 Sætre</li>
+            <li>E-post: <a href="mailto:stein@percor.no" class="text-primary hover:underline">stein@percor.no</a></li>
+            <li>Telefon: <a href="tel:+4790772409" class="text-primary hover:underline">907 72 409</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">2. Hvilke opplysninger samler vi inn?</h2>
+          <p>Vi samler inn følgende personopplysninger:</p>
+          <h3 class="text-lg font-semibold text-text mt-4 mb-2">Kontaktskjema</h3>
+          <p>
+            Når du sender oss en henvendelse via kontaktskjemaet, samler vi inn navn, e-postadresse, telefonnummer, eventuelt bedriftsnavn og innholdet i meldingen din. Disse opplysningene brukes utelukkende til å besvare din henvendelse.
+          </p>
+          <h3 class="text-lg font-semibold text-text mt-4 mb-2">Analyse og statistikk</h3>
+          <p>
+            Vi bruker analyseverktøy for å forstå hvordan besøkende bruker nettsiden vår. Dette inkluderer anonymisert informasjon som sidevisninger, varighet på besøk og hvilken enhet som brukes. Vi bruker ikke disse dataene til å identifisere enkeltpersoner.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">3. Informasjonskapsler (cookies)</h2>
+          <p>
+            Denne nettsiden bruker informasjonskapsler for å sikre at nettsiden fungerer korrekt og for å samle anonymisert statistikk. Vi bruker følgende typer informasjonskapsler:
+          </p>
+          <ul class="list-disc pl-6 space-y-1 mt-3">
+            <li><strong class="text-text">Nødvendige:</strong> Tekniske informasjonskapsler som er nødvendige for at nettsiden skal fungere.</li>
+            <li><strong class="text-text">Statistikk:</strong> Anonymiserte analysekapsler som hjelper oss å forstå hvordan nettsiden brukes.</li>
+          </ul>
+          <p class="mt-3">
+            Du kan selv administrere og slette informasjonskapsler via nettleserens innstillinger.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">4. Formål og rettslig grunnlag</h2>
+          <p>Vi behandler personopplysninger basert på følgende rettslige grunnlag:</p>
+          <ul class="list-disc pl-6 space-y-1 mt-3">
+            <li><strong class="text-text">Samtykke:</strong> Når du sender inn et kontaktskjema, samtykker du til at vi behandler opplysningene for å besvare henvendelsen.</li>
+            <li><strong class="text-text">Berettiget interesse:</strong> Analyseverktøy brukes for å forbedre nettsiden og brukeropplevelsen.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">5. Deling med tredjeparter</h2>
+          <p>
+            Vi deler ikke dine personopplysninger med tredjeparter, med unntak av:
+          </p>
+          <ul class="list-disc pl-6 space-y-1 mt-3">
+            <li>Leverandører av IT-tjenester som er nødvendige for drift av nettsiden (f.eks. Netlify for hosting).</li>
+            <li>Analyseverktøy som behandler anonymisert data.</li>
+          </ul>
+          <p class="mt-3">
+            Alle tredjeparter er forpliktet til å behandle opplysninger i henhold til gjeldende personvernlovgivning.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">6. Oppbevaring</h2>
+          <p>
+            Personopplysninger fra kontaktskjema oppbevares så lenge det er nødvendig for å behandle henvendelsen din, og slettes deretter. Anonymiserte analysedata oppbevares i opptil 26 måneder.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">7. Dine rettigheter</h2>
+          <p>I henhold til GDPR har du følgende rettigheter:</p>
+          <ul class="list-disc pl-6 space-y-1 mt-3">
+            <li><strong class="text-text">Innsyn:</strong> Du kan be om å få se hvilke personopplysninger vi har registrert om deg.</li>
+            <li><strong class="text-text">Retting:</strong> Du kan be om at feilaktige opplysninger rettes.</li>
+            <li><strong class="text-text">Sletting:</strong> Du kan be om at dine personopplysninger slettes.</li>
+            <li><strong class="text-text">Dataportabilitet:</strong> Du kan be om å få utlevert dine opplysninger i et maskinlesbart format.</li>
+            <li><strong class="text-text">Innsigelse:</strong> Du kan protestere mot behandling basert på berettiget interesse.</li>
+          </ul>
+          <p class="mt-3">
+            For å utøve dine rettigheter, kontakt oss på <a href="mailto:stein@percor.no" class="text-primary hover:underline">stein@percor.no</a>.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">8. Klage</h2>
+          <p>
+            Dersom du mener at vår behandling av personopplysninger ikke er i samsvar med personvernregelverket, kan du klage til Datatilsynet. Mer informasjon finner du på <a href="https://www.datatilsynet.no" target="_blank" rel="noopener" class="text-primary hover:underline">datatilsynet.no</a>.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-text mb-4">9. Endringer</h2>
+          <p>
+            Vi forbeholder oss retten til å oppdatere denne personvernerklæringen. Eventuelle endringer vil bli publisert på denne siden.
+          </p>
+          <p class="mt-3 text-sm text-text-light">
+            Sist oppdatert: Mars 2026
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

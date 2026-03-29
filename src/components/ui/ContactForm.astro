@@ -1,0 +1,59 @@
+---
+interface Props {
+  formName?: string;
+  showCompany?: boolean;
+}
+
+const { formName = 'kontakt', showCompany = false } = Astro.props;
+---
+
+<form name={formName} method="POST" data-netlify="true" class="space-y-5">
+  <input type="hidden" name="form-name" value={formName} />
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div>
+      <label for="name" class="block text-sm font-medium text-text mb-1.5">Navn *</label>
+      <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white" />
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium text-text mb-1.5">E-post *</label>
+      <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white" />
+    </div>
+  </div>
+
+  {showCompany && (
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div>
+        <label for="company" class="block text-sm font-medium text-text mb-1.5">Bedriftsnavn</label>
+        <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white" />
+      </div>
+      <div>
+        <label for="phone" class="block text-sm font-medium text-text mb-1.5">Telefon</label>
+        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white" />
+      </div>
+    </div>
+  )}
+
+  <div>
+    <label for="subject" class="block text-sm font-medium text-text mb-1.5">Emne</label>
+    <select id="subject" name="subject" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white">
+      <option value="">Velg emne</option>
+      <option value="tilbud">Forespørsel / Tilbud</option>
+      <option value="tekstiltrykk">Tekstiltrykk</option>
+      <option value="foliering">Foliering</option>
+      <option value="storformat">Storformat</option>
+      <option value="design">Grafisk design</option>
+      <option value="annet">Annet</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium text-text mb-1.5">Melding *</label>
+    <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors bg-white resize-y"></textarea>
+  </div>
+
+  <button type="submit" class="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-light transition-colors">
+    Send melding
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+  </button>
+</form>

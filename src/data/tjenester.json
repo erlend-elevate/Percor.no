@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "tekstiltrykk",
+    "title": "Tekstiltrykk",
+    "shortDesc": "Broderi, screentrykk, DTF, transfer og sublimering",
+    "description": "Vi tilbyr et bredt spekter av tekstiltrykk-teknikker for alle behov — fra enkle logotrykk til avansert fullfargetrykk på alle typer tekstiler.",
+    "icon": "tshirt",
+    "techniques": ["Broderi", "Screentrykk", "DTF-trykk", "Transfer", "Sublimering"]
+  },
+  {
+    "slug": "foliering",
+    "title": "Foliering",
+    "shortDesc": "Bil, lastebil, butikkvindu og kontordekor",
+    "description": "Profesjonell foliering av kjøretøy, butikkvinduer og kontorer. Vi leverer alt fra full bilfoliering til elegant vindusdekor.",
+    "icon": "car",
+    "techniques": ["Bilfoliering", "Lastebildekor", "Vindusfolie", "Kontorfolie", "Wrapping"]
+  },
+  {
+    "slug": "storformat",
+    "title": "Storformat",
+    "shortDesc": "Bannere, rollups, plakater og klistremerker",
+    "description": "Storformatprint for alle formål — fra messer og events til butikkdekor og skilting. Høy kvalitet på alle materialer.",
+    "icon": "banner",
+    "techniques": ["Bannere", "Rollups", "Plakater", "Klistremerker", "Fasadeskilt"]
+  },
+  {
+    "slug": "grafisk-design",
+    "title": "Grafisk design",
+    "shortDesc": "Logo, profilhåndbok og trykkfiler",
+    "description": "Våre designere hjelper deg med alt fra logodesign og visuell identitet til trykkklare filer og profilhåndbøker.",
+    "icon": "palette",
+    "techniques": ["Logodesign", "Profilhåndbok", "Trykkfiler", "Visittkort", "Emballasje"]
+  }
+]

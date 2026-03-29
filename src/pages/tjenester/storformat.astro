@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+
+const products = [
+  {
+    title: 'Bannere',
+    desc: 'Holdbare bannere i ulike størrelser for innendørs og utendørs bruk. Med eller uten øyer og kantforsterkning.',
+  },
+  {
+    title: 'Rollups',
+    desc: 'Portable rollup-systemer som er perfekte for messer, arrangementer og butikkdisplay. Enkel opp- og nedmontering.',
+  },
+  {
+    title: 'Plakater',
+    desc: 'Plakater i alle formater — fra A3 til storformat. Trykket på premium papir eller syntetisk materiale.',
+  },
+  {
+    title: 'Klistremerker',
+    desc: 'Klistremerker og etiketter i alle fasonger og størrelser. Egnet for merking, dekor og markedsføring.',
+  },
+  {
+    title: 'Fasadeskilt',
+    desc: 'Solide skilt for fasader og uteområder. Vi leverer alt fra lyskasser til flatskilt i ulike materialer.',
+  },
+];
+
+const useCases = [
+  { title: 'Messer og events', desc: 'Rollups, bannere og veggplakater som tiltrekker oppmerksomhet.' },
+  { title: 'Butikkdekor', desc: 'Vindusdekor, gulvklistremerker og kampanjeplakater.' },
+  { title: 'Kontor og resepsjon', desc: 'Vegggrafikk, skilt og informasjonstavler.' },
+  { title: 'Utendørs skilting', desc: 'Værbestandige fasadeskilt, bannere og pyloner.' },
+];
+---
+
+<BaseLayout
+  title="Storformat"
+  description="Storformatprint fra Percor — bannere, rollups, plakater, klistremerker og fasadeskilt. Høy kvalitet for alle formål."
+>
+  <Breadcrumbs items={[{ label: 'Tjenester', href: '/tjenester' }, { label: 'Storformat' }]} />
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-lighter/20 to-transparent"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-16 md:py-24">
+      <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Tjenester</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Storformat</h1>
+      <p class="mt-4 text-lg md:text-xl text-dark-text-secondary max-w-2xl">
+        Storformatprint for alle formål — fra messer og events til butikkdekor og skilting. Høy kvalitet på alle materialer.
+      </p>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-text mb-10">Produkter</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {products.map((p) => (
+          <div class="bg-white rounded-xl border border-border p-6">
+            <h3 class="text-lg font-bold text-text mb-2">{p.title}</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section class="py-16 md:py-24 bg-bg-alt">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-text mb-10 text-center">Bruksområder</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {useCases.map((uc, i) => (
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white text-lg font-bold mb-4">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <h3 class="font-bold text-text text-lg">{uc.title}</h3>
+            <p class="text-sm text-text-secondary mt-2 leading-relaxed">{uc.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-accent">
+    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Trenger du storformatprint?</h2>
+      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+        Vi hjelper deg med å finne riktig produkt og materiale for ditt prosjekt. Kontakt oss for et uforpliktende tilbud.
+      </p>
+      <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+        Be om tilbud
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

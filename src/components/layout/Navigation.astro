@@ -1,0 +1,89 @@
+---
+const tjenester = [
+  { title: 'Tekstiltrykk', desc: 'Broderi, screentrykk, DTF, transfer, sublimering', href: '/tjenester/tekstiltrykk' },
+  { title: 'Foliering', desc: 'Bil, lastebil, butikkvindu, kontordekor', href: '/tjenester/foliering' },
+  { title: 'Storformat', desc: 'Bannere, rollups, plakater, klistremerker', href: '/tjenester/storformat' },
+  { title: 'Grafisk design', desc: 'Logo, profilhåndbok, trykkfiler', href: '/tjenester/grafisk-design' },
+];
+
+const merkevarer = [
+  { title: 'Payper 🇮🇹', desc: 'Eksklusiv norsk forhandler — arbeidstøy & profilklær', href: '/merkevarer/payper' },
+  { title: 'L.Brador 🇸🇪', desc: 'Svensk arbeidstøy via Skydda', href: '/merkevarer/l-brador' },
+  { title: 'Roly 🇪🇸', desc: 'Profilklær og gaveartikler', href: '/merkevarer/roly' },
+  { title: 'Zeus Sport 🇮🇹', desc: 'Drakter og sportsutstyr', href: '/merkevarer/zeus-sport' },
+  { title: 'Skydda', desc: 'Verneutstyr og HMS', href: '/merkevarer/skydda' },
+  { title: 'Stamina 🇪🇸', desc: 'Profilklær og tilbehør', href: '/merkevarer/stamina' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="hidden lg:flex items-center gap-1" aria-label="Hovedmeny">
+  <!-- Tjenester dropdown -->
+  <div class="relative group">
+    <a href="/tjenester" class:list={["nav-link", { "nav-link--active": currentPath.startsWith('/tjenester') }]}>
+      Tjenester
+      <svg class="w-3.5 h-3.5 ml-0.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+      <div class="bg-white rounded-xl shadow-lg border border-border p-4 w-72">
+        {tjenester.map(item => (
+          <a href={item.href} class="block px-3 py-2.5 rounded-lg hover:bg-bg-alt transition-colors">
+            <span class="block text-sm font-semibold text-text">{item.title}</span>
+            <span class="block text-xs text-text-secondary mt-0.5">{item.desc}</span>
+          </a>
+        ))}
+        <div class="border-t border-border mt-2 pt-2">
+          <a href="/tjenester" class="block px-3 py-2 text-sm font-semibold text-primary hover:text-primary-light transition-colors">Se alle tjenester →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Merkevarer dropdown -->
+  <div class="relative group">
+    <a href="/merkevarer" class:list={["nav-link", { "nav-link--active": currentPath.startsWith('/merkevarer') }]}>
+      Merkevarer
+      <svg class="w-3.5 h-3.5 ml-0.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+      <div class="bg-white rounded-xl shadow-lg border border-border p-4 w-80">
+        {merkevarer.map(item => (
+          <a href={item.href} class="block px-3 py-2.5 rounded-lg hover:bg-bg-alt transition-colors">
+            <span class="block text-sm font-semibold text-text">{item.title}</span>
+            <span class="block text-xs text-text-secondary mt-0.5">{item.desc}</span>
+          </a>
+        ))}
+        <div class="border-t border-border mt-2 pt-2">
+          <a href="/merkevarer" class="block px-3 py-2 text-sm font-semibold text-primary hover:text-primary-light transition-colors">Se alle merkevarer →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="/produkter" class:list={["nav-link", { "nav-link--active": currentPath.startsWith('/produkter') }]}>Produkter</a>
+  <a href="/bedrift" class:list={["nav-link", { "nav-link--active": currentPath === '/bedrift' }]}>For bedrifter</a>
+  <a href="/om-oss" class:list={["nav-link", { "nav-link--active": currentPath === '/om-oss' }]}>Om oss</a>
+  <a href="/kontakt" class:list={["nav-link", { "nav-link--active": currentPath === '/kontakt' }]}>Kontakt</a>
+</nav>
+
+<style>
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-text);
+    border-radius: 0.5rem;
+    transition: color 0.15s, background-color 0.15s;
+  }
+  .nav-link:hover {
+    color: var(--color-primary);
+    background-color: var(--color-bg-alt);
+  }
+  .nav-link--active {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+</style>

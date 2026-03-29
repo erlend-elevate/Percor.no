@@ -1,0 +1,54 @@
+---
+const shopUrl = 'https://butikk.percor.no';
+---
+
+<div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-border">
+  <div class="px-4 py-4 space-y-1 max-h-[calc(100vh-5rem)] overflow-y-auto">
+    <!-- Nettbutikk CTA -->
+    <a
+      href={shopUrl}
+      target="_blank"
+      rel="noopener"
+      class="flex items-center justify-center gap-2 bg-primary text-white px-4 py-3 rounded-lg text-sm font-semibold mb-3"
+    >
+      🛒 Gå til nettbutikken ↗
+    </a>
+
+    <!-- Tjenester -->
+    <div>
+      <button data-mobile-accordion class="flex items-center justify-between w-full px-3 py-3 text-left font-semibold text-text">
+        Tjenester
+        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="hidden pl-4 pb-2 space-y-1">
+        <a href="/tjenester/tekstiltrykk" class="block px-3 py-2 text-sm text-text-secondary hover:text-primary">Tekstiltrykk</a>
+        <a href="/tjenester/foliering" class="block px-3 py-2 text-sm text-text-secondary hover:text-primary">Foliering</a>
+        <a href="/tjenester/storformat" class="block px-3 py-2 text-sm text-text-secondary hover:text-primary">Storformat</a>
+        <a href="/tjenester/grafisk-design" class="block px-3 py-2 text-sm text-text-secondary hover:text-primary">Grafisk design</a>
+        <a href="/tjenester" class="block px-3 py-2 text-sm font-semibold text-primary">Se alle tjenester →</a>
+      </div>
+    </div>
+
+    <!-- Merkevarer -->
+    <div>
+      <button data-mobile-accordion class="flex items-center justify-between w-full px-3 py-3 text-left font-semibold text-text">
+        Merkevarer
+        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="hidden pl-4 pb-2 space-y-1">
+        <a href="/merkevarer/payper" class="block px-3 py-2 text-sm text-text-secondary hover:text-primary">Payper</a>
+        <a href="/merkevarer/l-brador" class="block px-3 py-2 text-sm text-text-secondary hover:text-primary">L.Brador</a>
+        <a href="/merkevarer/roly" class="block px-3 py-2 text-sm text-text-secondary hover:text-primary">Roly</a>
+        <a href="/merkevarer/zeus-sport" class="block px-3 py-2 text-sm text-text-secondary hover:text-primary">Zeus Sport</a>
+        <a href="/merkevarer/skydda" class="block px-3 py-2 text-sm text-text-secondary hover:text-primary">Skydda</a>
+        <a href="/merkevarer/stamina" class="block px-3 py-2 text-sm text-text-secondary hover:text-primary">Stamina</a>
+        <a href="/merkevarer" class="block px-3 py-2 text-sm font-semibold text-primary">Se alle merkevarer →</a>
+      </div>
+    </div>
+
+    <a href="/produkter" class="block px-3 py-3 font-semibold text-text hover:text-primary">Produkter</a>
+    <a href="/bedrift" class="block px-3 py-3 font-semibold text-text hover:text-primary">For bedrifter</a>
+    <a href="/om-oss" class="block px-3 py-3 font-semibold text-text hover:text-primary">Om oss</a>
+    <a href="/kontakt" class="block px-3 py-3 font-semibold text-text hover:text-primary">Kontakt</a>
+  </div>
+</div>

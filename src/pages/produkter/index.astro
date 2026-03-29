@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+
+const shopUrl = 'https://butikk.percor.no';
+
+const categories = [
+  {
+    title: 'Arbeidstøy',
+    description: 'Slitesterkt og funksjonelt arbeidstøy for alle bransjer. Bukser, jakker, kjeledresser og mer.',
+    brands: [
+      { name: 'Payper', href: '/merkevarer/payper' },
+      { name: 'L.Brador', href: '/merkevarer/l-brador' },
+    ],
+    icon: '<path d="M3 21V7a2 2 0 012-2h2.586a1 1 0 00.707-.293l1.414-1.414A1 1 0 0110.414 3h3.172a1 1 0 01.707.293l1.414 1.414A1 1 0 0016.414 5H19a2 2 0 012 2v14"/><path d="M8 21h8M12 3v4"/>',
+  },
+  {
+    title: 'Profilklær',
+    description: 'T-skjorter, piké, hettegensere og mer — perfekt for profilering av din bedrift eller organisasjon.',
+    brands: [
+      { name: 'Payper', href: '/merkevarer/payper' },
+      { name: 'Roly', href: '/merkevarer/roly' },
+    ],
+    icon: '<path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"/>',
+  },
+  {
+    title: 'Verneutstyr',
+    description: 'Vernesko, hjelmer, hansker og HMS-utstyr. Sikkerhet på arbeidsplassen med godkjent utstyr.',
+    brands: [
+      { name: 'Skydda', href: '/merkevarer' },
+    ],
+    icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  },
+  {
+    title: 'Sportsutstyr',
+    description: 'Drakter, treningsklær og utstyr for lag og foreninger. Italiensk kvalitet til gode priser.',
+    brands: [
+      { name: 'Zeus Sport', href: '/merkevarer' },
+    ],
+    icon: '<circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><path d="M2 12h20"/>',
+  },
+];
+---
+
+<BaseLayout
+  title="Produkter"
+  description="Utforsk Percors produktutvalg: arbeidstøy, profilklær, verneutstyr og sportsutstyr fra ledende merkevarer som Payper, L.Brador, Roly og flere."
+>
+  <Breadcrumbs items={[{ label: 'Produkter' }]} />
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-lighter/20 to-transparent"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-16 md:py-24 text-center">
+      <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Produkter</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Vårt produktutvalg</h1>
+      <p class="mt-4 text-lg md:text-xl text-dark-text-secondary max-w-2xl mx-auto">
+        Kvalitetsprodukter fra ledende merkevarer. Handle direkte i nettbutikken eller kontakt oss for bedriftstilbud.
+      </p>
+      <div class="mt-8">
+        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-accent text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
+          Gå til nettbutikken
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kategorier -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Kategorier</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-text">Hva leter du etter?</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {categories.map((cat) => (
+          <div class="bg-white rounded-xl border border-border p-8 hover:shadow-lg transition-shadow duration-200">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><Fragment set:html={cat.icon} /></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-text mb-2">{cat.title}</h3>
+            <p class="text-text-secondary leading-relaxed mb-4">{cat.description}</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              {cat.brands.map((brand) => (
+                <a href={brand.href} class="text-xs bg-bg-alt text-text-secondary px-3 py-1.5 rounded-full hover:bg-primary/10 hover:text-primary transition-colors">
+                  {brand.name}
+                </a>
+              ))}
+            </div>
+            <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+              Handle i nettbutikken
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Merkevarer -->
+  <section class="py-16 md:py-24 bg-bg-alt">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Merkevarer</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-text">Kvalitetsmerker vi fører</h2>
+        <p class="mt-3 text-text-secondary">
+          Vi samarbeider med ledende merkevarer for å tilby deg de beste produktene.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        {[
+          { name: 'Payper', slug: 'payper', tagline: 'Eksklusiv importør' },
+          { name: 'L.Brador', slug: 'l-brador', tagline: 'Arbeidstøy' },
+          { name: 'Roly', slug: 'roly', tagline: 'Profilklær' },
+          { name: 'Zeus Sport', slug: 'zeus-sport', tagline: 'Sportsutstyr' },
+          { name: 'Skydda', slug: 'skydda', tagline: 'Verneutstyr' },
+          { name: 'Stamina', slug: 'stamina', tagline: 'Profilklær' },
+        ].map((brand) => (
+          <a href={`/merkevarer/${brand.slug}`} class="group bg-white rounded-xl border border-border p-5 text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+            <p class="font-bold text-text group-hover:text-primary transition-colors">{brand.name}</p>
+            <p class="text-xs text-text-light mt-1">{brand.tagline}</p>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/merkevarer" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+          Se alle merkevarer
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bedrift CTA -->
+  <section class="py-16 md:py-20 bg-accent">
+    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Trenger du større volum?</h2>
+      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+        Vi tilbyr konkurransedyktige bedriftspriser, dedikert oppfølging og skreddersydd profilering. Ta kontakt for et tilpasset tilbud.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/bedrift" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+          For bedrifter
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/20 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/30 transition-colors backdrop-blur-sm">
+          Besøk nettbutikken
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

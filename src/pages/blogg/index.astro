@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+
+const posts = [
+  {
+    slug: 'velge-riktig-arbeidstoey',
+    title: 'Hvordan velge riktig arbeidstøy for din bransje',
+    description: 'En komplett guide til å finne arbeidstøy som passer din bransje — fra bygg og anlegg til helse og industri.',
+    date: '2026-03-15',
+  },
+  {
+    slug: 'dtf-trykk-ny-standard',
+    title: 'DTF-trykk: Den nye standarden for tekstiltrykk',
+    description: 'Oppdag hvorfor DTF-trykk revolusjonerer tekstilbransjen med bedre kvalitet, holdbarhet og fleksibilitet.',
+    date: '2026-03-01',
+  },
+  {
+    slug: 'bilfoliering-guide',
+    title: 'Bilfoliering — alt du trenger å vite',
+    description: 'Komplett guide til bilfoliering: fordeler, kostnader, holdbarhet og hva du bør tenke på før du folierer bilen.',
+    date: '2026-02-15',
+  },
+  {
+    slug: 'profilklaer-merkevare',
+    title: 'Profilklær som styrker merkevaren din',
+    description: 'Lær hvordan profilklær kan øke synligheten, bygge teamfølelse og styrke merkevaren din.',
+    date: '2026-02-01',
+  },
+  {
+    slug: 'payper-eksklusiv-importor',
+    title: 'Percor blir eksklusiv Payper-importør i Norge',
+    description: 'Percor er stolte av å kunngjøre at vi er blitt eksklusiv importør av Payper arbeidstøy i Norge.',
+    date: '2026-01-15',
+  },
+];
+---
+
+<BaseLayout title="Blogg" description="Les siste nytt fra Percor — fagartikler om arbeidstøy, profilklær, trykk og design.">
+  <div class="mx-auto max-w-7xl px-4 lg:px-6">
+    <Breadcrumbs items={[{label: 'Blogg'}]} />
+  </div>
+
+  <section class="mx-auto max-w-7xl px-4 lg:px-6 pb-16">
+    <header class="mb-10">
+      <h1 class="text-3xl md:text-4xl font-bold text-text">Blogg</h1>
+      <p class="text-text-secondary mt-2 text-lg">Fagartikler, nyheter og tips fra Percor-teamet.</p>
+    </header>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => {
+        const formatted = new Date(post.date).toLocaleDateString('nb-NO', { day: 'numeric', month: 'long', year: 'numeric' });
+        return (
+          <a href={`/blogg/${post.slug}`} class="group block rounded-xl border border-border bg-white p-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all">
+            <time class="text-sm text-text-light">{formatted}</time>
+            <h2 class="text-xl font-semibold text-text mt-2 group-hover:text-primary transition-colors leading-snug">{post.title}</h2>
+            <p class="text-text-secondary mt-2 text-sm line-clamp-3">{post.description}</p>
+            <span class="inline-block mt-4 text-sm font-medium text-primary">Les mer &rarr;</span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>

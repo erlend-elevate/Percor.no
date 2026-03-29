@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import tjenester from '../../data/tjenester.json';
+
+const shopUrl = 'https://butikk.percor.no';
+
+const icons: Record<string, string> = {
+  tekstiltrykk: '👕',
+  foliering: '🚗',
+  storformat: '🖼️',
+  'grafisk-design': '🎨',
+};
+---
+
+<BaseLayout
+  title="Tjenester"
+  description="Percor tilbyr tekstiltrykk, foliering, storformatprint og grafisk design. Alt du trenger — under ett tak."
+>
+  <Breadcrumbs items={[{ label: 'Tjenester' }]} />
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-lighter/20 to-transparent"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-16 md:py-24 text-center">
+      <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Vårt tilbud</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Våre tjenester</h1>
+      <p class="mt-4 text-lg md:text-xl text-dark-text-secondary max-w-2xl mx-auto">
+        Alt du trenger — under ett tak. Fra tekstiltrykk og foliering til storformatprint og grafisk design.
+      </p>
+    </div>
+  </section>
+
+  <!-- Service grid -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {tjenester.map((t) => (
+          <a
+            href={`/tjenester/${t.slug}`}
+            class="group bg-white rounded-xl border border-border p-8 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <span class="text-4xl block mb-4">{icons[t.slug]}</span>
+            <h2 class="text-2xl font-bold text-text group-hover:text-primary transition-colors">
+              {t.title}
+            </h2>
+            <p class="text-text-secondary mt-3 leading-relaxed">{t.description}</p>
+            <ul class="flex flex-wrap gap-2 mt-4">
+              {t.techniques.map((tech: string) => (
+                <li class="text-xs bg-bg-alt text-text-secondary px-3 py-1 rounded-full">{tech}</li>
+              ))}
+            </ul>
+            <span class="inline-flex items-center gap-1 mt-6 text-sm font-semibold text-primary">
+              Les mer
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-accent">
+    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Usikker på hva du trenger?</h2>
+      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+        Ta kontakt, så hjelper vi deg med å finne den beste løsningen for din bedrift.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+          Kontakt oss
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/20 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/30 transition-colors backdrop-blur-sm">
+          Besøk nettbutikken
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

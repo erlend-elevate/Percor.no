@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+
+const services = [
+  {
+    title: 'Bilfoliering',
+    desc: 'Full eller delvis foliering av personbiler. Endre farge, beskytt lakken, eller legg til reklamemotiv — mulighetene er mange.',
+  },
+  {
+    title: 'Lastebildekor',
+    desc: 'Gjør lastebilen til en rullende reklameplakat. Vi designer og monterer heldekkende dekor som synes på veien.',
+  },
+  {
+    title: 'Vindusfolie',
+    desc: 'Frosting, solfilm eller reklamemotiv for butikkvinduer og kontorer. Gir et profesjonelt uttrykk og økt synlighet.',
+  },
+  {
+    title: 'Kontorfolie',
+    desc: 'Foliering av glass, vegger og interiørflater. Skap et helhetlig visuelt uttrykk i kontor- og møterom.',
+  },
+];
+
+const benefits = [
+  'Kostnadseffektiv markedsføring som jobber 24/7',
+  'Beskytter originallakk og overflater',
+  'Enkelt å oppdatere og fjerne',
+  'Profesjonelt og helhetlig uttrykk',
+  'Høykvalitets folie med lang levetid',
+  'Montert av erfarne fagfolk',
+];
+---
+
+<BaseLayout
+  title="Foliering"
+  description="Profesjonell foliering av bil, lastebil, butikkvindu og kontor. Percor leverer alt fra full bilfoliering til elegant vindusdekor."
+>
+  <Breadcrumbs items={[{ label: 'Tjenester', href: '/tjenester' }, { label: 'Foliering' }]} />
+
+  <!-- Hero -->
+  <section class="relative bg-primary overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-lighter/20 to-transparent"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-16 md:py-24">
+      <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Tjenester</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Foliering</h1>
+      <p class="mt-4 text-lg md:text-xl text-dark-text-secondary max-w-2xl">
+        Profesjonell foliering av kjøretøy, butikkvinduer og kontorer. Vi leverer alt fra full bilfoliering til elegant vindusdekor.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-text mb-10">Hva vi tilbyr</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {services.map((s) => (
+          <div class="bg-white rounded-xl border border-border p-6">
+            <h3 class="text-lg font-bold text-text mb-2">{s.title}</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-16 md:py-24 bg-bg-alt">
+    <div class="mx-auto max-w-3xl px-4 lg:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-text mb-10 text-center">Hvorfor velge foliering?</h2>
+      <ul class="space-y-4">
+        {benefits.map((b) => (
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <span class="text-text-secondary leading-relaxed">{b}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-accent">
+    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Klar for foliering?</h2>
+      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+        Fortell oss om prosjektet ditt, så lager vi et skreddersydd tilbud. Vi tar oss av alt fra design til montering.
+      </p>
+      <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+        Be om tilbud
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

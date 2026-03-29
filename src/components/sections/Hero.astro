@@ -1,0 +1,30 @@
+---
+const shopUrl = 'https://butikk.percor.no';
+---
+
+<section class="relative bg-primary overflow-hidden">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-lighter/20 to-transparent"></div>
+  </div>
+  <div class="relative mx-auto max-w-7xl px-4 lg:px-6 py-20 md:py-28 lg:py-36">
+    <div class="max-w-3xl">
+      <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-4">Norsk importør & leverandør</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+        Arbeidstøy, profilklær,<br class="hidden md:block" /> trykk og design
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-dark-text-secondary leading-relaxed max-w-2xl">
+        Percor er din totalleverandør — fra arbeidstøy og profilklær til tekstiltrykk, foliering og grafisk design. Eksklusiv norsk importør av Payper.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="/kontakt" class="inline-flex items-center gap-2 bg-accent text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-accent-light transition-colors text-base">
+          Be om tilbud
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/10 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/20 transition-colors text-base backdrop-blur-sm">
+          Gå til nettbutikken
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

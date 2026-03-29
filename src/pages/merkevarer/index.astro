@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import merkevarer from '../../data/merkevarer.json';
+
+const shopUrl = 'https://butikk.percor.no';
+---
+
+<BaseLayout
+  title="Merkevarer"
+  description="Utforsk merkevarene vi forer — Payper, L.Brador, Roly, Zeus Sport, Skydda og Stamina. Kvalitetsprodukter fra ledende europeiske produsenter."
+>
+  <section class="bg-primary py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <Breadcrumbs items={[{ label: 'Merkevarer' }]} />
+      <div class="max-w-3xl">
+        <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-3">Våre partnere</p>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">Merkevarer vi stoler på</h1>
+        <p class="text-lg text-dark-text-secondary leading-relaxed">
+          Vi samarbeider med ledende europeiske produsenter for å levere arbeidstøy, profilklær, verneutstyr og sportsutstyr av høyeste kvalitet. Percor er eksklusiv norsk forhandler av Payper.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 lg:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {merkevarer.map(brand => (
+          <a
+            href={`/merkevarer/${brand.slug}`}
+            class={`group relative bg-white rounded-xl border p-8 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 ${brand.slug === 'payper' ? 'border-accent ring-2 ring-accent/20 lg:col-span-1 md:col-span-2' : 'border-border'}`}
+          >
+            {brand.slug === 'payper' && (
+              <span class="absolute -top-3 left-6 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                Eksklusiv norsk forhandler
+              </span>
+            )}
+            <div class="flex items-start gap-4">
+              <span class="text-4xl">{brand.flag}</span>
+              <div class="flex-1">
+                <h2 class="text-xl font-bold text-text group-hover:text-primary transition-colors mb-1">{brand.name}</h2>
+                <p class="text-sm text-text-light mb-3">{brand.country} {brand.tagline && `— ${brand.tagline}`}</p>
+                <p class="text-text-secondary text-sm leading-relaxed mb-4">{brand.description}</p>
+                <div class="flex flex-wrap gap-2">
+                  {brand.categories.map(cat => (
+                    <span class="text-xs bg-bg-alt text-text-secondary px-2.5 py-1 rounded-full">{cat}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-border">
+              <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-primary-light transition-colors">
+                Utforsk {brand.name}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-accent">
+    <div class="mx-auto max-w-4xl px-4 lg:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Finner du ikke det du leter etter?
+      </h2>
+      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+        Vi har tilgang til hele sortimentet fra alle våre merkevarer. Ta kontakt for en uforpliktende prat.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-accent px-7 py-3.5 rounded-lg font-semibold hover:bg-white/90 transition-colors">
+          Kontakt oss
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/20 text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-white/30 transition-colors backdrop-blur-sm">
+          Besøk nettbutikken
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
