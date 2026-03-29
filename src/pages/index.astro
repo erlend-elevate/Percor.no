@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/sections/Hero.astro';
-import UspBar from '../components/sections/UspBar.astro';
+import StoryIntro from '../components/sections/StoryIntro.astro';
 import CategoryGrid from '../components/sections/CategoryGrid.astro';
-import BrandShowcase from '../components/sections/BrandShowcase.astro';
 import ProcessSteps from '../components/sections/ProcessSteps.astro';
 import PayperHighlight from '../components/sections/PayperHighlight.astro';
+import BrandShowcase from '../components/sections/BrandShowcase.astro';
 import Testimonials from '../components/sections/Testimonials.astro';
 import BlogTeaser from '../components/sections/BlogTeaser.astro';
 import NewsletterSignup from '../components/sections/NewsletterSignup.astro';
@@ -17,14 +17,31 @@ import CtaBanner from '../components/sections/CtaBanner.astro';
   description="Percor er din totalleverandør av arbeidstøy, profilklær, tekstiltrykk, foliering og grafisk design. Eksklusiv norsk importør av Payper."
   schemaType="localBusiness"
 >
+  <!-- Act 1: Hook — who we are, why you should care -->
   <Hero />
-  <UspBar />
+
+  <!-- Act 2: The problem — why this matters -->
+  <StoryIntro />
+
+  <!-- Act 3: How we solve it — services -->
   <CategoryGrid />
-  <PayperHighlight />
-  <BrandShowcase />
+
+  <!-- Act 4: The process — from idea to delivery -->
   <ProcessSteps />
+
+  <!-- Act 5: Our edge — Payper exclusive -->
+  <PayperHighlight />
+
+  <!-- Act 6: All the brands -->
+  <BrandShowcase />
+
+  <!-- Act 7: Proof — customer stories -->
   <Testimonials />
+
+  <!-- Act 8: Stay connected -->
   <BlogTeaser />
   <NewsletterSignup />
+
+  <!-- Finale: CTA -->
   <CtaBanner />
 </BaseLayout>

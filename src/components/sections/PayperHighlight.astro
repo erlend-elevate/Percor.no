@@ -2,56 +2,75 @@
 const shopUrl = 'https://butikk.percor.no';
 ---
 
-<section class="py-16 md:py-24 bg-primary">
-  <div class="mx-auto max-w-7xl px-4 lg:px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <p class="text-accent-light font-semibold text-sm uppercase tracking-wider mb-3">Eksklusiv norsk forhandler</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-          Payper — Italiensk kvalitet<br />for norske arbeidsfolk
-        </h2>
-        <p class="text-dark-text-secondary leading-relaxed mb-4">
-          Percor er stolt eksklusiv importør og distributør av Payper i Norge. Med over 40 års erfaring leverer Payper arbeidstøy og profilklær som kombinerer italiensk design med funksjonalitet og holdbarhet.
-        </p>
-        <ul class="space-y-2 text-dark-text-secondary mb-8">
-          <li class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-accent-light flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Bredt sortiment — fra t-skjorter til high-vis
-          </li>
-          <li class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-accent-light flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Konkurransedyktige priser — direkte fra produsent
-          </li>
-          <li class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-accent-light flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Raske leveranser fra norsk lager
-          </li>
-        </ul>
-        <div class="flex flex-wrap gap-4">
-          <a href="/merkevarer/payper" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-light transition-colors">
-            Utforsk Payper
-          </a>
-          <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm">
-            Handle i nettbutikken
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="bg-white/5 rounded-2xl p-8 lg:p-12 backdrop-blur-sm border border-white/10">
-        <div class="text-center">
-          <span class="text-6xl mb-4 block">🇮🇹</span>
-          <h3 class="text-2xl font-bold text-white mb-2">Payper</h3>
-          <p class="text-dark-text-secondary text-sm mb-6">Made in Italy — Since 1977</p>
-          <div class="grid grid-cols-2 gap-4 text-center">
-            <div class="bg-white/5 rounded-lg p-4">
-              <p class="text-2xl font-bold text-accent-light">500+</p>
-              <p class="text-xs text-dark-text-secondary mt-1">Produkter</p>
-            </div>
-            <div class="bg-white/5 rounded-lg p-4">
-              <p class="text-2xl font-bold text-accent-light">40+</p>
-              <p class="text-xs text-dark-text-secondary mt-1">År erfaring</p>
+<section class="py-20 md:py-32 bg-bg-alt relative overflow-hidden">
+  <!-- Decorative element -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 lg:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- Left: visual -->
+      <div data-reveal="left" class="order-2 lg:order-1">
+        <div class="relative">
+          <div class="bg-primary rounded-2xl p-10 lg:p-14">
+            <div class="text-center">
+              <div class="inline-flex items-center gap-2 bg-accent/20 rounded-full px-4 py-1.5 mb-6">
+                <span class="text-sm font-semibold text-accent-light">Eksklusiv importør i Norge</span>
+              </div>
+              <p class="text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-2">Payper</p>
+              <p class="text-dark-text-secondary text-sm">Made in Italy — Since 1977</p>
+
+              <div class="grid grid-cols-3 gap-4 mt-8">
+                <div class="bg-white/5 rounded-xl p-4">
+                  <p class="text-2xl font-extrabold text-accent-light">500+</p>
+                  <p class="text-[11px] text-white/50 mt-1">Produkter</p>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4">
+                  <p class="text-2xl font-extrabold text-white">40+</p>
+                  <p class="text-[11px] text-white/50 mt-1">År erfaring</p>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4">
+                  <p class="text-2xl font-extrabold text-accent-light">1</p>
+                  <p class="text-[11px] text-white/50 mt-1">Norsk importør</p>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- Floating badge -->
+          <div class="absolute -top-3 -right-3 bg-accent text-white rounded-xl px-4 py-2 shadow-lg shadow-accent/30 rotate-3">
+            <p class="text-xs font-bold">🇮🇹 Direkte fra Italia</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: story text -->
+      <div class="order-1 lg:order-2">
+        <p data-reveal class="text-accent font-semibold text-sm uppercase tracking-widest mb-4">Vår stolthet</p>
+        <h2 data-reveal class="text-3xl md:text-4xl font-extrabold text-text leading-tight mb-6">
+          Italiensk håndverk,<br />norsk service
+        </h2>
+        <div data-reveal class="space-y-4 text-text-secondary leading-relaxed">
+          <p>
+            De fleste arbeidstøy-leverandører selger det samme fra de samme katalogene. Vi gjør det annerledes.
+          </p>
+          <p>
+            Som <strong class="text-text">eneste norske importør av Payper</strong> har vi direkte tilgang til en av Europas ledende produsenter. Det betyr bedre priser, raskere levering, og produkter du ikke finner hos noen andre.
+          </p>
+          <p>
+            Fra T-skjorter og pikéer til high-vis jakker og arbeidsbukser — alt designet i Italia, levert fra norsk lager.
+          </p>
+        </div>
+
+        <div data-reveal class="flex flex-wrap gap-4 mt-8">
+          <a href="/merkevarer/payper" class="group inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-light transition-colors">
+            Utforsk Payper
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-light transition-colors">
+            Se i nettbutikken
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
         </div>
       </div>
     </div>
