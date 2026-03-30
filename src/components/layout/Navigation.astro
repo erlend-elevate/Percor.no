@@ -65,6 +65,10 @@ const currentPath = Astro.url.pathname;
   <a href="/bedrift" class:list={["nav-link", { "nav-link--active": currentPath === '/bedrift' }]}>For bedrifter</a>
   <a href="/om-oss" class:list={["nav-link", { "nav-link--active": currentPath === '/om-oss' }]}>Om oss</a>
   <a href="/kontakt" class:list={["nav-link", { "nav-link--active": currentPath === '/kontakt' }]}>Kontakt</a>
+  <a href="/v2" class:list={["nav-link nav-link--v2", { "nav-link--active": currentPath === '/v2' }]}>
+    Forside v2
+    <span class="ml-1.5 text-[10px] font-bold bg-accent text-white px-1.5 py-0.5 rounded uppercase leading-none">ny</span>
+  </a>
 </nav>
 
 <style>
