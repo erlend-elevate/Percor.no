@@ -7,22 +7,22 @@ const shopUrl = 'https://butikk.percor.no';
 const categories = [
   {
     name: 'Verneutstyr',
-    desc: 'Komplett utvalg av personlig verneutstyr -- fra oye- og hoerselsvern til hansker og fallsikring. Alt sertifisert etter gjeldende europeiske standarder.',
+    desc: 'Komplett utvalg av personlig verneutstyr — fra øye- og hørselsvern til hansker og fallsikring. Alt sertifisert etter gjeldende europeiske standarder.',
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
   },
   {
     name: 'HMS-produkter',
-    desc: 'Alt innen helse, miljo og sikkerhet for arbeidsplassen. Forstehjelp, ergonomi, skilting og sikkerhetsutstyr i henhold til norske forskrifter.',
+    desc: 'Alt innen helse, miljø og sikkerhet for arbeidsplassen. Førstehjelp, ergonomi, skilting og sikkerhetsutstyr i henhold til norske forskrifter.',
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>`,
   },
   {
     name: 'Vernesko',
-    desc: 'Sikkerhetssko med staltalje, antistatisk bunnplate og sklisikker sale. Fra lette sneaker-modeller til tungt isolerte vintersko.',
+    desc: 'Sikkerhetssko med ståltalje, antistatisk bunnplate og sklisikker såle. Fra lette sneaker-modeller til tungt isolerte vintersko.',
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z"/></svg>`,
   },
   {
     name: 'Hjelmer',
-    desc: 'Vernehjelmer og hodebeskyttelse for industri, bygg og anlegg. Inkluderer tilbehor som visir, hoerselsvern og hodelykt-fester.',
+    desc: 'Vernehjelmer og hodebeskyttelse for industri, bygg og anlegg. Inkluderer tilbehør som visir, hørselsvern og hodelykt-fester.',
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z"/></svg>`,
   },
 ];
@@ -31,15 +31,15 @@ const certifications = [
   { label: 'EN 388', desc: 'Vernehansker' },
   { label: 'EN 397', desc: 'Vernehjelmer' },
   { label: 'EN ISO 20345', desc: 'Vernesko' },
-  { label: 'EN 166', desc: 'Oyevern' },
-  { label: 'EN 352', desc: 'Hoerselsvern' },
+  { label: 'EN 166', desc: 'Øyevern' },
+  { label: 'EN 352', desc: 'Hørselsvern' },
   { label: 'EN 361', desc: 'Fallsikring' },
 ];
 ---
 
 <BaseLayout
-  title="Skydda -- Verneutstyr og HMS | Percor"
-  description="Skydda er Nordens ledende leverandor av verneutstyr og HMS-produkter. Vernesko, hjelmer, verneklaer og sikkerhetsutstyr tilgjengelig hos Percor."
+  title="Skydda — Verneutstyr og HMS | Percor"
+  description="Skydda er Nordens ledende leverandør av verneutstyr og HMS-produkter. Vernesko, hjelmer, verneklær og sikkerhetsutstyr tilgjengelig hos Percor."
 >
   <!-- Hero -->
   <section class="relative overflow-hidden bg-gradient-to-br from-[#0f1d2e] via-primary to-primary-light/40 py-20 md:py-32">
@@ -57,10 +57,10 @@ const certifications = [
             <span class="text-amber-300 font-semibold text-sm uppercase tracking-wider">Svensk verneutstyr og HMS</span>
           </div>
           <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Nar sikkerhet <span class="text-amber-400">ikke er valgfritt</span>
+            Når sikkerhet <span class="text-amber-400">ikke er valgfritt</span>
           </h1>
           <p class="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-xl">
-            Skydda leverer sertifisert verneutstyr for de som ikke kan ta sjanser. Fra vernesko til fallsikring -- alt du trenger for at alle kommer trygt hjem.
+            Skydda leverer sertifisert verneutstyr for de som ikke kan ta sjanser. Fra vernesko til fallsikring — alt du trenger for at alle kommer trygt hjem.
           </p>
           <div class="flex flex-wrap gap-4">
             <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-amber-600 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-amber-500 transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-amber-600/25">
@@ -68,7 +68,7 @@ const certifications = [
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
             </a>
             <a href="/kontakt" class="inline-flex items-center gap-2 bg-white/10 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/10">
-              Be om radgivning
+              Be om rådgivning
             </a>
           </div>
         </div>
@@ -98,10 +98,10 @@ const certifications = [
           <h2 class="text-3xl md:text-4xl font-bold text-text mt-3 mb-6">Beskyttelse uten kompromiss</h2>
           <div class="space-y-4 text-text-secondary text-lg leading-relaxed">
             <p>
-              I enhver bransje der folk jobber med hendene, finnes det risikoer. Skydda ble grunnlagt med overbevisningen om at ingen skal maatte velge mellom sikkerhet og komfort. Som Nordens ledende leverandor av verneutstyr har Skydda bygget sitt rykte pa en ting: a holde folk trygge.
+              I enhver bransje der folk jobber med hendene, finnes det risikoer. Skydda ble grunnlagt med overbevisningen om at ingen skal måtte velge mellom sikkerhet og komfort. Som Nordens ledende leverandør av verneutstyr har Skydda bygget sitt rykte på én ting: å holde folk trygge.
             </p>
             <p>
-              Med et sortiment som dekker alt fra enkle vernehansker til avanserte fallsikringssystemer, er Skydda forstevalget for bedrifter som tar HMS pa alvor. Hvert produkt er testet, sertifisert og klargjort for de toffeste arbeidsforholdene Norden kan by pa.
+              Med et sortiment som dekker alt fra enkle vernehansker til avanserte fallsikringssystemer, er Skydda førstevalget for bedrifter som tar HMS på alvor. Hvert produkt er testet, sertifisert og klargjort for de tøffeste arbeidsforholdene Norden kan by på.
             </p>
           </div>
         </div>
@@ -130,7 +130,7 @@ const certifications = [
         <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Sortiment</span>
         <h2 class="text-3xl md:text-4xl font-bold text-text mt-3 mb-4">Verneutstyr for alle bransjer</h2>
         <p class="text-text-secondary text-lg leading-relaxed">
-          Fra byggeplass til industri, fra verksted til offshore -- Skydda har verneutstyr som oppfyller kravene.
+          Fra byggeplass til industri, fra verksted til offshore — Skydda har verneutstyr som oppfyller kravene.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-reveal-stagger>
@@ -157,22 +157,22 @@ const certifications = [
           <div class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-6">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
           </div>
-          <h3 class="font-bold text-text mb-3 text-lg">Personlig radgivning</h3>
-          <p class="text-text-secondary leading-relaxed">Vi hjelper deg med a finne riktig verneutstyr basert pa din bransje, dine risikoer og gjeldende forskrifter.</p>
+          <h3 class="font-bold text-text mb-3 text-lg">Personlig rådgivning</h3>
+          <p class="text-text-secondary leading-relaxed">Vi hjelper deg med å finne riktig verneutstyr basert på din bransje, dine risikoer og gjeldende forskrifter.</p>
         </div>
         <div class="text-center bg-white rounded-3xl border border-border p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
           <div class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-6">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
           </div>
           <h3 class="font-bold text-text mb-3 text-lg">Komplett sortiment</h3>
-          <p class="text-text-secondary leading-relaxed">Tilgang til hele Skydda-sortimentet -- fra enkle forbruksprodukter til spesialisert sikkerhetsutstyr.</p>
+          <p class="text-text-secondary leading-relaxed">Tilgang til hele Skydda-sortimentet — fra enkle forbruksprodukter til spesialisert sikkerhetsutstyr.</p>
         </div>
         <div class="text-center bg-white rounded-3xl border border-border p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
           <div class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-6">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
           </div>
           <h3 class="font-bold text-text mb-3 text-lg">Profilering mulig</h3>
-          <p class="text-text-secondary leading-relaxed">Utvalgte produkter kan profileres med bedriftens logo, slik at verneutstyret ogsa styrker merkeidentiteten.</p>
+          <p class="text-text-secondary leading-relaxed">Utvalgte produkter kan profileres med bedriftens logo, slik at verneutstyret også styrker merkeidentiteten.</p>
         </div>
       </div>
     </div>
@@ -185,10 +185,10 @@ const certifications = [
     </div>
     <div class="relative mx-auto max-w-4xl px-4 lg:px-6 text-center" data-reveal>
       <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-        Trenger du verneutstyr du kan stole pa?
+        Trenger du verneutstyr du kan stole på?
       </h2>
       <p class="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-        Kontakt oss for radgivning og tilbud pa verneutstyr og HMS-produkter fra Skydda. Vi finner riktig beskyttelse for din arbeidsplass.
+        Kontakt oss for rådgivning og tilbud på verneutstyr og HMS-produkter fra Skydda. Vi finner riktig beskyttelse for din arbeidsplass.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <a href="/kontakt" class="inline-flex items-center gap-2 bg-white text-amber-700 px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-all duration-300 hover:-translate-y-0.5 shadow-lg">
@@ -196,7 +196,7 @@ const certifications = [
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href={shopUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/15 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/25 transition-all duration-300 backdrop-blur-sm border border-white/20">
-          Besok nettbutikken
+          Besøk nettbutikken
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
       </div>

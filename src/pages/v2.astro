@@ -1,0 +1,875 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Hjem"
+  description="Percor er din totalleverandør av arbeidstøy, profilklær, tekstiltrykk, foliering og grafisk design. Eksklusiv norsk importør av Payper."
+  schemaType="localBusiness"
+>
+
+<!-- ============================================================
+     SCENE 1: The Opening — Full viewport, massive type
+     ============================================================ -->
+<section class="scene scene-hero" data-scene="hero">
+  <div class="scene-hero__inner">
+    <div class="scene-hero__wordmark" aria-hidden="true">PERCOR</div>
+    <p class="scene-hero__tagline">Arbeidstøy. Profilklær. Trykk. Design.</p>
+    <div class="scene-hero__scroll-cue">
+      <span>Scroll for å oppdage</span>
+      <svg class="scene-hero__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SCENE 2: The Problem — Sticky text with scroll-driven reveal
+     ============================================================ -->
+<section class="scene scene-problem" data-scene="problem">
+  <div class="scene-problem__sticky">
+    <div class="scene-problem__text-stack">
+      <p class="scene-problem__line" data-scroll-text="0">Du har en bedrift å drive.</p>
+      <p class="scene-problem__line" data-scroll-text="1">Ikke fire leverandører å koordinere.</p>
+      <p class="scene-problem__line scene-problem__line--accent" data-scroll-text="2">Vi erstatter dem alle.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SCENE 3: The Four Pillars — Scroll-driven service reveal
+     ============================================================ -->
+<section class="scene scene-pillars" data-scene="pillars">
+  <div class="scene-pillars__sticky">
+    <!-- Background color shifts per pillar -->
+    <div class="scene-pillars__bg" data-pillar-bg></div>
+
+    <!-- Counter -->
+    <div class="scene-pillars__counter">
+      <span data-pillar-current>01</span> / 04
+    </div>
+
+    <!-- Each pillar -->
+    <div class="scene-pillars__card" data-pillar="0">
+      <span class="scene-pillars__label">Fagområde 01</span>
+      <h2 class="scene-pillars__title">Tekstiltrykk<br/>&amp; broderi</h2>
+      <p class="scene-pillars__desc">Screentrykk. DTF. Transfer. Sublimering. Broderi. Fem teknikker, én leverandør. Din logo — på hva som helst.</p>
+      <a href="/tjenester/tekstiltrykk" class="scene-pillars__link">Utforsk →</a>
+    </div>
+
+    <div class="scene-pillars__card" data-pillar="1">
+      <span class="scene-pillars__label">Fagområde 02</span>
+      <h2 class="scene-pillars__title">Foliering<br/>&amp; dekor</h2>
+      <p class="scene-pillars__desc">Gjør hver kilometer til en reklame. Bil, lastebil, vindu, kontor — 70 000 visninger om dagen, null løpende kostnader.</p>
+      <a href="/tjenester/foliering" class="scene-pillars__link">Utforsk →</a>
+    </div>
+
+    <div class="scene-pillars__card" data-pillar="2">
+      <span class="scene-pillars__label">Fagområde 03</span>
+      <h2 class="scene-pillars__title">Storformat-<br/>print</h2>
+      <p class="scene-pillars__desc">Du har tre sekunder. Bannere, rollups, fasadeskilt og messevegg som vinner dem — hver gang.</p>
+      <a href="/tjenester/storformat" class="scene-pillars__link">Utforsk →</a>
+    </div>
+
+    <div class="scene-pillars__card" data-pillar="3">
+      <span class="scene-pillars__label">Fagområde 04</span>
+      <h2 class="scene-pillars__title">Grafisk<br/>design</h2>
+      <p class="scene-pillars__desc">De fleste har en logo. Få har en identitet. Vi bygger det visuelle systemet som gjør at alt henger sammen.</p>
+      <a href="/tjenester/grafisk-design" class="scene-pillars__link">Utforsk →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SCENE 4: The Numbers — Scroll-synced counters
+     ============================================================ -->
+<section class="scene scene-numbers" data-scene="numbers">
+  <div class="scene-numbers__sticky">
+    <div class="scene-numbers__grid">
+      <div class="scene-numbers__item">
+        <span class="scene-numbers__value" data-count-to="500" data-count-suffix="+">0</span>
+        <span class="scene-numbers__label">produkter i sortiment</span>
+      </div>
+      <div class="scene-numbers__item">
+        <span class="scene-numbers__value" data-count-to="6">0</span>
+        <span class="scene-numbers__label">europeiske merkevarer</span>
+      </div>
+      <div class="scene-numbers__item">
+        <span class="scene-numbers__value" data-count-to="5">0</span>
+        <span class="scene-numbers__label">trykkteknikker</span>
+      </div>
+      <div class="scene-numbers__item">
+        <span class="scene-numbers__value" data-count-to="1">0</span>
+        <span class="scene-numbers__label">kontaktperson</span>
+      </div>
+    </div>
+    <p class="scene-numbers__punchline" data-scroll-fade>Alt under ett tak. I Sætre.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SCENE 5: The Process — Sticky step-through
+     ============================================================ -->
+<section class="scene scene-process" data-scene="process">
+  <div class="scene-process__sticky">
+    <div class="scene-process__step" data-step="0">
+      <div class="scene-process__number">01</div>
+      <h3 class="scene-process__title">Du sender oss en e-post.</h3>
+      <p class="scene-process__desc">«Vi trenger 40 jakker med logo og to folierte varebiler.» Det er alt vi trenger.</p>
+    </div>
+    <div class="scene-process__step" data-step="1">
+      <div class="scene-process__number">02</div>
+      <h3 class="scene-process__title">Vi sender deg ett tilbud.</h3>
+      <p class="scene-process__desc">Riktig jakke, riktig trykk, riktig folie. Én pris, ingen overraskelser.</p>
+    </div>
+    <div class="scene-process__step" data-step="2">
+      <div class="scene-process__number">03</div>
+      <h3 class="scene-process__title">Vi produserer alt selv.</h3>
+      <p class="scene-process__desc">Broderi, trykk og foliering i vårt eget verksted. Fargene matcher. Kvaliteten matcher. Alltid.</p>
+    </div>
+    <div class="scene-process__step" data-step="3">
+      <div class="scene-process__number">04</div>
+      <h3 class="scene-process__title">Du mottar alt samlet.</h3>
+      <p class="scene-process__desc">40 jakker. To varebiler. Én faktura. Ferdig.</p>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="scene-process__progress">
+      <div class="scene-process__progress-fill" data-process-progress></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SCENE 6: Payper — Exclusive importer highlight
+     ============================================================ -->
+<section class="scene scene-payper" data-scene="payper">
+  <div class="scene-payper__sticky">
+    <div class="scene-payper__badge">Eksklusiv norsk importør</div>
+    <h2 class="scene-payper__title">
+      <span class="scene-payper__title-main" data-scroll-scale>Payper</span>
+    </h2>
+    <p class="scene-payper__subtitle">Italiensk håndverk. Nordisk arbeidshverdag.</p>
+    <div class="scene-payper__stats">
+      <div><strong>500+</strong> produkter</div>
+      <div><strong>40+</strong> års erfaring</div>
+      <div><strong>1</strong> norsk importør</div>
+    </div>
+    <a href="/merkevarer/payper" class="scene-payper__cta">Utforsk Payper →</a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SCENE 7: CTA — Final
+     ============================================================ -->
+<section class="scene scene-cta" data-scene="cta">
+  <div class="scene-cta__inner">
+    <h2 class="scene-cta__title">Klar for å komme i gang?</h2>
+    <p class="scene-cta__desc">Fortell oss hva du trenger. Vi tar det derfra.</p>
+    <div class="scene-cta__buttons">
+      <a href="/kontakt" class="scene-cta__btn scene-cta__btn--primary">
+        Ta kontakt
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:+4731284000" class="scene-cta__btn scene-cta__btn--secondary">
+        Ring oss: 31 28 40 00
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SCROLL ENGINE — All scroll-driven animation logic
+     ============================================================ -->
+<style is:global>
+  /* ========== SCENE SYSTEM ========== */
+  .scene {
+    position: relative;
+    width: 100%;
+  }
+
+  /* ===== SCENE 1: HERO ===== */
+  .scene-hero {
+    height: 200vh;
+    background: var(--color-primary);
+  }
+  .scene-hero__inner {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .scene-hero__wordmark {
+    font-size: clamp(4rem, 18vw, 16rem);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    transition: none;
+    will-change: transform, opacity;
+  }
+  .scene-hero__tagline {
+    color: rgba(255,255,255,0.5);
+    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    will-change: opacity;
+  }
+  .scene-hero__scroll-cue {
+    position: absolute;
+    bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    will-change: opacity;
+  }
+  .scene-hero__arrow {
+    animation: bounce-down 2s ease-in-out infinite;
+  }
+  @keyframes bounce-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ===== SCENE 2: PROBLEM ===== */
+  .scene-problem {
+    height: 400vh;
+    background: var(--color-bg);
+  }
+  .scene-problem__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .scene-problem__text-stack {
+    max-width: 900px;
+    text-align: center;
+  }
+  .scene-problem__line {
+    font-size: clamp(1.75rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-text);
+    margin-bottom: 0.5em;
+    opacity: 0;
+    transform: translateY(2rem);
+    will-change: transform, opacity;
+    transition: none;
+  }
+  .scene-problem__line--accent {
+    color: var(--color-accent);
+  }
+
+  /* ===== SCENE 3: PILLARS ===== */
+  .scene-pillars {
+    height: 500vh;
+  }
+  .scene-pillars__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .scene-pillars__bg {
+    position: absolute;
+    inset: 0;
+    transition: background-color 0.6s ease;
+    background-color: var(--color-primary);
+  }
+  .scene-pillars__counter {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    z-index: 2;
+  }
+  .scene-pillars__card {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(4rem);
+    will-change: transform, opacity;
+    transition: none;
+    pointer-events: none;
+  }
+  .scene-pillars__card.is-active {
+    pointer-events: auto;
+  }
+  .scene-pillars__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1.5rem;
+  }
+  .scene-pillars__title {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+  .scene-pillars__desc {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: rgba(255,255,255,0.6);
+    max-width: 500px;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+  .scene-pillars__link {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-accent-light);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+  .scene-pillars__link:hover {
+    color: var(--color-accent);
+  }
+
+  /* ===== SCENE 4: NUMBERS ===== */
+  .scene-numbers {
+    height: 300vh;
+    background: var(--color-bg);
+  }
+  .scene-numbers__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .scene-numbers__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  @media (min-width: 768px) {
+    .scene-numbers__grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4rem;
+    }
+  }
+  .scene-numbers__item {
+    opacity: 0;
+    transform: scale(0.8);
+    will-change: transform, opacity;
+    transition: none;
+  }
+  .scene-numbers__value {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    display: block;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .scene-numbers__label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-top: 0.5rem;
+    display: block;
+  }
+  .scene-numbers__punchline {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--color-text);
+    opacity: 0;
+    transform: translateY(1rem);
+    will-change: opacity, transform;
+    transition: none;
+  }
+
+  /* ===== SCENE 5: PROCESS ===== */
+  .scene-process {
+    height: 500vh;
+    background: var(--color-primary);
+  }
+  .scene-process__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
+  }
+  .scene-process__step {
+    position: absolute;
+    max-width: 600px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(3rem);
+    will-change: transform, opacity;
+    transition: none;
+    padding: 0 2rem;
+  }
+  .scene-process__number {
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 800;
+    color: rgba(255,255,255,0.08);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .scene-process__title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .scene-process__desc {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .scene-process__progress {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(200px, 40vw);
+    height: 3px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .scene-process__progress-fill {
+    height: 100%;
+    background: var(--color-accent);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  /* ===== SCENE 6: PAYPER ===== */
+  .scene-payper {
+    height: 250vh;
+    background: var(--color-bg-alt);
+  }
+  .scene-payper__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+  }
+  .scene-payper__badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: var(--color-accent-subtle);
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    will-change: opacity;
+  }
+  .scene-payper__title {
+    margin-bottom: 1.5rem;
+  }
+  .scene-payper__title-main {
+    font-size: clamp(4rem, 15vw, 12rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    will-change: transform;
+    transition: none;
+  }
+  .scene-payper__subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--color-text-secondary);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    will-change: opacity;
+  }
+  .scene-payper__stats {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    will-change: opacity;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .scene-payper__stats strong {
+    color: var(--color-text);
+    font-weight: 800;
+    font-size: 1.25rem;
+    display: block;
+  }
+  .scene-payper__cta {
+    font-weight: 700;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 1.125rem;
+    opacity: 0;
+    will-change: opacity;
+    transition: color 0.3s;
+  }
+  .scene-payper__cta:hover {
+    color: var(--color-accent-light);
+  }
+
+  /* ===== SCENE 7: CTA ===== */
+  .scene-cta {
+    background: var(--color-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .scene-cta__inner {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 700px;
+  }
+  .scene-cta__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .scene-cta__desc {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+  .scene-cta__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .scene-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .scene-cta__btn--primary {
+    background: var(--color-accent);
+    color: white;
+    box-shadow: 0 8px 30px rgba(217, 119, 6, 0.3);
+  }
+  .scene-cta__btn--primary:hover {
+    background: var(--color-accent-light);
+    transform: translateY(-2px);
+  }
+  .scene-cta__btn--secondary {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    backdrop-filter: blur(8px);
+  }
+  .scene-cta__btn--secondary:hover {
+    background: rgba(255,255,255,0.18);
+  }
+
+  /* ===== REDUCED MOTION ===== */
+  @media (prefers-reduced-motion: reduce) {
+    .scene-hero__wordmark,
+    .scene-problem__line,
+    .scene-pillars__card,
+    .scene-numbers__item,
+    .scene-numbers__punchline,
+    .scene-process__step,
+    .scene-payper__badge,
+    .scene-payper__subtitle,
+    .scene-payper__stats,
+    .scene-payper__cta,
+    .scene-payper__title-main {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .scene-hero__arrow {
+      animation: none !important;
+    }
+  }
+</style>
+
+<script>
+  // ============================================================
+  // SCROLL ENGINE — Continuous scroll-driven animation
+  // ============================================================
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Utility: get scroll progress through an element (0 to 1)
+  function getScrollProgress(el: HTMLElement): number {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const totalScroll = el.offsetHeight - windowHeight;
+    if (totalScroll <= 0) return rect.top <= 0 ? 1 : 0;
+    const scrolled = -rect.top;
+    return Math.max(0, Math.min(1, scrolled / totalScroll));
+  }
+
+  // Utility: lerp
+  function lerp(a: number, b: number, t: number): number {
+    return a + (b - a) * t;
+  }
+
+  // Utility: clamp
+  function clamp(v: number, min: number, max: number): number {
+    return Math.max(min, Math.min(max, v));
+  }
+
+  // Utility: map range
+  function mapRange(value: number, inMin: number, inMax: number, outMin: number, outMax: number): number {
+    return clamp(lerp(outMin, outMax, (value - inMin) / (inMax - inMin)), Math.min(outMin, outMax), Math.max(outMin, outMax));
+  }
+
+  // Cache DOM elements
+  const scenes = {
+    hero: document.querySelector('[data-scene="hero"]') as HTMLElement,
+    problem: document.querySelector('[data-scene="problem"]') as HTMLElement,
+    pillars: document.querySelector('[data-scene="pillars"]') as HTMLElement,
+    numbers: document.querySelector('[data-scene="numbers"]') as HTMLElement,
+    process: document.querySelector('[data-scene="process"]') as HTMLElement,
+    payper: document.querySelector('[data-scene="payper"]') as HTMLElement,
+  };
+
+  const heroWordmark = document.querySelector('.scene-hero__wordmark') as HTMLElement;
+  const heroTagline = document.querySelector('.scene-hero__tagline') as HTMLElement;
+  const heroScrollCue = document.querySelector('.scene-hero__scroll-cue') as HTMLElement;
+
+  const problemLines = document.querySelectorAll('.scene-problem__line') as NodeListOf<HTMLElement>;
+
+  const pillarBg = document.querySelector('[data-pillar-bg]') as HTMLElement;
+  const pillarCurrent = document.querySelector('[data-pillar-current]') as HTMLElement;
+  const pillarCards = document.querySelectorAll('.scene-pillars__card') as NodeListOf<HTMLElement>;
+
+  const numberItems = document.querySelectorAll('.scene-numbers__item') as NodeListOf<HTMLElement>;
+  const numberValues = document.querySelectorAll('.scene-numbers__value') as NodeListOf<HTMLElement>;
+  const numbersPunchline = document.querySelector('.scene-numbers__punchline') as HTMLElement;
+
+  const processSteps = document.querySelectorAll('.scene-process__step') as NodeListOf<HTMLElement>;
+  const processProgress = document.querySelector('[data-process-progress]') as HTMLElement;
+
+  const payperBadge = document.querySelector('.scene-payper__badge') as HTMLElement;
+  const payperTitle = document.querySelector('.scene-payper__title-main') as HTMLElement;
+  const payperSubtitle = document.querySelector('.scene-payper__subtitle') as HTMLElement;
+  const payperStats = document.querySelector('.scene-payper__stats') as HTMLElement;
+  const payperCta = document.querySelector('.scene-payper__cta') as HTMLElement;
+
+  // Pillar colors
+  const pillarColors = ['#1A2E44', '#1e3a5f', '#2c1e4a', '#1a3e2e'];
+
+  // Animation frame
+  let ticking = false;
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateAnimations);
+  }
+
+  function updateAnimations() {
+    ticking = false;
+    if (prefersReducedMotion) return;
+
+    // === SCENE 1: HERO ===
+    if (scenes.hero) {
+      const p = getScrollProgress(scenes.hero);
+      const scale = mapRange(p, 0, 0.8, 1, 2.5);
+      const opacity = mapRange(p, 0.2, 0.7, 1, 0);
+      const taglineOpacity = mapRange(p, 0.05, 0.4, 1, 0);
+      const cueOpacity = mapRange(p, 0, 0.15, 1, 0);
+
+      heroWordmark.style.transform = `scale(${scale})`;
+      heroWordmark.style.opacity = `${opacity}`;
+      heroTagline.style.opacity = `${taglineOpacity}`;
+      heroScrollCue.style.opacity = `${cueOpacity}`;
+    }
+
+    // === SCENE 2: PROBLEM ===
+    if (scenes.problem) {
+      const p = getScrollProgress(scenes.problem);
+
+      problemLines.forEach((line, i) => {
+        const start = i * 0.25;
+        const fadeIn = mapRange(p, start, start + 0.1, 0, 1);
+        const slideUp = mapRange(p, start, start + 0.15, 2, 0);
+        const fadeOut = i < problemLines.length - 1
+          ? mapRange(p, start + 0.25, start + 0.35, 1, 0.3)
+          : 1;
+
+        line.style.opacity = `${fadeIn * fadeOut}`;
+        line.style.transform = `translateY(${slideUp}rem)`;
+      });
+    }
+
+    // === SCENE 3: PILLARS ===
+    if (scenes.pillars) {
+      const p = getScrollProgress(scenes.pillars);
+      const totalPillars = pillarCards.length;
+      const activePillar = Math.min(Math.floor(p * totalPillars), totalPillars - 1);
+      const pillarProgress = (p * totalPillars) - activePillar;
+
+      pillarBg.style.backgroundColor = pillarColors[activePillar] || pillarColors[0];
+      pillarCurrent.textContent = String(activePillar + 1).padStart(2, '0');
+
+      pillarCards.forEach((card, i) => {
+        card.classList.toggle('is-active', i === activePillar);
+        if (i === activePillar) {
+          const fadeIn = mapRange(pillarProgress, 0, 0.3, 0, 1);
+          const slideUp = mapRange(pillarProgress, 0, 0.4, 4, 0);
+          const fadeOut = mapRange(pillarProgress, 0.7, 1, 1, 0);
+          const combinedOpacity = i === totalPillars - 1 ? fadeIn : fadeIn * fadeOut;
+          card.style.opacity = `${combinedOpacity}`;
+          card.style.transform = `translateY(${slideUp}rem)`;
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(4rem)';
+        }
+      });
+    }
+
+    // === SCENE 4: NUMBERS ===
+    if (scenes.numbers) {
+      const p = getScrollProgress(scenes.numbers);
+
+      numberItems.forEach((item, i) => {
+        const start = 0.05 + i * 0.1;
+        const opacity = mapRange(p, start, start + 0.15, 0, 1);
+        const scale = mapRange(p, start, start + 0.15, 0.8, 1);
+        item.style.opacity = `${opacity}`;
+        item.style.transform = `scale(${scale})`;
+      });
+
+      // Scroll-synced counting
+      numberValues.forEach((val) => {
+        const target = parseInt(val.getAttribute('data-count-to') || '0');
+        const suffix = val.getAttribute('data-count-suffix') || '';
+        const countProgress = mapRange(p, 0.1, 0.6, 0, 1);
+        const current = Math.round(countProgress * target);
+        val.textContent = `${current}${suffix}`;
+      });
+
+      // Punchline
+      const punchOpacity = mapRange(p, 0.6, 0.75, 0, 1);
+      const punchSlide = mapRange(p, 0.6, 0.75, 1, 0);
+      numbersPunchline.style.opacity = `${punchOpacity}`;
+      numbersPunchline.style.transform = `translateY(${punchSlide}rem)`;
+    }
+
+    // === SCENE 5: PROCESS ===
+    if (scenes.process) {
+      const p = getScrollProgress(scenes.process);
+      const totalSteps = processSteps.length;
+      const activeStep = Math.min(Math.floor(p * totalSteps), totalSteps - 1);
+      const stepProgress = (p * totalSteps) - activeStep;
+
+      processProgress.style.width = `${p * 100}%`;
+
+      processSteps.forEach((step, i) => {
+        if (i === activeStep) {
+          const fadeIn = mapRange(stepProgress, 0, 0.25, 0, 1);
+          const slideUp = mapRange(stepProgress, 0, 0.3, 3, 0);
+          const fadeOut = mapRange(stepProgress, 0.7, 1, 1, 0);
+          const combinedOpacity = i === totalSteps - 1 ? fadeIn : fadeIn * fadeOut;
+          step.style.opacity = `${combinedOpacity}`;
+          step.style.transform = `translateY(${slideUp}rem)`;
+        } else {
+          step.style.opacity = '0';
+          step.style.transform = 'translateY(3rem)';
+        }
+      });
+    }
+
+    // === SCENE 6: PAYPER ===
+    if (scenes.payper) {
+      const p = getScrollProgress(scenes.payper);
+
+      const badgeOpacity = mapRange(p, 0.05, 0.2, 0, 1);
+      payperBadge.style.opacity = `${badgeOpacity}`;
+
+      const titleScale = mapRange(p, 0, 0.4, 0.6, 1);
+      payperTitle.style.transform = `scale(${titleScale})`;
+
+      const subOpacity = mapRange(p, 0.2, 0.35, 0, 1);
+      payperSubtitle.style.opacity = `${subOpacity}`;
+
+      const statsOpacity = mapRange(p, 0.3, 0.45, 0, 1);
+      payperStats.style.opacity = `${statsOpacity}`;
+
+      const ctaOpacity = mapRange(p, 0.4, 0.55, 0, 1);
+      payperCta.style.opacity = `${ctaOpacity}`;
+    }
+  }
+
+  // Listen
+  window.addEventListener('scroll', onScroll, { passive: true });
+  // Initial render
+  updateAnimations();
+</script>
+
+</BaseLayout>
